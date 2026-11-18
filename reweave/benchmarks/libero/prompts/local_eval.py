@@ -1,0 +1,46 @@
+# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"""Local-memory variant of the single-attempt LIBERO evaluation prompt."""
+
+from __future__ import annotations
+
+from reweave.benchmarks.libero.prompts import system as base
+from reweave.prompt.utils import Numbered, PromptNode
+
+MEMORY_PROFILE = base.MEMORY_GUIDANCE
+
+WORKFLOW_STEPS = base.WORKFLOW_STEPS
+
+
+def system_prompt() -> PromptNode:
+    """Assemble the local global/task-family/task-specific evaluation prompt."""
+    return {
+        "ROLE AND EVALUATION": base.ROLE_AND_EVALUATION,
+        "MEMORY PROFILE — LOCAL GLOBAL + TASK-FAMILY + TASK-SPECIFIC": MEMORY_PROFILE,
+        "MANIPULATION GUIDANCE": base.MANIPULATION_GUIDANCE,
+        "RUNTIME": base.RUNTIME,
+        "DECISION COST": base.DECISION_COST,
+        "OPTIONAL TOOL REFERENCES": base.STEP_READ_GUIDES,
+        "YOUR GOAL": base.GOAL,
+        "RULES (NON-NEGOTIABLE)": base.RULES,
+        "LOCALIZATION": base.LOCALIZATION,
+        "PERCEPTION WHEN NEEDED": base.PERCEPTION_GUIDANCE,
+        "WORKFLOW": Numbered(WORKFLOW_STEPS),
+        "KEY HYPERPARAMETERS": base.KEY_HYPERPARAMETERS,
+        "OUTPUT DISCIPLINE": base.OUTPUT_DISCIPLINE,
+    }
+
+
+__all__ = ["system_prompt", "WORKFLOW_STEPS"]

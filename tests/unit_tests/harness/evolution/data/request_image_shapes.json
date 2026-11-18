@@ -1,0 +1,1018 @@
+{
+  "002": {
+    "state_images": [
+      {
+        "path": "/observation/_runtime_images/0",
+        "image_id": "image-1"
+      },
+      {
+        "path": "/observation/_runtime_images/1",
+        "image_id": "image-2"
+      },
+      {
+        "path": "/observation/_runtime_images/2",
+        "image_id": "image-3"
+      },
+      {
+        "path": "/acquisition_history/0/result/_runtime_images/0",
+        "image_id": "image-4"
+      },
+      {
+        "path": "/acquisition_history/0/result/_runtime_images/1",
+        "image_id": "image-5"
+      },
+      {
+        "path": "/acquisition_history/0/result/_runtime_images/2",
+        "image_id": "image-6"
+      },
+      {
+        "path": "/acquisition_history/1/result/_runtime_images/0",
+        "image_id": "image-4"
+      },
+      {
+        "path": "/acquisition_history/1/result/_runtime_images/1",
+        "image_id": "image-5"
+      },
+      {
+        "path": "/acquisition_history/1/result/_runtime_images/2",
+        "image_id": "image-6"
+      },
+      {
+        "path": "/acquisition_history/2/result/_runtime_images/0",
+        "image_id": "image-7"
+      },
+      {
+        "path": "/acquisition_history/2/result/_runtime_images/1",
+        "image_id": "image-8"
+      },
+      {
+        "path": "/acquisition_history/2/result/_runtime_images/2",
+        "image_id": "image-9"
+      },
+      {
+        "path": "/acquisition_history/3/result/_runtime_images/0",
+        "image_id": "image-7"
+      },
+      {
+        "path": "/acquisition_history/3/result/_runtime_images/1",
+        "image_id": "image-8"
+      },
+      {
+        "path": "/acquisition_history/3/result/_runtime_images/2",
+        "image_id": "image-9"
+      },
+      {
+        "path": "/acquisition_history/4/result/_runtime_images/0",
+        "image_id": "image-10"
+      },
+      {
+        "path": "/acquisition_history/4/result/_runtime_images/1",
+        "image_id": "image-11"
+      },
+      {
+        "path": "/acquisition_history/4/result/_runtime_images/2",
+        "image_id": "image-12"
+      },
+      {
+        "path": "/acquisition_history/5/result/_runtime_images/0",
+        "image_id": "image-10"
+      },
+      {
+        "path": "/acquisition_history/5/result/_runtime_images/1",
+        "image_id": "image-11"
+      },
+      {
+        "path": "/acquisition_history/5/result/_runtime_images/2",
+        "image_id": "image-12"
+      },
+      {
+        "path": "/acquisition_history/6/result/_runtime_images/0",
+        "image_id": "image-13"
+      },
+      {
+        "path": "/acquisition_history/6/result/_runtime_images/1",
+        "image_id": "image-14"
+      },
+      {
+        "path": "/acquisition_history/6/result/_runtime_images/2",
+        "image_id": "image-15"
+      },
+      {
+        "path": "/acquisition_history/7/result/_runtime_images/0",
+        "image_id": "image-13"
+      },
+      {
+        "path": "/acquisition_history/7/result/_runtime_images/1",
+        "image_id": "image-14"
+      },
+      {
+        "path": "/acquisition_history/7/result/_runtime_images/2",
+        "image_id": "image-15"
+      },
+      {
+        "path": "/acquisition_history/8/result/_runtime_images/0",
+        "image_id": "image-16"
+      },
+      {
+        "path": "/acquisition_history/8/result/_runtime_images/1",
+        "image_id": "image-17"
+      },
+      {
+        "path": "/acquisition_history/8/result/_runtime_images/2",
+        "image_id": "image-18"
+      },
+      {
+        "path": "/acquisition_history/9/result/_runtime_images/0",
+        "image_id": "image-16"
+      },
+      {
+        "path": "/acquisition_history/9/result/_runtime_images/1",
+        "image_id": "image-17"
+      },
+      {
+        "path": "/acquisition_history/9/result/_runtime_images/2",
+        "image_id": "image-18"
+      },
+      {
+        "path": "/acquisition_history/11/result/_runtime_images/0",
+        "image_id": "image-19"
+      },
+      {
+        "path": "/acquisition_history/11/result/_runtime_images/1",
+        "image_id": "image-20"
+      },
+      {
+        "path": "/acquisition_history/11/result/_runtime_images/2",
+        "image_id": "image-21"
+      },
+      {
+        "path": "/acquisition_history/12/result/_runtime_images/0",
+        "image_id": "image-19"
+      },
+      {
+        "path": "/acquisition_history/12/result/_runtime_images/1",
+        "image_id": "image-20"
+      },
+      {
+        "path": "/acquisition_history/12/result/_runtime_images/2",
+        "image_id": "image-21"
+      },
+      {
+        "path": "/acquisition_history/13/result/_runtime_images/0",
+        "image_id": "image-22"
+      },
+      {
+        "path": "/acquisition_history/13/result/_runtime_images/1",
+        "image_id": "image-23"
+      },
+      {
+        "path": "/acquisition_history/13/result/_runtime_images/2",
+        "image_id": "image-24"
+      },
+      {
+        "path": "/acquisition_history/14/result/_runtime_images/0",
+        "image_id": "image-22"
+      },
+      {
+        "path": "/acquisition_history/14/result/_runtime_images/1",
+        "image_id": "image-23"
+      },
+      {
+        "path": "/acquisition_history/14/result/_runtime_images/2",
+        "image_id": "image-24"
+      },
+      {
+        "path": "/acquisition_history/15/result/_runtime_images/0",
+        "image_id": "image-25"
+      },
+      {
+        "path": "/acquisition_history/15/result/_runtime_images/1",
+        "image_id": "image-26"
+      },
+      {
+        "path": "/acquisition_history/15/result/_runtime_images/2",
+        "image_id": "image-27"
+      },
+      {
+        "path": "/acquisition_history/16/result/_runtime_images/0",
+        "image_id": "image-25"
+      },
+      {
+        "path": "/acquisition_history/16/result/_runtime_images/1",
+        "image_id": "image-26"
+      },
+      {
+        "path": "/acquisition_history/16/result/_runtime_images/2",
+        "image_id": "image-27"
+      },
+      {
+        "path": "/acquisition_history/17/result/_runtime_images/0",
+        "image_id": "image-28"
+      },
+      {
+        "path": "/acquisition_history/17/result/_runtime_images/1",
+        "image_id": "image-29"
+      },
+      {
+        "path": "/acquisition_history/17/result/_runtime_images/2",
+        "image_id": "image-30"
+      },
+      {
+        "path": "/acquisition_history/18/result/_runtime_images/0",
+        "image_id": "image-28"
+      },
+      {
+        "path": "/acquisition_history/18/result/_runtime_images/1",
+        "image_id": "image-29"
+      },
+      {
+        "path": "/acquisition_history/18/result/_runtime_images/2",
+        "image_id": "image-30"
+      },
+      {
+        "path": "/acquisition_history/19/result/_runtime_images/0",
+        "image_id": "image-31"
+      },
+      {
+        "path": "/acquisition_history/19/result/_runtime_images/1",
+        "image_id": "image-32"
+      },
+      {
+        "path": "/acquisition_history/19/result/_runtime_images/2",
+        "image_id": "image-33"
+      },
+      {
+        "path": "/acquisition_history/20/result/_runtime_images/0",
+        "image_id": "image-31"
+      },
+      {
+        "path": "/acquisition_history/20/result/_runtime_images/1",
+        "image_id": "image-32"
+      },
+      {
+        "path": "/acquisition_history/20/result/_runtime_images/2",
+        "image_id": "image-33"
+      },
+      {
+        "path": "/acquisition_history/21/result/_runtime_images/0",
+        "image_id": "image-34"
+      },
+      {
+        "path": "/acquisition_history/21/result/_runtime_images/1",
+        "image_id": "image-35"
+      },
+      {
+        "path": "/acquisition_history/21/result/_runtime_images/2",
+        "image_id": "image-36"
+      },
+      {
+        "path": "/acquisition_history/22/result/_runtime_images/0",
+        "image_id": "image-34"
+      },
+      {
+        "path": "/acquisition_history/22/result/_runtime_images/1",
+        "image_id": "image-35"
+      },
+      {
+        "path": "/acquisition_history/22/result/_runtime_images/2",
+        "image_id": "image-36"
+      },
+      {
+        "path": "/acquisition_history/23/result/_runtime_images/0",
+        "image_id": "image-37"
+      },
+      {
+        "path": "/acquisition_history/23/result/_runtime_images/1",
+        "image_id": "image-38"
+      },
+      {
+        "path": "/acquisition_history/23/result/_runtime_images/2",
+        "image_id": "image-39"
+      },
+      {
+        "path": "/acquisition_history/24/result/_runtime_images/0",
+        "image_id": "image-37"
+      },
+      {
+        "path": "/acquisition_history/24/result/_runtime_images/1",
+        "image_id": "image-38"
+      },
+      {
+        "path": "/acquisition_history/24/result/_runtime_images/2",
+        "image_id": "image-39"
+      },
+      {
+        "path": "/acquisition_history/25/result/_runtime_images/0",
+        "image_id": "image-40"
+      },
+      {
+        "path": "/acquisition_history/25/result/_runtime_images/1",
+        "image_id": "image-41"
+      },
+      {
+        "path": "/acquisition_history/25/result/_runtime_images/2",
+        "image_id": "image-42"
+      },
+      {
+        "path": "/acquisition_history/26/result/_runtime_images/0",
+        "image_id": "image-40"
+      },
+      {
+        "path": "/acquisition_history/26/result/_runtime_images/1",
+        "image_id": "image-41"
+      },
+      {
+        "path": "/acquisition_history/26/result/_runtime_images/2",
+        "image_id": "image-42"
+      },
+      {
+        "path": "/acquisition_history/27/result/_runtime_images/0",
+        "image_id": "image-43"
+      },
+      {
+        "path": "/acquisition_history/27/result/_runtime_images/1",
+        "image_id": "image-44"
+      },
+      {
+        "path": "/acquisition_history/27/result/_runtime_images/2",
+        "image_id": "image-45"
+      },
+      {
+        "path": "/acquisition_history/28/result/_runtime_images/0",
+        "image_id": "image-43"
+      },
+      {
+        "path": "/acquisition_history/28/result/_runtime_images/1",
+        "image_id": "image-44"
+      },
+      {
+        "path": "/acquisition_history/28/result/_runtime_images/2",
+        "image_id": "image-45"
+      },
+      {
+        "path": "/acquisition_history/29/result/_runtime_images/0",
+        "image_id": "image-46"
+      },
+      {
+        "path": "/acquisition_history/29/result/_runtime_images/1",
+        "image_id": "image-47"
+      },
+      {
+        "path": "/acquisition_history/29/result/_runtime_images/2",
+        "image_id": "image-48"
+      },
+      {
+        "path": "/acquisition_history/30/result/_runtime_images/0",
+        "image_id": "image-46"
+      },
+      {
+        "path": "/acquisition_history/30/result/_runtime_images/1",
+        "image_id": "image-47"
+      },
+      {
+        "path": "/acquisition_history/30/result/_runtime_images/2",
+        "image_id": "image-48"
+      },
+      {
+        "path": "/acquisition_history/38/result/_runtime_images/0",
+        "image_id": "image-49"
+      },
+      {
+        "path": "/acquisition_history/38/result/_runtime_images/1",
+        "image_id": "image-50"
+      },
+      {
+        "path": "/acquisition_history/38/result/_runtime_images/2",
+        "image_id": "image-51"
+      },
+      {
+        "path": "/acquisition_history/39/result/_runtime_images/0",
+        "image_id": "image-49"
+      },
+      {
+        "path": "/acquisition_history/39/result/_runtime_images/1",
+        "image_id": "image-50"
+      },
+      {
+        "path": "/acquisition_history/39/result/_runtime_images/2",
+        "image_id": "image-51"
+      },
+      {
+        "path": "/acquisition_history/40/result/_runtime_images/0",
+        "image_id": "image-52"
+      },
+      {
+        "path": "/acquisition_history/40/result/_runtime_images/1",
+        "image_id": "image-53"
+      },
+      {
+        "path": "/acquisition_history/40/result/_runtime_images/2",
+        "image_id": "image-54"
+      },
+      {
+        "path": "/acquisition_history/41/result/_runtime_images/0",
+        "image_id": "image-52"
+      },
+      {
+        "path": "/acquisition_history/41/result/_runtime_images/1",
+        "image_id": "image-53"
+      },
+      {
+        "path": "/acquisition_history/41/result/_runtime_images/2",
+        "image_id": "image-54"
+      },
+      {
+        "path": "/acquisition_history/42/result/_runtime_images/0",
+        "image_id": "image-55"
+      },
+      {
+        "path": "/acquisition_history/42/result/_runtime_images/1",
+        "image_id": "image-56"
+      },
+      {
+        "path": "/acquisition_history/42/result/_runtime_images/2",
+        "image_id": "image-57"
+      },
+      {
+        "path": "/acquisition_history/43/result/_runtime_images/0",
+        "image_id": "image-55"
+      },
+      {
+        "path": "/acquisition_history/43/result/_runtime_images/1",
+        "image_id": "image-56"
+      },
+      {
+        "path": "/acquisition_history/43/result/_runtime_images/2",
+        "image_id": "image-57"
+      },
+      {
+        "path": "/acquisition_history/44/result/_runtime_images/0",
+        "image_id": "image-58"
+      },
+      {
+        "path": "/acquisition_history/44/result/_runtime_images/1",
+        "image_id": "image-59"
+      },
+      {
+        "path": "/acquisition_history/44/result/_runtime_images/2",
+        "image_id": "image-60"
+      },
+      {
+        "path": "/acquisition_history/45/result/_runtime_images/0",
+        "image_id": "image-58"
+      },
+      {
+        "path": "/acquisition_history/45/result/_runtime_images/1",
+        "image_id": "image-59"
+      },
+      {
+        "path": "/acquisition_history/45/result/_runtime_images/2",
+        "image_id": "image-60"
+      },
+      {
+        "path": "/acquisition_history/46/result/_runtime_images/0",
+        "image_id": "image-61"
+      },
+      {
+        "path": "/acquisition_history/46/result/_runtime_images/1",
+        "image_id": "image-62"
+      },
+      {
+        "path": "/acquisition_history/46/result/_runtime_images/2",
+        "image_id": "image-63"
+      },
+      {
+        "path": "/acquisition_history/47/result/_runtime_images/0",
+        "image_id": "image-61"
+      },
+      {
+        "path": "/acquisition_history/47/result/_runtime_images/1",
+        "image_id": "image-62"
+      },
+      {
+        "path": "/acquisition_history/47/result/_runtime_images/2",
+        "image_id": "image-63"
+      },
+      {
+        "path": "/acquisition_history/49/result/_runtime_images/0",
+        "image_id": "image-64"
+      },
+      {
+        "path": "/acquisition_history/49/result/_runtime_images/1",
+        "image_id": "image-65"
+      },
+      {
+        "path": "/acquisition_history/49/result/_runtime_images/2",
+        "image_id": "image-66"
+      },
+      {
+        "path": "/acquisition_history/50/result/_runtime_images/0",
+        "image_id": "image-64"
+      },
+      {
+        "path": "/acquisition_history/50/result/_runtime_images/1",
+        "image_id": "image-65"
+      },
+      {
+        "path": "/acquisition_history/50/result/_runtime_images/2",
+        "image_id": "image-66"
+      },
+      {
+        "path": "/acquisition_history/51/result/_runtime_images/0",
+        "image_id": "image-67"
+      },
+      {
+        "path": "/acquisition_history/51/result/_runtime_images/1",
+        "image_id": "image-68"
+      },
+      {
+        "path": "/acquisition_history/51/result/_runtime_images/2",
+        "image_id": "image-69"
+      },
+      {
+        "path": "/acquisition_history/52/result/_runtime_images/0",
+        "image_id": "image-67"
+      },
+      {
+        "path": "/acquisition_history/52/result/_runtime_images/1",
+        "image_id": "image-68"
+      },
+      {
+        "path": "/acquisition_history/52/result/_runtime_images/2",
+        "image_id": "image-69"
+      },
+      {
+        "path": "/acquisition_history/53/result/_runtime_images/0",
+        "image_id": "image-70"
+      },
+      {
+        "path": "/acquisition_history/53/result/_runtime_images/1",
+        "image_id": "image-71"
+      },
+      {
+        "path": "/acquisition_history/53/result/_runtime_images/2",
+        "image_id": "image-72"
+      },
+      {
+        "path": "/acquisition_history/54/result/_runtime_images/0",
+        "image_id": "image-70"
+      },
+      {
+        "path": "/acquisition_history/54/result/_runtime_images/1",
+        "image_id": "image-71"
+      },
+      {
+        "path": "/acquisition_history/54/result/_runtime_images/2",
+        "image_id": "image-72"
+      },
+      {
+        "path": "/acquisition_history/55/result/_runtime_images/0",
+        "image_id": "image-73"
+      },
+      {
+        "path": "/acquisition_history/55/result/_runtime_images/1",
+        "image_id": "image-74"
+      },
+      {
+        "path": "/acquisition_history/55/result/_runtime_images/2",
+        "image_id": "image-75"
+      },
+      {
+        "path": "/acquisition_history/56/result/_runtime_images/0",
+        "image_id": "image-73"
+      },
+      {
+        "path": "/acquisition_history/56/result/_runtime_images/1",
+        "image_id": "image-74"
+      },
+      {
+        "path": "/acquisition_history/56/result/_runtime_images/2",
+        "image_id": "image-75"
+      },
+      {
+        "path": "/acquisition_history/57/result/_runtime_images/0",
+        "image_id": "image-76"
+      },
+      {
+        "path": "/acquisition_history/57/result/_runtime_images/1",
+        "image_id": "image-77"
+      },
+      {
+        "path": "/acquisition_history/57/result/_runtime_images/2",
+        "image_id": "image-78"
+      },
+      {
+        "path": "/acquisition_history/58/result/_runtime_images/0",
+        "image_id": "image-76"
+      },
+      {
+        "path": "/acquisition_history/58/result/_runtime_images/1",
+        "image_id": "image-77"
+      },
+      {
+        "path": "/acquisition_history/58/result/_runtime_images/2",
+        "image_id": "image-78"
+      },
+      {
+        "path": "/acquisition_history/59/result/_runtime_images/0",
+        "image_id": "image-79"
+      },
+      {
+        "path": "/acquisition_history/59/result/_runtime_images/1",
+        "image_id": "image-80"
+      },
+      {
+        "path": "/acquisition_history/59/result/_runtime_images/2",
+        "image_id": "image-81"
+      },
+      {
+        "path": "/acquisition_history/60/result/_runtime_images/0",
+        "image_id": "image-79"
+      },
+      {
+        "path": "/acquisition_history/60/result/_runtime_images/1",
+        "image_id": "image-80"
+      },
+      {
+        "path": "/acquisition_history/60/result/_runtime_images/2",
+        "image_id": "image-81"
+      },
+      {
+        "path": "/acquisition_history/65/result/_runtime_images/0",
+        "image_id": "image-82"
+      },
+      {
+        "path": "/acquisition_history/65/result/_runtime_images/1",
+        "image_id": "image-83"
+      },
+      {
+        "path": "/acquisition_history/65/result/_runtime_images/2",
+        "image_id": "image-84"
+      },
+      {
+        "path": "/acquisition_history/66/result/_runtime_images/0",
+        "image_id": "image-85"
+      },
+      {
+        "path": "/acquisition_history/66/result/_runtime_images/1",
+        "image_id": "image-86"
+      },
+      {
+        "path": "/acquisition_history/66/result/_runtime_images/2",
+        "image_id": "image-87"
+      },
+      {
+        "path": "/acquisition_history/67/result/_runtime_images/0",
+        "image_id": "image-1"
+      },
+      {
+        "path": "/acquisition_history/67/result/_runtime_images/1",
+        "image_id": "image-2"
+      },
+      {
+        "path": "/acquisition_history/67/result/_runtime_images/2",
+        "image_id": "image-3"
+      }
+    ]
+  },
+  "003": {
+    "state_images": [
+      {
+        "path": "/observation/_runtime_images/0",
+        "image_id": "image-1"
+      },
+      {
+        "path": "/observation/_runtime_images/1",
+        "image_id": "image-2"
+      },
+      {
+        "path": "/observation/_runtime_images/2",
+        "image_id": "image-3"
+      },
+      {
+        "path": "/acquisition_history/0/result/_runtime_images/0",
+        "image_id": "image-4"
+      },
+      {
+        "path": "/acquisition_history/0/result/_runtime_images/1",
+        "image_id": "image-5"
+      },
+      {
+        "path": "/acquisition_history/0/result/_runtime_images/2",
+        "image_id": "image-6"
+      },
+      {
+        "path": "/acquisition_history/1/result/_runtime_images/0",
+        "image_id": "image-4"
+      },
+      {
+        "path": "/acquisition_history/1/result/_runtime_images/1",
+        "image_id": "image-5"
+      },
+      {
+        "path": "/acquisition_history/1/result/_runtime_images/2",
+        "image_id": "image-6"
+      },
+      {
+        "path": "/acquisition_history/2/result/_runtime_images/0",
+        "image_id": "image-7"
+      },
+      {
+        "path": "/acquisition_history/2/result/_runtime_images/1",
+        "image_id": "image-8"
+      },
+      {
+        "path": "/acquisition_history/2/result/_runtime_images/2",
+        "image_id": "image-9"
+      },
+      {
+        "path": "/acquisition_history/3/result/_runtime_images/0",
+        "image_id": "image-7"
+      },
+      {
+        "path": "/acquisition_history/3/result/_runtime_images/1",
+        "image_id": "image-8"
+      },
+      {
+        "path": "/acquisition_history/3/result/_runtime_images/2",
+        "image_id": "image-9"
+      },
+      {
+        "path": "/acquisition_history/4/result/_runtime_images/0",
+        "image_id": "image-10"
+      },
+      {
+        "path": "/acquisition_history/4/result/_runtime_images/1",
+        "image_id": "image-11"
+      },
+      {
+        "path": "/acquisition_history/4/result/_runtime_images/2",
+        "image_id": "image-12"
+      },
+      {
+        "path": "/acquisition_history/5/result/_runtime_images/0",
+        "image_id": "image-10"
+      },
+      {
+        "path": "/acquisition_history/5/result/_runtime_images/1",
+        "image_id": "image-11"
+      },
+      {
+        "path": "/acquisition_history/5/result/_runtime_images/2",
+        "image_id": "image-12"
+      },
+      {
+        "path": "/acquisition_history/6/result/_runtime_images/0",
+        "image_id": "image-13"
+      },
+      {
+        "path": "/acquisition_history/6/result/_runtime_images/1",
+        "image_id": "image-14"
+      },
+      {
+        "path": "/acquisition_history/6/result/_runtime_images/2",
+        "image_id": "image-15"
+      },
+      {
+        "path": "/acquisition_history/7/result/_runtime_images/0",
+        "image_id": "image-13"
+      },
+      {
+        "path": "/acquisition_history/7/result/_runtime_images/1",
+        "image_id": "image-14"
+      },
+      {
+        "path": "/acquisition_history/7/result/_runtime_images/2",
+        "image_id": "image-15"
+      },
+      {
+        "path": "/acquisition_history/8/result/_runtime_images/0",
+        "image_id": "image-16"
+      },
+      {
+        "path": "/acquisition_history/8/result/_runtime_images/1",
+        "image_id": "image-17"
+      },
+      {
+        "path": "/acquisition_history/8/result/_runtime_images/2",
+        "image_id": "image-18"
+      },
+      {
+        "path": "/acquisition_history/9/result/_runtime_images/0",
+        "image_id": "image-16"
+      },
+      {
+        "path": "/acquisition_history/9/result/_runtime_images/1",
+        "image_id": "image-17"
+      },
+      {
+        "path": "/acquisition_history/9/result/_runtime_images/2",
+        "image_id": "image-18"
+      },
+      {
+        "path": "/acquisition_history/11/result/_runtime_images/0",
+        "image_id": "image-19"
+      },
+      {
+        "path": "/acquisition_history/11/result/_runtime_images/1",
+        "image_id": "image-20"
+      },
+      {
+        "path": "/acquisition_history/11/result/_runtime_images/2",
+        "image_id": "image-21"
+      },
+      {
+        "path": "/acquisition_history/12/result/_runtime_images/0",
+        "image_id": "image-19"
+      },
+      {
+        "path": "/acquisition_history/12/result/_runtime_images/1",
+        "image_id": "image-20"
+      },
+      {
+        "path": "/acquisition_history/12/result/_runtime_images/2",
+        "image_id": "image-21"
+      },
+      {
+        "path": "/acquisition_history/13/result/_runtime_images/0",
+        "image_id": "image-22"
+      },
+      {
+        "path": "/acquisition_history/13/result/_runtime_images/1",
+        "image_id": "image-23"
+      },
+      {
+        "path": "/acquisition_history/13/result/_runtime_images/2",
+        "image_id": "image-24"
+      },
+      {
+        "path": "/acquisition_history/14/result/_runtime_images/0",
+        "image_id": "image-22"
+      },
+      {
+        "path": "/acquisition_history/14/result/_runtime_images/1",
+        "image_id": "image-23"
+      },
+      {
+        "path": "/acquisition_history/14/result/_runtime_images/2",
+        "image_id": "image-24"
+      },
+      {
+        "path": "/acquisition_history/15/result/_runtime_images/0",
+        "image_id": "image-25"
+      },
+      {
+        "path": "/acquisition_history/15/result/_runtime_images/1",
+        "image_id": "image-26"
+      },
+      {
+        "path": "/acquisition_history/15/result/_runtime_images/2",
+        "image_id": "image-27"
+      },
+      {
+        "path": "/acquisition_history/16/result/_runtime_images/0",
+        "image_id": "image-25"
+      },
+      {
+        "path": "/acquisition_history/16/result/_runtime_images/1",
+        "image_id": "image-26"
+      },
+      {
+        "path": "/acquisition_history/16/result/_runtime_images/2",
+        "image_id": "image-27"
+      },
+      {
+        "path": "/acquisition_history/17/result/_runtime_images/0",
+        "image_id": "image-28"
+      },
+      {
+        "path": "/acquisition_history/17/result/_runtime_images/1",
+        "image_id": "image-29"
+      },
+      {
+        "path": "/acquisition_history/17/result/_runtime_images/2",
+        "image_id": "image-30"
+      },
+      {
+        "path": "/acquisition_history/18/result/_runtime_images/0",
+        "image_id": "image-28"
+      },
+      {
+        "path": "/acquisition_history/18/result/_runtime_images/1",
+        "image_id": "image-29"
+      },
+      {
+        "path": "/acquisition_history/18/result/_runtime_images/2",
+        "image_id": "image-30"
+      },
+      {
+        "path": "/acquisition_history/19/result/_runtime_images/0",
+        "image_id": "image-31"
+      },
+      {
+        "path": "/acquisition_history/19/result/_runtime_images/1",
+        "image_id": "image-32"
+      },
+      {
+        "path": "/acquisition_history/19/result/_runtime_images/2",
+        "image_id": "image-33"
+      },
+      {
+        "path": "/acquisition_history/20/result/_runtime_images/0",
+        "image_id": "image-31"
+      },
+      {
+        "path": "/acquisition_history/20/result/_runtime_images/1",
+        "image_id": "image-32"
+      },
+      {
+        "path": "/acquisition_history/20/result/_runtime_images/2",
+        "image_id": "image-33"
+      },
+      {
+        "path": "/acquisition_history/21/result/_runtime_images/0",
+        "image_id": "image-34"
+      },
+      {
+        "path": "/acquisition_history/21/result/_runtime_images/1",
+        "image_id": "image-35"
+      },
+      {
+        "path": "/acquisition_history/21/result/_runtime_images/2",
+        "image_id": "image-36"
+      },
+      {
+        "path": "/acquisition_history/22/result/_runtime_images/0",
+        "image_id": "image-34"
+      },
+      {
+        "path": "/acquisition_history/22/result/_runtime_images/1",
+        "image_id": "image-35"
+      },
+      {
+        "path": "/acquisition_history/22/result/_runtime_images/2",
+        "image_id": "image-36"
+      },
+      {
+        "path": "/acquisition_history/23/result/_runtime_images/0",
+        "image_id": "image-37"
+      },
+      {
+        "path": "/acquisition_history/23/result/_runtime_images/1",
+        "image_id": "image-38"
+      },
+      {
+        "path": "/acquisition_history/23/result/_runtime_images/2",
+        "image_id": "image-39"
+      },
+      {
+        "path": "/acquisition_history/24/result/_runtime_images/0",
+        "image_id": "image-37"
+      },
+      {
+        "path": "/acquisition_history/24/result/_runtime_images/1",
+        "image_id": "image-38"
+      },
+      {
+        "path": "/acquisition_history/24/result/_runtime_images/2",
+        "image_id": "image-39"
+      },
+      {
+        "path": "/acquisition_history/25/result/_runtime_images/0",
+        "image_id": "image-40"
+      },
+      {
+        "path": "/acquisition_history/25/result/_runtime_images/1",
+        "image_id": "image-41"
+      },
+      {
+        "path": "/acquisition_history/25/result/_runtime_images/2",
+        "image_id": "image-42"
+      },
+      {
+        "path": "/acquisition_history/26/result/_runtime_images/0",
+        "image_id": "image-40"
+      },
+      {
+        "path": "/acquisition_history/26/result/_runtime_images/1",
+        "image_id": "image-41"
+      },
+      {
+        "path": "/acquisition_history/26/result/_runtime_images/2",
+        "image_id": "image-42"
+      },
+      {
+        "path": "/acquisition_history/27/result/_runtime_images/0",
+        "image_id": "image-1"
+      },
+      {
+        "path": "/acquisition_history/27/result/_runtime_images/1",
+        "image_id": "image-2"
+      },
+      {
+        "path": "/acquisition_history/27/result/_runtime_images/2",
+        "image_id": "image-3"
+      }
+    ]
+  }
+}

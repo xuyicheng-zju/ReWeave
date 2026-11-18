@@ -1,0 +1,55 @@
+{
+  "graph": {
+    "distance_bins_m": [
+      0.02,
+      0.1
+    ],
+    "joint_fraction_bins": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "displacement_bin_m": 0.02,
+    "analysis_wall_time_s": null
+  },
+  "dev": [
+    {
+      "task": "libero:libero_goal:0",
+      "initialization": {
+        "suite": "libero_goal",
+        "task": 0,
+        "seed": 0,
+        "reset_state_id": 0
+      },
+      "record_id": "libero-dev-001"
+    }
+  ],
+  "max_rounds": 5,
+  "execution": {
+    "physical_steps": 10000,
+    "wait_steps": 10,
+    "model_requests": 100,
+    "wall_time_s": null,
+    "program_calls": null,
+    "gateway_calls": null,
+    "repetition": 0,
+    "model_sampling": {
+      "reasoning_effort": "high"
+    },
+    "controller_request_unit": "native_turn",
+    "adaptation_mode": "static"
+  },
+  "infrastructure_retries": 1,
+  "max_authors_per_round": 1,
+  "author_wall_time_s": null,
+  "target_success_rate": 0.75,
+  "search": {
+    "author_cost_usd": 8.0,
+    "rollout_cost_usd": 20.0,
+    "success_value": 50.0,
+    "prior_strength": 3.0
+  },
+  "record_id": "libero-example-protocol",
+  "execution_id": "libero-example-native-static",
+  "manifest_id": "libero-example-conditions"
+}

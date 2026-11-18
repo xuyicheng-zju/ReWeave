@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+      - run: python -m pip install '.[test,graspgen]'
+      - run: python -m pytest
+      - run: python examples/robodojo_demo.py --output-dir runs/robodojo-demo
+      - run: reweave --help
+      - run: reweave-evolve schema
+      - run: reweave-distill schema
