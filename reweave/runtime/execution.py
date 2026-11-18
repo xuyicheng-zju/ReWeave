@@ -1,4 +1,5 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Copyright (c) 2026 RPent Contributors
+# Modified for the ReWeave namespace.
 """Structured lifetimes for callable code from immutable plugin packages."""
 
 from __future__ import annotations

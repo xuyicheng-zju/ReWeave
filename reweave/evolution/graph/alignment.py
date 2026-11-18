@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Conditional graph alignment by bounded search and exact assignment.
 
 Object/state correspondences carry the combinatorial coupling. Once fixed,

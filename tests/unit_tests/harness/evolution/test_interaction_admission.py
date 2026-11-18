@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Final admission exercises changed assets, not just authors' unit fixtures."""
 
 import asyncio

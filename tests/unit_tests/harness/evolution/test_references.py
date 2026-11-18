@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Global parent selection, historical source reuse and complete inheritance."""
 
 import copy

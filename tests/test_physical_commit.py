@@ -1,4 +1,5 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Copyright (c) 2026 RPent Contributors
+# Modified for the ReWeave namespace.
 """Acknowledged, uncertain, and unused robot actions have distinct evidence."""
 
 import json

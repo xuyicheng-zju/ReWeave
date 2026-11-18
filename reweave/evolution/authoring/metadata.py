@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Service native timestamp and mode changes on pinned, workspace-owned files.
 
 Landlock does not mediate these changes. A seccomp notification supervisor performs

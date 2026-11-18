@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Physical trace graph construction and exact original-evidence queries."""
 
 from __future__ import annotations

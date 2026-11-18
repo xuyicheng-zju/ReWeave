@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Physical-graph-guided offline evolution with immutable native sessions and receipts."""
 
 from __future__ import annotations

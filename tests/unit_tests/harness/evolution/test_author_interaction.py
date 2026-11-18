@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Author assumptions are checked at actual production plugin entrypoints."""
 
 import asyncio

@@ -1,4 +1,5 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Copyright (c) 2026 RPent Contributors
+# Modified for the ReWeave namespace.
 """Public RoboDojo observations and generic dual-arm control contract."""
 
 from collections.abc import Mapping

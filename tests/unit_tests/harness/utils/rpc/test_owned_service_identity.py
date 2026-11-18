@@ -1,4 +1,5 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Copyright (c) 2026 RPent Contributors
+# Modified for the ReWeave namespace.
 """Real delayed subprocesses must not connect to another service's ready port."""
 
 from __future__ import annotations

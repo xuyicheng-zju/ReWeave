@@ -1,4 +1,5 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Copyright (c) 2026 RPent Contributors
+# Modified for the ReWeave namespace.
 """Build a labelled side-by-side video from two LIBERO run directories.
 
 The common case compares a pure-VLA baseline (from ``baseline_vla.py``) with

@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Independent per-round graph sessions, with immutable graph handoff receipts."""
 
 from __future__ import annotations

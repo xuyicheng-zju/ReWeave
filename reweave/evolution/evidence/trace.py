@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Deterministic offline navigation over complete, immutable episode evidence.
 
 Zetta's aligned telemetry and visual overviews inspired this implementation

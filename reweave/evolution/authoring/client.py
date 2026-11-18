@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Small unprivileged client for workspace-bound Host development tools."""
 
 from __future__ import annotations

@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Bounded physical-attempt retries and receipt recovery without real rollouts."""
 
 import json

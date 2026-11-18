@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Replay declared responses through the production W/C/L execution path.
 
 Only the model and public gateway responses are synthetic. The Planner adapter,

@@ -1,4 +1,5 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Copyright (c) 2026 RPent Contributors
+# Modified for the ReWeave namespace.
 """Public geometry and scripted controls use observed pixels and settled actions."""
 
 from contextlib import nullcontext

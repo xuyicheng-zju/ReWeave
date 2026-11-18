@@ -1,4 +1,5 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Copyright (c) 2026 RPent Contributors
+# Modified for the ReWeave namespace.
 """Fixed execution gateway for immutable W/C/L bundles.
 
 Replaceable plugins request operations; only this kernel dispatches effects. A

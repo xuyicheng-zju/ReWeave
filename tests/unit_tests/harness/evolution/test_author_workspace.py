@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Real subprocess tests of author IO boundaries, including child Python tools."""
 
 import json

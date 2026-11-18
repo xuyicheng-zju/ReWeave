@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Routed author guidance keeps one contract copy and concise requests."""
 
 import asyncio

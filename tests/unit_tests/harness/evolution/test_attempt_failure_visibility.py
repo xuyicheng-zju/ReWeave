@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Failed and cancelled adapter attempts remain durably visible."""
 
 import asyncio

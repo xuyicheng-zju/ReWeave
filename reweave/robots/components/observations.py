@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Shared observation encoding for RLinf real-world camera workers."""
 
 from __future__ import annotations

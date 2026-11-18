@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Shipped examples execute through production admission, not a second runtime."""
 
 import asyncio

@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Lossless bounded Codex history transport in both SSH directions."""
 
 import asyncio

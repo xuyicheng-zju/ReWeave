@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Episode-private source revisions activated at settled execution boundaries.
 
 This module owns source capture and activation only. The existing Kernel remains

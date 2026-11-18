@@ -1,4 +1,5 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Copyright (c) 2026 RPent Contributors
+# Modified for the ReWeave namespace.
 """RoboDojo physical tools under the common episode execution lifecycle."""
 
 from __future__ import annotations

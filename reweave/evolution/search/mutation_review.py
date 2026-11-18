@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Observe mutation exposure and matched official outcomes without causal claims."""
 
 from __future__ import annotations

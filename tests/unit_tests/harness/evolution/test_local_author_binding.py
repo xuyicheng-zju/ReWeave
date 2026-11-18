@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Local native sessions reject changed ownership before any provider work."""
 
 import asyncio

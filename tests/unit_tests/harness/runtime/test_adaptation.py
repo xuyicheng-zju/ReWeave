@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Actual candidate capture and immutable program execution across revisions."""
 
 import asyncio

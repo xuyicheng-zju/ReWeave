@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Real rollout finalization and search recovery from synthetic exited workers."""
 
 import json

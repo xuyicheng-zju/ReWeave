@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Development reports bind the candidate bytes actually parsed and executed."""
 
 import asyncio

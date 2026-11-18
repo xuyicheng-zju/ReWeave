@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Default incremental observation input for editable native RoboDojo C."""
 
 from __future__ import annotations

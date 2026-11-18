@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Finite-horizon Bayesian width and measurable cost boundaries."""
 
 import json

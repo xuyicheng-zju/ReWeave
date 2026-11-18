@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Whole-program customization through real sandbox workers and model adapters."""
 
 import asyncio

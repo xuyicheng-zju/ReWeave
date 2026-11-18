@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Preflight uses actual CLI semantics and never launches a model or service."""
 
 import asyncio

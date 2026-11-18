@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Executable W/C/L illustrations: evidence -> mechanism -> falsifiable change."""
 
 import json

@@ -1,4 +1,5 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Copyright (c) 2026 RPent Contributors
+# Modified for the ReWeave namespace.
 """Text-experience scopes and Harness's shared Markdown writing convention."""
 
 from typing import Annotated, Literal, get_args

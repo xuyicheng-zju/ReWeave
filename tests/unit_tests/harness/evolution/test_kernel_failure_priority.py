@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Host evidence faults stop I/O and cannot relabel unknown physical outcomes."""
 
 import asyncio

@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Native adapter cancellation and durable workspace ownership."""
 
 import asyncio

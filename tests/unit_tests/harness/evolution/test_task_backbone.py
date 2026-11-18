@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """One task backbone, optional physical branches and exact Harness provenance."""
 
 import copy

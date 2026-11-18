@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Codex app-server backend for durable native author and analysis sessions."""
 
 from __future__ import annotations

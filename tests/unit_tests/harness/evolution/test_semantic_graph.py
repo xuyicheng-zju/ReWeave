@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Semantic re-projection, physical witness integrity and fixed allocation rules."""
 
 import copy

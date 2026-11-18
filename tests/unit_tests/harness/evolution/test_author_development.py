@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Real author boundary, authenticated development tools and production workers."""
 
 import asyncio

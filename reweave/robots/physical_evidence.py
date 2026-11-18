@@ -1,4 +1,5 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Copyright (c) 2026 RPent Contributors
+# Modified for the ReWeave namespace.
 """Side-effect-free physical scalar measurements shared by simulator adapters.
 
 The wire dictionary describes each feature at collection time. Evaluator calls

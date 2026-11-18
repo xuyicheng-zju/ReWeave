@@ -1,3 +1,4 @@
+# Copyright (c) 2026 RPent Contributors
 """Native turn cancellation closes its original session without replay."""
 
 import asyncio

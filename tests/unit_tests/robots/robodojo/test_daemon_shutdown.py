@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Only owned RoboDojo environments reserve shutdown time for video return."""
 
 import sys

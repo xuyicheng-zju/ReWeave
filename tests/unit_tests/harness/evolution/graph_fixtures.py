@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Explicit synthetic physical observations and graph judgments for orchestration tests."""
 
 import json

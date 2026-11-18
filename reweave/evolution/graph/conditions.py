@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Readable finite-domain coordinates for one canonical semantic graph.
 
 Definitions form a shared vocabulary. Object names are display information;

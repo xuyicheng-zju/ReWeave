@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Lossless episode originals and ordinary published artifact records."""
 
 from __future__ import annotations

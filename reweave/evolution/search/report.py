@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Host reports derived from exact execution receipts and mutation provenance."""
 
 from __future__ import annotations

@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Graph allocation invariants, with synthetic semantics rather than physics claims."""
 
 import copy

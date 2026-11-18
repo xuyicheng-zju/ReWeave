@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Branch-owned native author journals, with provider-specific resume identities."""
 
 from __future__ import annotations

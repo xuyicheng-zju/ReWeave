@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Server stage timing does not change action or acknowledgement semantics."""
 
 from types import SimpleNamespace

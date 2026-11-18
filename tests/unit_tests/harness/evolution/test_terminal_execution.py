@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Confirmed environment endings stop new work without changing the last ACK."""
 
 import asyncio

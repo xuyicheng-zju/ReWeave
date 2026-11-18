@@ -1,4 +1,5 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Copyright (c) 2026 RPent Contributors
+# Modified for the ReWeave namespace.
 """Planner decision batches, separate from VLA action chunks and horizons."""
 
 MAX_TOOLS_PER_DECISION = 5

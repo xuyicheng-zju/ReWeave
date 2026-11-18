@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Capture exact native journal lineage and fork completed read-only inquiries.
 
 Independent mutation authors never call the fork path. Inquiry copies only

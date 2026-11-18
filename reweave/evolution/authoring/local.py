@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Local Codex sessions with remote, on-demand workspace tools."""
 
 from __future__ import annotations

@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """SSH deployment preserves remote evidence, scoped writes and native identities."""
 
 import argparse

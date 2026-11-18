@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """SSH pacing changes transport writes without replaying issued requests."""
 
 import asyncio

@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Production case evidence supports semantic assertions without a second runner."""
 
 import asyncio

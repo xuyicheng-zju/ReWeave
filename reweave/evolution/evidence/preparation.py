@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Author-visible evidence views over admitted episode archives and history."""
 
 from __future__ import annotations

@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Online and offline source loading share one exact byte capture/parser."""
 
 import pytest

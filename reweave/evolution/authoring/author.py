@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Native offline authors over an isolated W/C/L candidate and complete dev trace."""
 
 from __future__ import annotations

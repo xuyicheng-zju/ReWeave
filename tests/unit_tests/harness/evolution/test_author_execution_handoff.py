@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """A settled graph keeps its decision while new authors adopt a runtime repair."""
 
 import asyncio

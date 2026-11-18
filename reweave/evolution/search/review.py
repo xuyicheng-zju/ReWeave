@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Comparable retained-goal vectors and search diagnostics on one current graph."""
 
 from __future__ import annotations

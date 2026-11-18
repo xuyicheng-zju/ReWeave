@@ -1,4 +1,5 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Copyright (c) 2026 RPent Contributors
+# Modified for the ReWeave namespace.
 """Fixed physical controls preserve actual steps, horizons and chunk suffixes."""
 
 from __future__ import annotations

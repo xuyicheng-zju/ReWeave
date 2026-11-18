@@ -1,4 +1,5 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Copyright (c) 2026 RPent Contributors
+# Modified for the ReWeave namespace.
 """Auditable LIBERO-Pro evaluation contracts shared by runners and tests.
 
 ASPIRE defines the development/held-out trial split used by this project.

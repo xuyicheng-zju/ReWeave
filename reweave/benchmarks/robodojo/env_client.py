@@ -1,4 +1,5 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Copyright (c) 2026 RPent Contributors
+# Modified for the ReWeave namespace.
 """RoboDojo RPC client with acknowledged action and frozen execution ownership."""
 
 from __future__ import annotations

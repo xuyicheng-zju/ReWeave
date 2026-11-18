@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Replay recorded C inputs through production construction and Host validation.
 
 Public observations stay historical. No model, robot, or fabricated read response

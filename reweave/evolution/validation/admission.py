@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Host admission of captured candidates through contract and interaction fixtures."""
 
 from __future__ import annotations

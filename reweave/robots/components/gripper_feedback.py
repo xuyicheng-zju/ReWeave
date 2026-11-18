@@ -1,5 +1,5 @@
 # Copyright 2026 PyRUA-Lean Contributors.
-# Licensed under the Apache License, Version 2.0 (see LICENSE and NOTICE).
+# Licensed under the Apache License, Version 2.0.
 """PyRUA-Lean's measured two-action stroke convergence, with explicit units.
 
 Adapted from grip() at fdf6e870654254e2c0c891ee407313fa48bdd0f9.

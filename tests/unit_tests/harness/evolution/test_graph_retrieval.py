@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Structural counterexamples, evidence continuity, and author retrieval boundaries."""
 
 import asyncio

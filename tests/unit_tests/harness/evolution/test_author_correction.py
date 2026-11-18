@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Invalid native output must be repaired in the same session, never evaluated."""
 
 import asyncio

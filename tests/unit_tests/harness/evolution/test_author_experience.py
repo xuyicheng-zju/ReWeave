@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Offline experience is required, preserved, and separate from executable skill assets."""
 
 import asyncio

@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Official development results for stopping, reporting and SR-only selection."""
 
 from collections.abc import Iterable, Mapping, Sequence

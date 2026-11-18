@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """W/C/L are consumed by the real API loop, with protected program execution."""
 
 import asyncio

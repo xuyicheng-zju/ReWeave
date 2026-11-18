@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Final condition-graph corpus, catalog lookup, and on-demand retrieval."""
 
 from __future__ import annotations

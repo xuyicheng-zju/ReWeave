@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Offline author guidance; complete contracts remain readable on disk."""
 
 from __future__ import annotations

@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Assignment equivalence boundaries and admissible partial-search bounds."""
 
 from itertools import product

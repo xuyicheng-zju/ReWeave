@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Durable native usage journals: completion receipts, totals and reconciliation."""
 
 from __future__ import annotations

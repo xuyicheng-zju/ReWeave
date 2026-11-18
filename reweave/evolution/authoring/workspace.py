@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Filesystem boundary for the native coding CLI, not an author loop.
 
 The CLI and every child inherit the same boundary. Inputs remain read-only;

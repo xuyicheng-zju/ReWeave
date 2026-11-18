@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Resolve graph program slices against their actual executable Bundle."""
 
 from reweave.evolution.bundle import AgentBundle

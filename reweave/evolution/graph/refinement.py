@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Admit complete semantic graphs against physical and executable evidence."""
 
 from __future__ import annotations

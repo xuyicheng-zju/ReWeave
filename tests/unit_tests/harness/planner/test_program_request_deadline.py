@@ -1,3 +1,4 @@
+# Copyright (c) 2026 RPent Contributors
 """Native model/program failures retain settled actions and actual turn costs."""
 
 import asyncio

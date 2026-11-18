@@ -1,4 +1,5 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Copyright (c) 2026 RPent Contributors
+# Modified for the ReWeave namespace.
 """Shared LIBERO perception and tool contracts, with evaluation-only workflow."""
 
 ROLE_AND_EVALUATION = """You are the task Planner for a LIBERO episode in PERCEPTION-ISOLATED mode.

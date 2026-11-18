@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Targeted views over complete graph originals; summaries never replace evidence."""
 
 from reweave.evolution.graph.projection import map_cell, map_row

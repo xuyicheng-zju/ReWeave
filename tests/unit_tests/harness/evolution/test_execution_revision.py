@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Published execution changes preserve original assets and measurement meaning."""
 
 import pytest

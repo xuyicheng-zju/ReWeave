@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Fixed command runner: isolated episodes, complete originals, explicit recovery."""
 
 from __future__ import annotations

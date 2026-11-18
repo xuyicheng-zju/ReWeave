@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Retry classification for durable native coding-agent sessions."""
 
 from __future__ import annotations

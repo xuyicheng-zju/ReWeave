@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Bidirectional requests on one private SSH stdio stream; no reconnect/replay.
 
 Frames have an integer request id, method and params, or the matching id and

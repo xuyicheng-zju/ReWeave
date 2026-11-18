@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Workspace-bound development tools served by the Host to native authors.
 
 Validation must run outside the author's filesystem restriction: the production

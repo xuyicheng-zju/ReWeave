@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Lossless native sessions keep branch identity across processes and relocation."""
 
 from __future__ import annotations

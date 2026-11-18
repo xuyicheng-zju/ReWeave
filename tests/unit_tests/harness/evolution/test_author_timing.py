@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Author accounting covers native cleanup and final immutable evidence binding."""
 
 import asyncio

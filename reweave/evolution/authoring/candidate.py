@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """The sole editable W/C/L candidate: layout, captured bytes and declared changes."""
 
 from __future__ import annotations

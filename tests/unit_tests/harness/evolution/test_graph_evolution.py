@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Global coverage selection and real controller transitions with offline adapters."""
 
 import asyncio

@@ -1,4 +1,5 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Copyright (c) 2026 RPent Contributors
+# Modified for the ReWeave namespace.
 """LIBERO worker construction, seeding and read-only instrumentation."""
 
 from __future__ import annotations

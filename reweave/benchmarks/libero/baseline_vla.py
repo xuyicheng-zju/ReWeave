@@ -1,4 +1,5 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Copyright (c) 2026 RPent Contributors
+# Modified for the ReWeave namespace.
 """Pure-VLA baseline for the HarnessVLA comparison.
 
 Runs Pi0.5 closed-loop on a LIBERO task using **only** the task's native

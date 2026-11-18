@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Maximum consistent coverage of a directed condition graph.
 
 One object substitution and one state correspondence explain the whole query.

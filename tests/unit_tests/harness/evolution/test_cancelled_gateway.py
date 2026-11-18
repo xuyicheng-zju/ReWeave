@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """A cancelled caller must retain the operation's eventual result or failure."""
 
 import asyncio

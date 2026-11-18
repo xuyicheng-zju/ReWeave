@@ -1,4 +1,5 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Copyright (c) 2026 RPent Contributors
+# Modified for the ReWeave namespace.
 """Versioned W/C/L assets; provenance and evaluation never enter content identity."""
 
 from __future__ import annotations

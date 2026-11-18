@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Offline model selection must not borrow the online Planner's environment."""
 
 import pytest

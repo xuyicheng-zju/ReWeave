@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Deterministic LIBERO lifecycle, exact analysis recovery and read-only replay."""
 
 import asyncio

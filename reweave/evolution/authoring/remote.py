@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Remote matrix Host: local Codex is a transport, never a second evaluator."""
 
 from __future__ import annotations

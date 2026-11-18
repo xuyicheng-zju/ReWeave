@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Reusing unchanged metadata does not rewrite the complete evolution archive."""
 
 import copy

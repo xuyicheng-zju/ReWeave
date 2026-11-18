@@ -1,5 +1,5 @@
 # Copyright 2026 PyRUA-Lean Contributors.
-# Licensed under the Apache License, Version 2.0 (see LICENSE and NOTICE).
+# Licensed under the Apache License, Version 2.0.
 # Adapted from DAGroup-PKU/PyRUA-Lean, commit
 # fdf6e870654254e2c0c891ee407313fa48bdd0f9, hosts/robodojo_tools.py.
 # Changes: explicit support plane, robot-neutral angle name, validated public input.

@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Native ancestry is a frozen history fork, never shared writable identity."""
 
 import asyncio

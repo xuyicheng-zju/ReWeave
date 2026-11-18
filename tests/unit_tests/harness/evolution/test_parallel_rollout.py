@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Real child-process isolation and leases; no robot or model is invoked here."""
 
 import asyncio

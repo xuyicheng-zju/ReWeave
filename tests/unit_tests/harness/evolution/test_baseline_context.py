@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """One default incremental C leaves persistent session history with its provider."""
 
 import asyncio

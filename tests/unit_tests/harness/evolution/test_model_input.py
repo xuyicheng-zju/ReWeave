@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Real failure shapes, explicit selection and end-to-end candidate input ownership."""
 
 import base64

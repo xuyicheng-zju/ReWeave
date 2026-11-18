@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Executable provenance, physical continuation and compact graph consumption."""
 
 import copy

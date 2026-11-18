@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """The LIBERO adapter exposes measured graph state without evaluator side effects."""
 
 from types import SimpleNamespace

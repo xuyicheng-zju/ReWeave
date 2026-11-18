@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Plan-confirmed Runtime calls survive complete episode archiving."""
 
 import asyncio

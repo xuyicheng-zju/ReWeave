@@ -1,3 +1,4 @@
+# Copyright (c) 2026 RPent Contributors
 """Native W/C/L stops after terminal ACK and never replays unknown actions."""
 
 import asyncio

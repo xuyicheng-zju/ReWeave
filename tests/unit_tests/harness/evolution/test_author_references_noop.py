@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Repeated reference encoding keeps issued output without republishing catalogs."""
 
 import json

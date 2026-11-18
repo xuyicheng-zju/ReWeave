@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Blocking job-local work that must finish before its owner releases locks."""
 
 from __future__ import annotations

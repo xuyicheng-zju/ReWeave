@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Resolve evolution attempts and explicitly imported completed receipts."""
 
 from pathlib import Path

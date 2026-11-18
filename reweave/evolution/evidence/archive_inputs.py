@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Read immutable contracts predating removal of author session inheritance.
 
 Current public models reject the retired fields. Only archive readers discard

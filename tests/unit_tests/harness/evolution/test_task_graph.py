@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Lossless physical evidence scaffold, independent of semantic refinement."""
 
 import json

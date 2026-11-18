@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Author model selection and observed cost accounting, with no Host budgets."""
 
 import math

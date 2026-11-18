@@ -1,3 +1,4 @@
+# Copyright (c) 2026 RPent Contributors
 """Current native timeout settings and unknown outcomes remain authoritative."""
 
 import pytest

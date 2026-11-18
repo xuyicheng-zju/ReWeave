@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Readable, request-bound references at the author/Host boundary.
 
 The run allocates append-only names; each workspace admits only the names it

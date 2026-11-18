@@ -1,4 +1,4 @@
-# Attribution retained in NOTICE. Modified for the ReWeave namespace.
+# Modified for the ReWeave namespace.
 """Native graph analysis hands off complete graphs across independent round sessions."""
 
 import asyncio
