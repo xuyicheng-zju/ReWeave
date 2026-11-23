@@ -28,9 +28,11 @@
 <p><sup>†</sup> Corresponding author</p>
 
 <p>
-  <strong>arXiv</strong>&nbsp;·&nbsp;Pending &nbsp;
-  <a href="https://xuyicheng-zju.github.io/ReWeave/"><img src="docs/assets/project-badge.svg" alt="Project website" height="24" align="absmiddle"></a>
-  <a href="https://github.com/xuyicheng-zju/ReWeave"><img src="docs/assets/code-badge.svg" alt="Code on GitHub" height="24" align="absmiddle"></a>
+  <a><picture><source media="(prefers-color-scheme: dark)" srcset="website/assets/logos/arxiv-dark.svg"><img src="website/assets/logos/arxiv.svg" width="48" alt="arXiv" align="absmiddle"></picture></a> · Pending
+  &nbsp;&nbsp;
+  <a href="https://xuyicheng-zju.github.io/ReWeave/"><img src="website/assets/logos/reweave-knot.svg" width="26" alt="" align="absmiddle"> Project</a>
+  &nbsp;&nbsp;
+  <a href="https://github.com/xuyicheng-zju/ReWeave"><picture><source media="(prefers-color-scheme: dark)" srcset="website/assets/logos/github-white.svg"><img src="website/assets/logos/github.svg" width="21" alt="" align="absmiddle"></picture> GitHub</a>
 </p>
 
 <p>
