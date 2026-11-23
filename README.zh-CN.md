@@ -1,22 +1,46 @@
-<h1 align="center">ReWeave</h1>
+<div align="center">
 
-<p align="center"><strong>面向具身智能体的拓扑引导 Harness 演化</strong></p>
+# $\color{#8557A0}{\textsf{ReWeave}}$: Emergent Physical&nbsp;Task&nbsp;Topologies<br>for Embodied Harness Optimization<br>and Cross-Task Meta-Distillation
 
-<p align="center">
-  <a href="#overview">概览</a> ·
-  <a href="#quick-start">快速开始</a> ·
-  <a href="#documentation">文档</a> ·
-  <a href="#benchmarks">基准</a> ·
-  <a href="#repository">代码结构</a> ·
-  <a href="#acknowledgments">致谢</a> ·
-  <a href="README.md">English</a>
+<p>
+  <strong><a href="https://github.com/xuyicheng-zju">Yicheng&nbsp;Xu</a></strong> &nbsp;·&nbsp;
+  <strong><a href="https://github.com/Rinke02">Wencan&nbsp;Jiang</a></strong> &nbsp;·&nbsp;
+  <strong>Zihao&nbsp;Zhu</strong> &nbsp;·&nbsp;
+  <strong>Keru&nbsp;Zhou</strong> &nbsp;·&nbsp;
+  <strong>Chang&nbsp;Zhou</strong><br>
+  <strong>Li&nbsp;Liu</strong> &nbsp;·&nbsp;
+  <strong>Maoqing&nbsp;Yao</strong> &nbsp;·&nbsp;
+  <strong>Yong&nbsp;Liu</strong> &nbsp;·&nbsp;
+  <strong><a href="https://github.com/zhangzjn">Jiangning&nbsp;Zhang</a></strong>
 </p>
 
-<h2 id="overview">概览</h2>
+<p>
+  <a href="#overview"><strong>亮点</strong></a> &nbsp;·&nbsp;
+  <a href="#quick-start"><strong>快速开始</strong></a> &nbsp;·&nbsp;
+  <a href="#documentation"><strong>文档</strong></a> &nbsp;·&nbsp;
+  <a href="#benchmarks"><strong>基准</strong></a> &nbsp;·&nbsp;
+  <a href="#repository"><strong>代码</strong></a> &nbsp;·&nbsp;
+  <a href="#acknowledgments"><strong>致谢</strong></a> &nbsp;·&nbsp;
+  <a href="README.md"><strong>English</strong></a>
+</p>
 
-ReWeave 从交互中联合优化具身智能体的 Harness 和物理任务拓扑。新证据修订拓扑后，系统在更新后的拓扑上重新投影历史试验，识别进展和瓶颈，用于指导 Harness 搜索。跨任务时，拓扑连接可复用机制，将其蒸馏为共享 Harness。[方法说明](docs/METHOD.md)
+<p>
+  <a href="docs/assets/teaser.png"><img src="docs/assets/teaser.png" width="100%" alt="ReWeave 论文导览图，展示失败试验中的保留进展、物理任务拓扑的修订，以及 Harness 优化和跨任务结果。"></a>
+</p>
 
-<h2 id="quick-start">快速开始</h2>
+</div>
+
+---
+
+<h2 id="overview">✦ 亮点</h2>
+
+- **显化的 Meta。** 在任务拓扑上看清每次执行满足了哪些物理条件、卡在哪一步，并在获得新证据后重评旧试验。
+- **高效的自进化。** 复用历史试验定位瓶颈，优先验证有证据支撑的 Harness 修改。
+- **共享 Harness 的蒸馏与持续学习。** 将多个任务验证过的机制蒸馏成一个共享 Harness，在未见任务上复用，并从新试验中继续改进。
+
+[查看方法说明](docs/METHOD.md)
+
+<h2 id="quick-start">⚡ 快速开始</h2>
 
 **Python 3.11 或 3.12。** 在仓库根目录安装并运行 CPU 示例。
 
@@ -35,7 +59,7 @@ python examples/robodojo_demo.py --output-dir runs/robodojo-demo
 | `reweave-evolve --help` | 在固定开发条件下搜索 Harness |
 | `reweave-distill --help` | 构建和评估共享 Harness |
 
-<h2 id="documentation">文档</h2>
+<h2 id="documentation">📚 文档</h2>
 
 | 文档 | 内容 |
 | --- | --- |

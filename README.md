@@ -1,26 +1,46 @@
-<h1 align="center">ReWeave</h1>
+<div align="center">
 
-<p align="center"><strong>Topology-guided harness evolution for embodied agents</strong></p>
+# $\color{#8557A0}{\textsf{ReWeave}}$: Emergent Physical&nbsp;Task&nbsp;Topologies<br>for Embodied Harness Optimization<br>and Cross-Task Meta-Distillation
 
-<p align="center">
-  <a href="#overview">Overview</a> ·
-  <a href="#quick-start">Quick Start</a> ·
-  <a href="#documentation">Docs</a> ·
-  <a href="#benchmarks">Benchmarks</a> ·
-  <a href="#repository">Repository</a> ·
-  <a href="#acknowledgments">Credits</a> ·
-  <a href="README.zh-CN.md">中文</a>
+<p>
+  <strong><a href="https://github.com/xuyicheng-zju">Yicheng&nbsp;Xu</a></strong> &nbsp;·&nbsp;
+  <strong><a href="https://github.com/Rinke02">Wencan&nbsp;Jiang</a></strong> &nbsp;·&nbsp;
+  <strong>Zihao&nbsp;Zhu</strong> &nbsp;·&nbsp;
+  <strong>Keru&nbsp;Zhou</strong> &nbsp;·&nbsp;
+  <strong>Chang&nbsp;Zhou</strong><br>
+  <strong>Li&nbsp;Liu</strong> &nbsp;·&nbsp;
+  <strong>Maoqing&nbsp;Yao</strong> &nbsp;·&nbsp;
+  <strong>Yong&nbsp;Liu</strong> &nbsp;·&nbsp;
+  <strong><a href="https://github.com/zhangzjn">Jiangning&nbsp;Zhang</a></strong>
 </p>
 
-<h2 id="overview">Overview</h2>
+<p>
+  <a href="#overview"><strong>Highlights</strong></a> &nbsp;·&nbsp;
+  <a href="#quick-start"><strong>Quick Start</strong></a> &nbsp;·&nbsp;
+  <a href="#documentation"><strong>Docs</strong></a> &nbsp;·&nbsp;
+  <a href="#benchmarks"><strong>Benchmarks</strong></a> &nbsp;·&nbsp;
+  <a href="#repository"><strong>Code</strong></a> &nbsp;·&nbsp;
+  <a href="#acknowledgments"><strong>Credits</strong></a> &nbsp;·&nbsp;
+  <a href="README.zh-CN.md"><strong>中文</strong></a>
+</p>
 
-ReWeave jointly optimizes an embodied agent harness and a physical task topology
-from interaction. It uses new evidence to revise the topology, reprojects earlier
-trials to recover progress and diagnose bottlenecks, and uses those findings to
-guide harness search. Across tasks, the topology connects reusable mechanisms
-for distillation into a shared harness. [Method](docs/METHOD.md)
+<p>
+  <a href="docs/assets/teaser.png"><img src="docs/assets/teaser.png" width="100%" alt="ReWeave teaser showing progress in failed trials, physical task topology revision, and the harness optimization and cross-task results."></a>
+</p>
 
-<h2 id="quick-start">Quick Start</h2>
+</div>
+
+---
+
+<h2 id="overview">✦ Highlights</h2>
+
+- **Explicit task meta-knowledge.** See which physical conditions a rollout met and where it stalled, then reassess past trials as new evidence comes in.
+- **Efficient harness self-evolution.** Reuse archived trials to diagnose bottlenecks and decide which harness revisions to test next.
+- **Shared harness distillation and continual learning.** Distill validated mechanisms from several tasks into one harness, reuse it on unseen tasks, and keep improving it with new trials.
+
+[Read the method](docs/METHOD.md)
+
+<h2 id="quick-start">⚡ Quick Start</h2>
 
 **Python 3.11 or 3.12.** From the repository root, install the package and run
 the CPU demo.
@@ -42,7 +62,7 @@ benchmark runtime, scene assets, and model weights. [Installation](docs/INSTALLA
 | `reweave-evolve --help` | Search for a harness on fixed development conditions. |
 | `reweave-distill --help` | Build and evaluate a shared harness. |
 
-<h2 id="documentation">Documentation</h2>
+<h2 id="documentation">📚 Documentation</h2>
 
 | Guide | Coverage |
 | --- | --- |
