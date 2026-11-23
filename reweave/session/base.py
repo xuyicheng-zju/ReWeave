@@ -19,7 +19,6 @@ from __future__ import annotations
 
 import copy
 import json
-import os
 from collections.abc import Generator
 from contextlib import contextmanager
 from dataclasses import dataclass, field
@@ -30,6 +29,7 @@ import imageio.v2 as imageio
 import numpy as np
 
 from reweave.utils.logging import get_logger
+from reweave.utils.persistence import atomic_path
 
 logger = get_logger("env_state")
 
@@ -150,13 +150,10 @@ class EnvState:
             "run_artifacts": sorted(self._run_artifacts),
             "steps": [record.to_blob() for record in self._steps],
         }
-        try:
+        with atomic_path(destination, temporary):
             # Rewritten whole at every tool boundary: compact JSON keeps the cost flat.
             with temporary.open("w") as file:
                 json.dump(manifest, file, default=_json_default)
-            os.replace(temporary, destination)
-        finally:
-            temporary.unlink(missing_ok=True)
 
     # -- lifecycle and counters -----------------------------------------
 
@@ -213,41 +210,41 @@ class EnvState:
         suffix = destination.suffix.lower()
         record: StepRecord | None = self._record_for(step) if step is not None else None
         try:
-            if suffix in _IMAGE_SUFFIXES:
-                array = np.asarray(value)
-                if array.dtype != np.uint8:
-                    array = array.astype(np.uint8)
-                imageio.imwrite(temporary, array)
-            elif suffix == ".npy":
-                np.save(temporary, np.asarray(value))
-            elif suffix == ".npz":
-                np.savez_compressed(temporary, array=np.asarray(value))
-            elif suffix == ".json":
-                with temporary.open("w") as file:
-                    json.dump(value, file, indent=2, default=_json_default)
-            elif suffix == ".jsonl":
-                with temporary.open("w") as file:
-                    if isinstance(value, str):
-                        file.write(value)
+            with atomic_path(destination, temporary):
+                if suffix in _IMAGE_SUFFIXES:
+                    array = np.asarray(value)
+                    if array.dtype != np.uint8:
+                        array = array.astype(np.uint8)
+                    imageio.imwrite(temporary, array)
+                elif suffix == ".npy":
+                    np.save(temporary, np.asarray(value))
+                elif suffix == ".npz":
+                    np.savez_compressed(temporary, array=np.asarray(value))
+                elif suffix == ".json":
+                    with temporary.open("w") as file:
+                        json.dump(value, file, indent=2, default=_json_default)
+                elif suffix == ".jsonl":
+                    with temporary.open("w") as file:
+                        if isinstance(value, str):
+                            file.write(value)
+                        else:
+                            for item in value:
+                                file.write(json.dumps(item, default=_json_default) + "\n")
+                elif suffix == ".mp4":
+                    if isinstance(value, (bytes, bytearray, memoryview)):
+                        temporary.write_bytes(bytes(value))
                     else:
-                        for item in value:
-                            file.write(json.dumps(item, default=_json_default) + "\n")
-            elif suffix == ".mp4":
-                if isinstance(value, (bytes, bytearray, memoryview)):
+                        imageio.mimwrite(
+                            temporary,
+                            list(value),
+                            fps=int(options.get("fps", 20)),
+                        )
+                elif suffix in _TEXT_SUFFIXES:
+                    temporary.write_text(str(value))
+                elif suffix == ".bin":
                     temporary.write_bytes(bytes(value))
                 else:
-                    imageio.mimwrite(
-                        temporary,
-                        list(value),
-                        fps=int(options.get("fps", 20)),
-                    )
-            elif suffix in _TEXT_SUFFIXES:
-                temporary.write_text(str(value))
-            elif suffix == ".bin":
-                temporary.write_bytes(bytes(value))
-            else:
-                raise ValueError(f"unsupported artifact suffix: {suffix}")
-            os.replace(temporary, destination)
+                    raise ValueError(f"unsupported artifact suffix: {suffix}")
             if record is not None:
                 record.artifacts.add(name)
             else:
@@ -258,8 +255,6 @@ class EnvState:
         except Exception as exc:
             logger.warning("failed to save artifact %s: %s", name, exc)
             return None
-        finally:
-            temporary.unlink(missing_ok=True)
 
     def load(self, name: str, *, step: int | None = -1) -> Any:
         """Load an artifact; ``step=-1`` selects the latest recorded step."""

@@ -14,6 +14,8 @@ from pathlib import Path
 
 import jsonschema
 
+from reweave.utils.persistence import atomic_path
+
 
 class NativeSessionError(RuntimeError):
     """A native decision was not available; this is not an environment verdict."""
@@ -162,20 +164,13 @@ def _same_bytes(left: Path, right: Path) -> bool:
 
 def _write_json(path: Path, value: dict) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    with tempfile.NamedTemporaryFile(mode="w", dir=path.parent, delete=False) as stream:
-        temporary = Path(stream.name)
-        try:
+    stream = tempfile.NamedTemporaryFile(mode="w", dir=path.parent, delete=False)
+    with atomic_path(path, Path(stream.name)):
+        with stream:
             json.dump(value, stream, ensure_ascii=False, allow_nan=False)
             stream.write("\n")
             stream.flush()
             os.fsync(stream.fileno())
-        except BaseException:
-            temporary.unlink(missing_ok=True)
-            raise
-    try:
-        os.replace(temporary, path)
-    finally:
-        temporary.unlink(missing_ok=True)
 
 
 class DurableDecisionSession(NativeDecisionSession):

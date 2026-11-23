@@ -18,11 +18,12 @@
 from __future__ import annotations
 
 import json
-import os
 from collections.abc import Callable, Mapping
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
+
+from reweave.utils.persistence import atomic_path
 
 
 @dataclass(frozen=True)
@@ -54,12 +55,8 @@ def write_json_atomic(
 ) -> Path:
     """Write one JSON object atomically and return its destination path."""
     path = Path(destination)
-    temporary = path.with_name(f".{path.name}.tmp")
-    try:
+    with atomic_path(path, path.with_name(f".{path.name}.tmp")) as temporary:
         with temporary.open("w", encoding="utf-8") as file:
             json.dump(record, file, indent=2)
             file.write("\n")
-        os.replace(temporary, path)
-    finally:
-        temporary.unlink(missing_ok=True)
     return path

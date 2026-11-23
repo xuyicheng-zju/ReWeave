@@ -14,6 +14,7 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator, model_valida
 
 from reweave.evolution.bundle import AgentBundle, Asset, TextSkill
 from reweave.memory.experience import ExperienceId, ExperienceScope
+from reweave.utils.persistence import atomic_path, sync_directory
 
 
 class LocalSource(BaseModel):
@@ -135,23 +136,14 @@ def import_corpus(
 def _publish_json(path: Path, value: dict) -> None:
     """Atomically expose one complete file, refusing an existing destination."""
     raw = (json.dumps(value, ensure_ascii=False, indent=2) + "\n").encode()
-    temporary = None
-    try:
-        with tempfile.NamedTemporaryFile(dir=path.parent, delete=False) as stream:
-            temporary = Path(stream.name)
+    stream = tempfile.NamedTemporaryFile(dir=path.parent, delete=False)
+    # Unlike rename, a hard link cannot overwrite a concurrently created file.
+    with atomic_path(path, Path(stream.name), publish=os.link):
+        with stream:
             stream.write(raw)
             stream.flush()
             os.fsync(stream.fileno())
-        # Unlike rename, a hard link cannot overwrite a concurrently created file.
-        os.link(temporary, path)
-        descriptor = os.open(path.parent, os.O_RDONLY)
-        try:
-            os.fsync(descriptor)
-        finally:
-            os.close(descriptor)
-    finally:
-        if temporary is not None:
-            temporary.unlink(missing_ok=True)
+    sync_directory(path.parent)
 
 
 def publish_import(manifest_path: Path, bundle_path: Path, output: Path) -> dict:

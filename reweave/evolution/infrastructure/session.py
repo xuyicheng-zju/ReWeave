@@ -6,9 +6,12 @@ from __future__ import annotations
 import json
 import os
 import re
+from contextlib import nullcontext
 from dataclasses import asdict, is_dataclass
 from pathlib import Path, PureWindowsPath
 from typing import Any
+
+from reweave.utils.persistence import atomic_path
 
 
 def native_event_field(value: Any, name: str, default: Any = None) -> Any:
@@ -38,14 +41,15 @@ def serialize_native_event(value: Any) -> Any:
 def write_json(path: Path, value: Any) -> None:
     """Atomically persist a complete Host record."""
     path.parent.mkdir(parents=True, exist_ok=True)
-    temporary = path.with_suffix(path.suffix + ".tmp")
-    with temporary.open("w", encoding="utf-8") as stream:
-        stream.write(
-            json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False) + "\n"
-        )
-        stream.flush()
-        os.fsync(stream.fileno())
-    temporary.replace(path)
+    with atomic_path(
+        path, path.with_suffix(path.suffix + ".tmp"), cleanup=nullcontext
+    ) as temporary:
+        with temporary.open("w", encoding="utf-8") as stream:
+            stream.write(
+                json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False) + "\n"
+            )
+            stream.flush()
+            os.fsync(stream.fileno())
 
 
 def _validate_session_id(identity: str) -> None:

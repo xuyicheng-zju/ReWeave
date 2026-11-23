@@ -19,6 +19,7 @@ import jsonschema
 from reweave import __version__
 from reweave.planner.codex_connection import codex_connection_config, codex_model_config
 
+from reweave.utils.persistence import atomic_path
 from .base import (
     DurableDecisionSession,
     NativeAuthenticationError,
@@ -506,11 +507,8 @@ class CodexDecisionSession(DurableDecisionSession):
                     raise
         with tempfile.NamedTemporaryFile(dir=target.parent, delete=False) as stream:
             temporary = Path(stream.name)
-        try:
+        with atomic_path(target, temporary):
             shutil.copyfile(source, temporary)
-            os.replace(temporary, target)
-        finally:
-            temporary.unlink(missing_ok=True)
 
     def _submission_image_path(self, directory: Path, image: dict, index: int) -> Path:
         # The native process can read its Host-owned launcher directory, but

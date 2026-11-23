@@ -25,6 +25,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from reweave.memory.experience import EXPERIENCE_SCOPES
+from reweave.tools import common
 from reweave.tools.toolkit import readonly
 from reweave.utils.config import get_repo_root
 
@@ -69,7 +70,7 @@ def _check_memory_access(
     supplied = Path(path)
     if not supplied.is_absolute():
         supplied = get_repo_root() / supplied
-    resolved = _resolve_memory_path(path)
+    resolved = supplied.resolve()
     if supplied.is_relative_to(memory_root) and not resolved.is_relative_to(
         memory_root
     ):
@@ -107,8 +108,6 @@ def read_text_file(
         memory_root=memory_root,
         access="read",
     )
-    from reweave.tools import common
-
     return common.read_text_file(path, max_chars, offset=offset)
 
 
@@ -124,8 +123,6 @@ def write_text_file(
         memory_root=memory_root,
         access="write",
     )
-    from reweave.tools import common
-
     return common.write_text_file(path, content)
 
 
@@ -140,6 +137,4 @@ def list_dir(
         memory_root=memory_root,
         access="read",
     )
-    from reweave.tools import common
-
     return common.list_dir(path)

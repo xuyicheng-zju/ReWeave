@@ -14,6 +14,7 @@ if TYPE_CHECKING:
     from reweave.tools.toolkit import Toolkit
 
 from reweave.memory.experience import TASK_FAMILY_FORMAT
+from reweave.tools import common
 from reweave.tools.toolkit import readonly
 from reweave.utils.persistence import atomic_json, atomic_text
 
@@ -88,8 +89,6 @@ class EpisodeNotes:
         max_chars: int | None = None,
         offset: int = 0,
     ) -> dict:
-        from reweave.tools import common
-
         return common.read_text_file(
             str(self._path(path)),
             max_chars,
@@ -98,8 +97,6 @@ class EpisodeNotes:
 
     @readonly
     def list_dir(self, path: str = "") -> dict:
-        from reweave.tools import common
-
         target = (
             self.drafts
             if not path or Path(path).resolve() == self.root
