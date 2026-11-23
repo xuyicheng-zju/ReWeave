@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <title>ReWeave</title>
+  <rect x="1" y="1" width="62" height="62" rx="14" fill="#5a3568"/>
+  <path fill="#faf7f0" d="M14 15h21.5C45 15 51 20.3 51 28.7c0 8.4-5.9 13.8-15.5 13.8H28l-4.9-7.4h12.5c4.8 0 7.5-2.3 7.5-6.4 0-4-2.7-6.3-7.5-6.3H21.8v27.1H14z"/>
+  <path fill="#5a3568" d="M23.8 26.2h8.5l19.3 24.9H40.4L23.8 29.8z"/>
+  <path fill="#dfbd77" d="M24.5 26.7h4.9c2.6 0 4.3.9 6 3.1l15 19.7h-9.6L27.9 32.2a7.3 7.3 0 0 0-3.4-2.5z"/>
+</svg>

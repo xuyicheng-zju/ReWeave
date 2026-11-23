@@ -10,12 +10,12 @@ a fixed capability, action, and model-request contract. See
 
 ## Topology-guided evolution
 
-1. Run a frozen candidate on the development conditions and archive the
+1. Run a frozen candidate on the development conditions and save the
    terminal verdict, control trace, observations and program executions.
 2. Update the physical task topology with the new evidence. Reproject the
    admitted history onto the revised topology, deriving progress on its
    required milestones and retaining the evidence for conditional transitions.
-3. Select a complete parent and use the topology and archived programs to
+3. Select a complete parent and use the topology and earlier programs to
    guide new author mutations. Admit each resulting bundle before evaluating
    it under the same development contract.
 

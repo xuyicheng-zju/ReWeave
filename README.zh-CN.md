@@ -1,20 +1,36 @@
+<p>
+  <img src="website/assets/logos/april_logo_blue.png" height="30" align="left" alt="APRIL Lab">
+  <img src="website/assets/logos/agibot_logo.png" height="30" align="right" alt="AGIBOT">
+</p>
+<br clear="all">
+
 <div align="center">
 
-# $\color{#8557A0}{\textsf{ReWeave}}$: Emergent Physical&nbsp;Task&nbsp;Topologies<br>for Embodied Harness Optimization<br>and Cross-Task Meta-Distillation
+# <img src="website/assets/logos/reweave-mark.svg" width="38" height="38" align="absmiddle" alt=""> $\color{#8557A0}{\textsf{ReWeave}}$: Emergent Physical&nbsp;Task&nbsp;Topologies<br>for Embodied Harness Optimization<br>and Cross-Task Meta-Distillation
 
 <p>
-  <strong><a href="https://github.com/xuyicheng-zju">Yicheng&nbsp;Xu</a></strong> &nbsp;·&nbsp;
-  <strong><a href="https://github.com/Rinke02">Wencan&nbsp;Jiang</a></strong> &nbsp;·&nbsp;
-  <strong>Zihao&nbsp;Zhu</strong> &nbsp;·&nbsp;
-  <strong>Keru&nbsp;Zhou</strong> &nbsp;·&nbsp;
-  <strong>Chang&nbsp;Zhou</strong><br>
-  <strong>Li&nbsp;Liu</strong> &nbsp;·&nbsp;
-  <strong>Maoqing&nbsp;Yao</strong> &nbsp;·&nbsp;
-  <strong>Yong&nbsp;Liu</strong> &nbsp;·&nbsp;
-  <strong><a href="https://github.com/zhangzjn">Jiangning&nbsp;Zhang</a></strong>
+  <strong><a href="https://github.com/xuyicheng-zju">Yicheng&nbsp;Xu</a></strong><sup>1</sup> &nbsp;·&nbsp;
+  <strong><a href="https://github.com/Rinke02">Wencan&nbsp;Jiang</a></strong><sup>1</sup> &nbsp;·&nbsp;
+  <strong>Zihao&nbsp;Zhu</strong><sup>2,4</sup> &nbsp;·&nbsp;
+  <strong>Keru&nbsp;Zhou</strong><sup>3</sup> &nbsp;·&nbsp;
+  <strong>Chang&nbsp;Zhou</strong><sup>4</sup><br>
+  <strong>Li&nbsp;Liu</strong><sup>4</sup> &nbsp;·&nbsp;
+  <strong>Maoqing&nbsp;Yao</strong><sup>4</sup> &nbsp;·&nbsp;
+  <strong>Yong&nbsp;Liu</strong><sup>1</sup> &nbsp;·&nbsp;
+  <strong><a href="https://github.com/zhangzjn">Jiangning&nbsp;Zhang</a></strong><sup>1,†</sup>
 </p>
 
 <p>
+  <sup>1</sup> <img src="website/assets/logos/zju_logo.png" height="17" align="absmiddle" alt=""> 浙江大学 &nbsp;·&nbsp;
+  <sup>2</sup> <img src="website/assets/logos/stanford_logo.svg" height="17" align="absmiddle" alt=""> 斯坦福大学 &nbsp;·&nbsp;
+  <sup>3</sup> <img src="website/assets/logos/tsinghua_logo.svg" height="17" align="absmiddle" alt=""> 清华大学 &nbsp;·&nbsp;
+  <sup>4</sup> <img src="website/assets/logos/agibot_logo.png" height="17" align="absmiddle" alt=""> 智元机器人
+</p>
+<p><sup>†</sup> 通讯作者</p>
+
+<p>
+  <a href="https://xuyicheng-zju.github.io/ReWeave/"><strong>项目主页</strong></a> &nbsp;·&nbsp;
+  <a href="https://xuyicheng-zju.github.io/ReWeave/main.pdf"><strong>论文</strong></a> &nbsp;·&nbsp;
   <a href="#overview"><strong>亮点</strong></a> &nbsp;·&nbsp;
   <a href="#quick-start"><strong>快速开始</strong></a> &nbsp;·&nbsp;
   <a href="#documentation"><strong>文档</strong></a> &nbsp;·&nbsp;
