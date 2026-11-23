@@ -428,13 +428,6 @@ def _graph_instructions(request, workspace, *, detailed=False):
         "projection_contract": "Return the complete, coherently reprojected graph with every historical episode/frame/action interval covered. Revisit old interpretations affected by new evidence; preserve supported assignments. The draft is seeded with the previous complete graph, and context/input.json lists new_episode_ids. Unresolved intervals remain explicitly unclassified.",
         "projection_feedback": "Revisit older evidence where findings change its interpretation; return a complete, coherently reprojected graph.",
     }
-    if protocol.history_projection == "first_observation":
-        fields.update(
-            projection_contract="Update the topology using all available raw evidence, but project ONLY context/input.json new_episode_ids. Old receipts retain their first interpretation in context/progress_map.json: do not emit old episode assignments, old execution witnesses, or revised old scores/frontiers. This applies to final selection too. The draft retains topology definitions but clears episodes, witnesses and programs. Existing nodes and edges may be retained without new witnesses; new branches and edges require new observed members. Cover every frame/action interval of every new receipt; unmatched intervals remain unclassified. Historical semantic IDs are qualified by their interpretation origin, not aligned to the current graph.",
-            projection_feedback="Apply feedback to current topology definitions and new receipts only; never revise archived episode interpretations.",
-            revise_interpretations="Earlier episode interpretations remain immutable.",
-            backbone_contradiction=" Contradicting routes may revise the current backbone, while archived interpretations remain unchanged.",
-        )
     if archived_author_policy(request.policy).graph_retrieval is not None:
         fields.update(retrieval=_RETRIEVAL, matching=_MATCHING)
     elif needs_matching(request):
@@ -446,11 +439,7 @@ def _graph_instructions(request, workspace, *, detailed=False):
             "Use a consistent task-local catalog of evidence-grounded properties, ordered arguments and value domains; reuse equivalent definitions.",
         )
     else:
-        fields["matching"] = (
-            "Omit graph.matching, including final analysis: first-observation coordinates are task-local and are not exported for distillation.\n"
-            if protocol.history_projection == "first_observation"
-            else "Omit graph.matching in this phase; encode it in final analysis for distillation.\n"
-        )
+        fields["matching"] = "Omit graph.matching in this phase; encode it in final analysis for distillation.\n"
     if protocol.validation is not None:
         fields.update(_VALIDATION)
     if (workspace / "context/demonstrations.json").exists():
@@ -577,11 +566,7 @@ class NativeGraphAnalysis(NativeSession):
         prompt = f"Analyze frozen round {request.round_index + 1}. Continue from the structured graph handoff using current immutable inputs."
         if request.purpose == "final_selection":
             topology = "the same fixed topology" if fixed else "one updated topology"
-            evidence = (
-                "interpret only new_episode_ids; retain all archived first-observation interpretations unchanged"
-                if request.protocol.history_projection == "first_observation"
-                else "include the last mutation outcomes and reproject ALL settled historical episodes"
-            )
+            evidence = "include the last mutation outcomes and reproject ALL settled historical episodes"
             prompt = (
                 f"Perform final archive selection analysis on {topology}: {evidence}. "
                 "This analysis creates no authors or physical trials and is not another evolution round. No candidate forecast or search-width allocation is required."
@@ -634,25 +619,20 @@ class NativeGraphAnalysis(NativeSession):
             previous_graph = remap_episode_receipts(
                 previous_result.graph, history["navigation"].get("receipt_aliases", {})
             )
-            if request.protocol.history_projection == "first_observation":
-                from reweave.evolution.graph.reprojection import previous_projection
-
-                previous_map = previous_projection(request)
-            else:
-                previous_map = project_map(
-                    raw,
-                    previous_graph,
-                    request.versions,
-                    request.protocol.dev,
-                    graph_id=previous_receipt.record_id + "/analysis/graph",
-                    cell_receipts=analysis_graph_receipts(request, raw),
-                    validation_conditions=(
-                        request.protocol.validation.conditions
-                        if request.protocol.validation
-                        else ()
-                    ),
-                    partial=True,
-                )
+            previous_map = project_map(
+                raw,
+                previous_graph,
+                request.versions,
+                request.protocol.dev,
+                graph_id=previous_receipt.record_id + "/analysis/graph",
+                cell_receipts=analysis_graph_receipts(request, raw),
+                validation_conditions=(
+                    request.protocol.validation.conditions
+                    if request.protocol.validation
+                    else ()
+                ),
+                partial=True,
+            )
         atomic_json(
             context / "graph.json",
             catalog.encode(previous_graph.model_dump(mode="json"))
@@ -816,18 +796,6 @@ rechecks final bytes and completion provenance. No candidate validation or physi
         )
         (workspace / "analysis").mkdir()
         if previous_graph is not None:
-            if request.protocol.history_projection == "first_observation":
-                previous_graph = previous_graph.model_copy(
-                    update={
-                        "episodes": {},
-                        "programs": {},
-                        "unclassified": (),
-                        "edges": {
-                            key: edge.model_copy(update={"witnesses": ()})
-                            for key, edge in previous_graph.edges.items()
-                        },
-                    }
-                )
             atomic_json(
                 workspace / "analysis/result.json",
                 catalog.encode(

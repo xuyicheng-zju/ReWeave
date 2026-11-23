@@ -72,9 +72,7 @@ def select_parent(progress_map, versions, *, successful_sizes=None):
         # Compare exact node counts so float rounding cannot break a real tie.
         score = (
             successes,
-            math.fsum(c["progress"] or 0 for c in row.values())
-            if "interpretations" in progress_map
-            else sum(len(c["completed_nodes"] or ()) for c in row.values()),
+            sum(len(c["completed_nodes"] or ()) for c in row.values()),
             sum(c["progress"] is not None for c in row.values()),
             official_coverage,
         )

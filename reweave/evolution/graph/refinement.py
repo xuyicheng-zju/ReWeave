@@ -29,8 +29,6 @@ def needs_matching(request):
     """Encode conditions for retrieval or the final graph consumed by distillation."""
     from reweave.evolution.evidence.archive_inputs import archived_author_policy
 
-    if request.protocol.history_projection == "first_observation":
-        return False  # Single-task ablation; its archive is not a transfer graph.
     return (
         archived_author_policy(request.policy).graph_retrieval is not None
         or request.purpose == "final_selection"
@@ -41,12 +39,7 @@ def needs_matching(request):
 def analysis_result_schema(request):
     """Only ask the model to emit fields with a consumer in this phase."""
     schema = GraphAnalysisResult.model_json_schema()
-    if request.protocol.history_projection == "refresh":
-        schema["$defs"]["SemanticEdge"]["properties"]["witnesses"]["minItems"] = 1
-    else:
-        schema["$defs"]["SemanticGraph"]["properties"]["episodes"]["description"] = (
-            "Complete partitions for exactly new_episode_ids. Archived receipts must not appear."
-        )
+    schema["$defs"]["SemanticEdge"]["properties"]["witnesses"]["minItems"] = 1
     if request.needs_forecast:
         schema["properties"]["forecast"] = {"$ref": "#/$defs/ProgressForecast"}
         schema["required"].append("forecast")
@@ -134,19 +127,6 @@ def validate_refinement(request, result):
         raise ValueError("evidence graph differs from the frozen scaffold policy")
     graph = result.graph
     episodes = {e.receipt_id: e for e in evidence.episodes}
-    previous = None
-    if request.protocol.history_projection == "first_observation":
-        from reweave.evolution.graph.reprojection import projection_episode_ids
-
-        selected = projection_episode_ids(request, evidence)
-        episodes = {
-            key: episode for key, episode in episodes.items() if key in selected
-        }
-        if request.previous_analysis is not None:
-            request.previous_analysis.verify()
-            previous = GraphAnalysisReceipt.model_validate_json(
-                Path(request.previous_analysis.path).read_text()
-            ).analysis.graph
     if set(graph.episodes) != set(episodes):
         raise ValueError(
             "refinement must project every historical episode exactly once for refresh, and only all new receipts for first-observation"
@@ -236,8 +216,8 @@ def validate_refinement(request, result):
         covered[witness.episode_id].update(indices)
         return episode, indices
 
-    for key, edge in graph.edges.items():
-        if not edge.witnesses and (previous is None or key not in previous.edges):
+    for edge in graph.edges.values():
+        if not edge.witnesses:
             raise ValueError(
                 "only inherited first-observation edges may lack new witnesses"
             )

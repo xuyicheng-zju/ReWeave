@@ -20,7 +20,7 @@ a fixed capability, action, and model-request contract. See
    it under the same development contract.
 
 [analysis.py](../reweave/evolution/graph/analysis.py),
-[reprojection.py](../reweave/evolution/graph/reprojection.py),
+[projection.py](../reweave/evolution/graph/projection.py),
 [selection.py](../reweave/evolution/graph/selection.py), and
 [engine.py](../reweave/evolution/search/engine.py) implement these stages.
 

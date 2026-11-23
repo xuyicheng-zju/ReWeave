@@ -19,7 +19,6 @@ def compare_versions(progress_map, before, after):
         known = (
             old["completed_nodes"] is not None
             and new["completed_nodes"] is not None
-            and old.get("interpretation_id") == new.get("interpretation_id")
         )
         gained = (
             sorted(

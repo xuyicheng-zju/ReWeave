@@ -1420,7 +1420,6 @@ class GraphEvolution(EvolutionExecution):
             state, rows, round_index, identity=name if final else None
         )
         previous = None
-        previous_projection = None
         if round_index:
             prior = GraphRound.model_validate(state["rounds"][str(round_index - 1)])
             prior.decision.verify()
@@ -1428,12 +1427,9 @@ class GraphEvolution(EvolutionExecution):
                 Path(prior.decision.path).read_text()
             )
             previous = prior_decision.analysis
-            if self.workspace.protocol.history_projection == "first_observation":
-                previous_projection = prior_decision.progress_map
         request = GraphAnalysisRequest(
             purpose="final_selection" if final else "search",
             previous_analysis=previous,
-            previous_projection=previous_projection,
             record_id=f"final_{final_index:06d}_analysis"
             if final
             else f"round_{round_index:06d}_analysis",
@@ -1456,8 +1452,7 @@ class GraphEvolution(EvolutionExecution):
     async def _analyze(self, state, request, *, final_index=None):
         """Run one recoverable native analysis and deterministically project it."""
         from reweave.evolution.contracts import GraphSnapshot
-        from reweave.evolution.graph.projection import selected_graph_receipts
-        from reweave.evolution.graph.reprojection import project_analysis
+        from reweave.evolution.graph.projection import project_map, selected_graph_receipts
 
         request.graph.verify()
         request.history.verify()
@@ -1501,11 +1496,15 @@ class GraphEvolution(EvolutionExecution):
             else f"graphs/semantic-{request.round_index:06d}.json",
             result.analysis.graph,
         )
-        progress_map = project_analysis(
-            request,
+        progress_map = project_map(
             evidence_graph,
             result.analysis.graph,
+            request.versions,
+            request.protocol.dev,
             graph_id=result.record_id + "/analysis/graph",
+            validation_conditions=request.protocol.validation.conditions
+            if request.protocol.validation
+            else (),
             cell_receipts=selected_graph_receipts(
                 request.protocol,
                 (version.bundle_id for version in request.versions),

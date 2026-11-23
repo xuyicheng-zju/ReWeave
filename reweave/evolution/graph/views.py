@@ -38,10 +38,7 @@ _CONTINUATION_KEYS = ("edge_id", "program_id", "outcome", "cost")
 
 
 def _select(value, keys):
-    result = {key: value[key] for key in keys}
-    if "interpretation_id" in value:
-        result["interpretation_id"] = value["interpretation_id"]
-    return result
+    return {key: value[key] for key in keys}
 
 
 def query_semantic(graph, *, view="summary", identity=None, graph_id=None):
@@ -149,11 +146,6 @@ def _transition_views(value, identities, *, graph=None):
     for identity in identities:
         witness = value["transitions"][identity]
         episode = value["episodes"][witness["episode_id"]]
-        if "interpretations" in value:
-            from reweave.evolution.graph.reprojection import interpretation_graph
-
-            graph = interpretation_graph(value, witness["episode_id"])
-            completed = graph.completed_nodes()
         endpoints = {}
         for field, frame in (
             ("actual_source", witness["first_frame"]),

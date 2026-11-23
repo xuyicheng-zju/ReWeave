@@ -277,11 +277,6 @@ class EvolutionProtocol(PublishedRecord):
     topology_mode: Literal["evolving", "fixed_initial"] = Field(
         default="evolving", exclude_if=lambda value: value == "evolving"
     )
-    history_projection: Literal["refresh", "first_observation"] = Field(
-        default="refresh",
-        exclude_if=lambda value: value == "refresh",
-        description="Refresh interprets all receipts on the current topology. First-observation freezes each receipt's initial progress, frontier and witnesses while topology continues evolving; all later search and final selection consume that archive.",
-    )
     parent_selection: Literal["global", "latest_evaluated"] = Field(
         default="global",
         exclude_if=lambda value: value == "global",
@@ -311,15 +306,6 @@ class EvolutionProtocol(PublishedRecord):
 
     @model_validator(mode="after")
     def _conditions(self) -> EvolutionProtocol:
-        if self.history_projection == "first_observation" and (
-            self.evolution_mode != "topology"
-            or self.topology_mode != "evolving"
-            or self.max_authors_per_round != 1
-            or self.validation is not None
-        ):
-            raise ValueError(
-                "first-observation projection requires evolving topology, width capped at one and no feedback validation"
-            )
         if self.evolution_mode == "no_topology" and (
             self.max_authors_per_round != 1
             or self.mutation_scopes != ("W", "C", "L")
@@ -1049,12 +1035,6 @@ class GraphAnalysisRequest(PublishedRecord):
     previous_analysis: EvidenceFile | None = Field(
         description="Prior round completion supplying the structured graph/evidence handoff to this round's independent native session; null only in round zero."
     )
-    previous_projection: EvidenceFile | None = Field(
-        default=None,
-        exclude_if=lambda value: value is None,
-        description="Immutable prior progress map for first-observation history. Required after round zero in that mode; forbidden for refresh projection. Owns the already interpreted receipt IDs and their original semantic coordinates.",
-    )
-
     round_index: int = Field(
         ge=0,
         strict=True,
@@ -1094,15 +1074,6 @@ class GraphAnalysisRequest(PublishedRecord):
 
     @model_validator(mode="after")
     def _mechanism_inputs(self):
-        cached = self.protocol.history_projection == "first_observation"
-        if (self.previous_projection is not None) != (cached and self.round_index > 0):
-            raise ValueError(
-                "previous projection must match first-observation history and round"
-            )
-        if cached and self.policy.get("graph_retrieval") is not None:
-            raise ValueError(
-                "first-observation ablation does not support cross-task retrieval"
-            )
         if len(set(self.current_round_versions)) != len(
             self.current_round_versions
         ) or not set(self.current_round_versions).issubset(
