@@ -1,5 +1,5 @@
-# Copyright (c) 2026 RPent Contributors
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Final ACK loss and post-ACK errors retain both physical evidence and receipts."""
 
 import asyncio

@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Blocking job-local work that must finish before its owner releases locks."""
 
 from __future__ import annotations

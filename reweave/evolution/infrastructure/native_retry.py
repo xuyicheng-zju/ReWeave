@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Retry classification for durable native coding-agent sessions."""
 
 from __future__ import annotations

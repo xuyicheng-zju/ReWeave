@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Real rollout finalization and search recovery from synthetic exited workers."""
 
 import json

@@ -1,5 +1,5 @@
-# Copyright (c) 2026 RPent Contributors
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """A native task failure settles its action and remains a valid unsuccessful run."""
 
 import json

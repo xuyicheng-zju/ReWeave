@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Explicit synthetic physical observations and graph judgments for orchestration tests."""
 
 import json

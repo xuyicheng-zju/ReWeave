@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Resolve graph program slices against their actual executable Bundle."""
 
 from reweave.evolution.bundle import AgentBundle

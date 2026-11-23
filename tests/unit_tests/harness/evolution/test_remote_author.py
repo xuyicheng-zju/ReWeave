@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """SSH deployment preserves remote evidence, scoped writes and native identities."""
 
 import argparse

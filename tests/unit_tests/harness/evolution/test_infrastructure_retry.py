@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Bounded physical-attempt retries and receipt recovery without real rollouts."""
 
 import json

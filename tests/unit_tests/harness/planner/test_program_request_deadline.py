@@ -1,4 +1,5 @@
-# Copyright (c) 2026 RPent Contributors
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Native model/program failures retain settled actions and actual turn costs."""
 
 import asyncio

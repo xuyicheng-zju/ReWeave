@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Author accounting covers native cleanup and final immutable evidence binding."""
 
 import asyncio

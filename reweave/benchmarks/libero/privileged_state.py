@@ -1,5 +1,5 @@
-# Copyright (c) 2026 RPent Contributors
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Simulator-side semantic evidence reserved for the LIBERO critic.
 
 The collector reads MuJoCo state and LIBERO's declared task predicates without

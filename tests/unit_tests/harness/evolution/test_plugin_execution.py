@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Whole-program customization through real sandbox workers and model adapters."""
 
 import asyncio

@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Filesystem boundary for the native coding CLI, not an author loop.
 
 The CLI and every child inherit the same boundary. Inputs remain read-only;

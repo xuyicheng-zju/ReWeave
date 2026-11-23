@@ -1,5 +1,5 @@
-# Copyright (c) 2026 RPent Contributors
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Text-experience scopes and Harness's shared Markdown writing convention."""
 
 from typing import Annotated, Literal, get_args

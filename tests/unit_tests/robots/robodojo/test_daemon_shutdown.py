@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Only owned RoboDojo environments reserve shutdown time for video return."""
 
 import sys

@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Remote matrix Host: local Codex is a transport, never a second evaluator."""
 
 from __future__ import annotations

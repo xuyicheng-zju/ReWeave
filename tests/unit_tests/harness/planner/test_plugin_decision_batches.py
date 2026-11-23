@@ -1,5 +1,5 @@
-# Copyright (c) 2026 RPent Contributors
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Real plugin planning over synthetic tools; never a physical robot rollout."""
 
 import json

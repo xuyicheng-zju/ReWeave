@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Conditional graph alignment by bounded search and exact assignment.
 
 Object/state correspondences carry the combinatorial coupling. Once fixed,

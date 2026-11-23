@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Semantic re-projection, physical witness integrity and fixed allocation rules."""
 
 import copy

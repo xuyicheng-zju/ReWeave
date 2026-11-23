@@ -1,5 +1,5 @@
-# Copyright (c) 2026 RPent Contributors
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Physical agent main CLI entrypoint."""
 
 # `reweave/cli/`
@@ -61,9 +61,6 @@ from reweave.utils.logging import get_logger, init_output_dir
 logger = get_logger("agent")
 
 
-# ---------------------------------------------------------------------------
-# CLI
-# ---------------------------------------------------------------------------
 
 
 def _build_argparser() -> argparse.ArgumentParser:
@@ -429,7 +426,6 @@ def main() -> int:
         # it while the (slow) env/VLA servers boot below.
         await_first_prompt = start_first_prompt_resolver(input_queue)
 
-    # --- initialise robot runtime --------------------------------------------
     daemons, primitives_kwargs = robot_spec.init_runtime(
         args,
         output_dir,
@@ -440,7 +436,6 @@ def main() -> int:
     if args.agent_bundle is not None or args.capture_bundle is not None:
         primitives_kwargs["frozen_bundle"] = True
 
-    # --- agent loop --------------------------------------------------------
     t0 = time.time()
     finish_result, messages, agent_error = None, [], None
     planner_termination_class = None

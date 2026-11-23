@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Lossless episode originals and ordinary published artifact records."""
 
 from __future__ import annotations

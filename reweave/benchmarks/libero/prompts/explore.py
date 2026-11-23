@@ -1,17 +1,5 @@
-# Copyright 2026 The RPent Authors.
-# Modified for the ReWeave namespace.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     https://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 
 """LIBERO exploration prompt.
 
@@ -36,9 +24,6 @@ from __future__ import annotations
 from reweave.benchmarks.libero.prompts import system as base
 from reweave.prompt.utils import Numbered, PromptNode
 
-# ---------------------------------------------------------------------------
-# Role and goal
-# ---------------------------------------------------------------------------
 
 ROLE = """You are an LLM-in-the-loop hybrid driver for the LIBERO PRO benchmark, running
 in PERCEPTION-ISOLATED mode: you are NOT given object world coordinates. You
@@ -68,9 +53,6 @@ Published reference files remain fixed.
 The Host retains every revision and its source context for offline C review.
 Do not publish lessons or confidence claims directly into a shared corpus."""
 
-# ---------------------------------------------------------------------------
-# Rules — Rule 4 is the exploration-specific one; the rest match evaluation.
-# ---------------------------------------------------------------------------
 
 RULE_4 = """Rule 4 — 🔁 MULTI-ATTEMPT. Use evidence to choose an in-place correction when feasible; refresh
    geometry only if it has changed or is insufficient. When an episode is unrecoverable (object tipped or out of reach,
@@ -131,9 +113,6 @@ def _rules() -> str:
     return rules[:start] + RULE_4.strip() + ("\n\n" + tail if tail else "\n")
 
 
-# ---------------------------------------------------------------------------
-# Workflow steps that differ from evaluation
-# ---------------------------------------------------------------------------
 
 STEP_PRIMITIVES = """ALLOWED PRIMITIVES (physics-only; full schemas in the tool list/guides):
 `move_to`, `pi0_pick`, `pi0_doubled`, `release`, `set_gripper`,

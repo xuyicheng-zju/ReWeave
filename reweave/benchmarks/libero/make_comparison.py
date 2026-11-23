@@ -1,5 +1,5 @@
-# Copyright (c) 2026 RPent Contributors
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Build a labelled side-by-side video from two LIBERO run directories.
 
 The common case compares a pure-VLA baseline (from ``baseline_vla.py``) with

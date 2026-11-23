@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Deterministic LIBERO lifecycle, exact analysis recovery and read-only replay."""
 
 import asyncio

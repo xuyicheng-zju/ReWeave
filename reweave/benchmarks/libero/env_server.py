@@ -1,17 +1,5 @@
-# Copyright 2026 The RPent Authors.
-# Modified for the ReWeave namespace.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     https://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 
 """RPC server wrapping a single-env LIBERO environment."""
 
@@ -54,9 +42,6 @@ if TYPE_CHECKING:
     from rlinf.envs.libero.libero_env import LiberoEnv
 
 
-# ---------------------------------------------------------------------------
-# Config builders
-# ---------------------------------------------------------------------------
 
 
 def assert_libero_backend(requested_type: str, selected_module: str) -> None:
@@ -189,9 +174,6 @@ def make_env(
     )
 
 
-# ---------------------------------------------------------------------------
-# Facade implementing the reweave.benchmarks.libero.env_client protocol
-# ---------------------------------------------------------------------------
 
 
 def _to_numpy_tree(x):
@@ -240,7 +222,6 @@ class LiberoEnvFacade(BaseEnvFacade):
         )
         self._readonly_methods.add("env.get_task_language")
 
-    # ---- shape helpers ----
 
     def _strip(self, v):
         """Drop the leading env dim. ``v`` is either a batched numpy array
@@ -345,7 +326,6 @@ class LiberoEnvFacade(BaseEnvFacade):
         converted["critic_evidence"] = evidence
         return converted
 
-    # ---- gym-like surface ----
 
     def reset(self):
         obs, info = self._env.reset()
@@ -458,9 +438,6 @@ class LiberoEnvFacade(BaseEnvFacade):
         return self._env.task_descriptions[self._env_idx]
 
 
-# ---------------------------------------------------------------------------
-# Main
-# ---------------------------------------------------------------------------
 
 
 def main():

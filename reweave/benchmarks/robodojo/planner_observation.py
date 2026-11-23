@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Default incremental observation input for editable native RoboDojo C."""
 
 from __future__ import annotations

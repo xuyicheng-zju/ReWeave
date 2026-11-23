@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Replay recorded C inputs through production construction and Host validation.
 
 Public observations stay historical. No model, robot, or fabricated read response

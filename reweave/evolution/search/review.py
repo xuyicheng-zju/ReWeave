@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Comparable retained-goal vectors and search diagnostics on one current graph."""
 
 from __future__ import annotations

@@ -9,7 +9,7 @@ description = "Topology-guided harness evolution for embodied agents"
 readme = "README.md"
 requires-python = ">=3.11,<3.13"
 license = "Apache-2.0"
-license-files = ["LICENSE", "third_party/README.md"]
+license-files = ["LICENSE", "NOTICE", "third_party/README.md"]
 authors = [{name = "ReWeave contributors"}]
 keywords = ["robotics", "embodied-agents", "harness-evolution"]
 classifiers = [

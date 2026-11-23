@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Trace navigation preserves physical identity, evidence coverage and chronology."""
 
 import json

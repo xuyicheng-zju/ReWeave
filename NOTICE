@@ -1,0 +1,35 @@
+ReWeave
+Copyright 2026 The ReWeave Authors.
+
+RPent
+Copyright 2026 The RPent Authors.
+Copyright (c) 2026 RPent Contributors
+https://github.com/RLinf/RPent
+ReWeave adapts parts of the RPent harness, robot adapters, runtime and tests.
+
+PyRUA-Lean
+Copyright 2026 PyRUA-Lean Contributors.
+https://github.com/DAGroup-PKU/PyRUA-Lean
+Online workflow authoring adapts PROGRAM_CONTRACT and IMAGE_NOTES from
+src/pyrualean/arms.py at revision 20dbb21e823030077ff4ddd4463cb91e36277515.
+Object geometry and gripper settling adapt src/pyrualean/hosts/robodojo_tools.py
+at revision fdf6e870654254e2c0c891ee407313fa48bdd0f9. ReWeave uses an explicit
+support plane, a robot-neutral closing axis and backend-specific control units.
+
+ASPIRE
+Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+https://github.com/NVlabs/ASPIRE
+Online workflow authoring adapts Program rules and Stage 1 from
+.claude/skills/iterative-debugging/subagent-prompt.md at revision
+fa00f0ef2bc1d91d594b9aa502c22133c9f538f7. ReWeave applies them to WorkflowSpec,
+workflow results and continuations. The LIBERO-Pro development and held-out
+trial partitions follow the ASPIRE evaluation protocol.
+
+Zetta-Embodiment
+https://github.com/air-embodied-brain/Zetta-Embodiment
+The OpenPI-aligned runner informed the LIBERO-Pro horizon, counted settling
+actions and reset mapping. The local debug subset covers object, position,
+semantic and task perturbations. The aligned telemetry and visual overviews
+at revision dfe8777 informed ReWeave's independent trace navigation.
+
+See third_party/README.md for additional upstream components and source links.

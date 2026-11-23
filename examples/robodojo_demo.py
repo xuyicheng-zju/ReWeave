@@ -1,5 +1,5 @@
-# Copyright (c) 2026 RPent Contributors
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """SIMULATED CPU demo of the real frozen RoboDojo Harness execution path.
 
 Run with the repository interpreter: .venv/bin/python examples/robodojo_demo.py

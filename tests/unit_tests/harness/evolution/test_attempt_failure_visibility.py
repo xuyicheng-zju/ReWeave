@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Failed and cancelled adapter attempts remain durably visible."""
 
 import asyncio

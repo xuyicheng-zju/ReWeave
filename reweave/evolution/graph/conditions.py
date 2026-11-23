@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Readable finite-domain coordinates for one canonical semantic graph.
 
 Definitions form a shared vocabulary. Object names are display information;

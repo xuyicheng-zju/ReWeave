@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Capture exact native journal lineage and fork completed read-only inquiries.
 
 Independent mutation authors never call the fork path. Inquiry copies only

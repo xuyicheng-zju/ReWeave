@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Final condition-graph corpus, catalog lookup, and on-demand retrieval."""
 
 from __future__ import annotations

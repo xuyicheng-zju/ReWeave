@@ -1,10 +1,5 @@
-# Copyright 2026 PyRUA-Lean Contributors.
-# Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
-# Licensed under the Apache License, Version 2.0. See LICENSE.
-#
-# Prompt text adapted from PyRUA-Lean src/pyrualean/arms.py PROGRAM_CONTRACT,
-# IMAGE_NOTES and NVlabs/ASPIRE iterative-debugging/subagent-prompt.md.
-# Adaptation details are documented in third_party/README.md.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Opt-in online authoring of ordinary W assets, using the existing W contract."""
 
 from __future__ import annotations

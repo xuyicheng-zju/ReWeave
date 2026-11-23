@@ -1,17 +1,5 @@
-# Copyright 2026 The RPent Authors.
-# Modified for the ReWeave namespace.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     https://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 
 """Harness agent operations over the RLinf RoboDojo training adapter."""
 
@@ -173,7 +161,6 @@ class RoboDojoAgentEnv(RoboDojoEnv):
             return self._capture_observation()
         return self.observations.compact()
 
-    # ---- unified facade contract ----
     def get_env_meta(self) -> dict[str, Any]:
         """Return the meta info this server was launched with."""
         return dict(self.meta)
@@ -288,7 +275,6 @@ class RoboDojoAgentEnv(RoboDojoEnv):
             info,
         )
 
-    # ---- RoboDojo-specific RPC ----
     def get_obs(self) -> dict[str, Any]:
         return self._observation()
 

@@ -1,5 +1,5 @@
-# Copyright (c) 2026 RPent Contributors
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """LIBERO + OpenPI tool implementation."""
 
 from __future__ import annotations
@@ -1240,7 +1240,6 @@ class LiberoPrimitives:
         }
         return result
 
-    # ---- introspection helpers (for LLM-in-the-loop) ----
 
     @readonly
     def segment(
@@ -1607,7 +1606,6 @@ def _save_observation_artifacts(
         step=step_idx,
     )
 
-    # --- camera calibration (static for agentview): fetch metadata as needed ---
     agentview_meta = (
         primitives.env.get_camera_meta(
             camera_name="agentview",
@@ -1635,7 +1633,6 @@ def _save_observation_artifacts(
             step=step_idx,
         )
 
-    # --- per-step RGB in the depth/K frame (vertical-flip of the raw buffer) ---
     # Agentview pixels align with the matching depth and calibration. The policy
     # image uses Pi0 orientation and must not supply back-projection pixels.
     try:
@@ -1655,7 +1652,6 @@ def _save_observation_artifacts(
         logger.warning("image_cam dump failed: %s", e)
         errors.append({"stage": "image_cam dump failed", "error": str(e)})
 
-    # --- per-step metric depth (agentview), native orientation, in meters ---
     try:
         d = raw.get("agentview_depth")
         if d is None:
@@ -1684,7 +1680,6 @@ def _save_observation_artifacts(
         logger.warning("depth dump failed: %s", e)
         errors.append({"stage": "depth dump failed", "error": str(e)})
 
-    # --- per-step wrist camera (robot0_eye_in_hand), calibration frame ---
     try:
         wimg = raw.get("robot0_eye_in_hand_image")
         if wimg is None:
@@ -1807,9 +1802,6 @@ def _save_observation_artifacts(
     return errors
 
 
-# ---------------------------------------------------------------------------
-# Tool schema declarations (Anthropic-shaped canonical schema)
-# ---------------------------------------------------------------------------
 
 TOOLS_SPEC = [
     {

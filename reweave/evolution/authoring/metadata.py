@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Service native timestamp and mode changes on pinned, workspace-owned files.
 
 Landlock does not mediate these changes. A seccomp notification supervisor performs

@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Read immutable contracts predating removal of author session inheritance.
 
 Current public models reject the retired fields. Only archive readers discard

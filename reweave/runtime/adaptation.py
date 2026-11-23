@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Episode-private source revisions activated at settled execution boundaries.
 
 This module owns source capture and activation only. The existing Kernel remains

@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Reusing unchanged metadata does not rewrite the complete evolution archive."""
 
 import copy

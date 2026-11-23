@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Maximum consistent coverage of a directed condition graph.
 
 One object substitution and one state correspondence explain the whole query.

@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Admit complete semantic graphs against physical and executable evidence."""
 
 from __future__ import annotations

@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """One task backbone, optional physical branches and exact Harness provenance."""
 
 import copy

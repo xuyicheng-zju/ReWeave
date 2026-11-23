@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Host reports derived from exact execution receipts and mutation provenance."""
 
 from __future__ import annotations

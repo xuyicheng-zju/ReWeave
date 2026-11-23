@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Workspace-bound development tools served by the Host to native authors.
 
 Validation must run outside the author's filesystem restriction: the production

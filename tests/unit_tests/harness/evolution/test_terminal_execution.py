@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Confirmed environment endings stop new work without changing the last ACK."""
 
 import asyncio

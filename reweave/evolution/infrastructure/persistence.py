@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Resolve evolution attempts and explicitly imported completed receipts."""
 
 from pathlib import Path

@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Real subprocess tests of author IO boundaries, including child Python tools."""
 
 import json

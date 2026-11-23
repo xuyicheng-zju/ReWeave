@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """The sole editable W/C/L candidate: layout, captured bytes and declared changes."""
 
 from __future__ import annotations

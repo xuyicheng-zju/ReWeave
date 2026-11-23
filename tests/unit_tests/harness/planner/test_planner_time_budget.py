@@ -1,4 +1,5 @@
-# Copyright (c) 2026 RPent Contributors
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Native turn cancellation closes its original session without replay."""
 
 import asyncio

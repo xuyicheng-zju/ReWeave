@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Local Codex sessions with remote, on-demand workspace tools."""
 
 from __future__ import annotations

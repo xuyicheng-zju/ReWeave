@@ -1,11 +1,6 @@
-# Copyright (c) 2026 RPent Contributors
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Auditable LIBERO-Pro evaluation contracts shared by runners and tests.
-
-ASPIRE defines the development/held-out trial split used by this project.
-Zetta's OpenPI-aligned runner defines the VLA control horizon and the counted
-post-reset settling actions.  Keeping both contracts here prevents individual
-scripts from silently inventing different episode budgets.
 """
 
 from __future__ import annotations
@@ -31,9 +26,6 @@ LIBERO_PRO_PERTURBATION_SUFFIXES = {
     "task": "task",
     "environment": "env",
 }
-# The Zetta-aligned LIBERO-Pro dataset installed on the development machine
-# contains these four dimensions. The official environment dimension is not
-# registered by that package and is therefore not claimed by the debug miniset.
 LIBERO_PRO_DEBUG_PERTURBATIONS = (
     "object",
     "position",
@@ -58,8 +50,6 @@ def libero_horizon_contract(
     policy_action_horizon: int | None = None,
     wait_steps: int = LIBERO_WAIT_STEPS_DEFAULT,
 ) -> dict[str, Any]:
-    """Resolve the complete Zetta/OpenPI-aligned episode budget."""
-
     base_suite = libero_base_suite(suite)
     standard_policy_horizon = LIBERO_POLICY_ACTION_HORIZONS[base_suite]
     policy_horizon = (
@@ -90,8 +80,6 @@ def libero_horizon_contract(
 
 
 def aspire_trial_partition(trial: int) -> str:
-    """Classify an ASPIRE trial id without allowing split leakage."""
-
     trial = int(trial)
     if trial in ASPIRE_DEVELOPMENT_TRIALS:
         return "development"
@@ -103,8 +91,6 @@ def aspire_trial_partition(trial: int) -> str:
 
 
 def aspire_trial_to_reset_state_id(trial: int, state_count: int) -> int:
-    """Map ASPIRE's one-based trial id to a task-local reset-state id."""
-
     aspire_trial_partition(trial)
     state_count = int(state_count)
     if state_count <= 0:

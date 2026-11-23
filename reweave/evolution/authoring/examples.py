@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Executable W/C/L illustrations: evidence -> mechanism -> falsifiable change."""
 
 import json

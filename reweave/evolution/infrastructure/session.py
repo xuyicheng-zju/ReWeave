@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Branch-owned native author journals, with provider-specific resume identities."""
 
 from __future__ import annotations

@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Independent per-round graph sessions, with immutable graph handoff receipts."""
 
 from __future__ import annotations

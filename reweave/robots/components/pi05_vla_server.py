@@ -1,5 +1,5 @@
-# Copyright (c) 2026 RPent Contributors
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """RPC server wrapping the Pi0.5 VLA."""
 
 from __future__ import annotations
@@ -28,9 +28,6 @@ RLINF_REPO_PATH = get_rlinf_repo_path() or (REWEAVE_ROOT.parent / "rlinf").resol
 if str(RLINF_REPO_PATH) not in sys.path:
     sys.path.insert(0, str(RLINF_REPO_PATH))
 
-# ---------------------------------------------------------------------------
-# Config builders
-# ---------------------------------------------------------------------------
 
 
 def build_model_cfg(
@@ -102,9 +99,6 @@ def build_model_cfg(
     return cfg
 
 
-# ---------------------------------------------------------------------------
-# Facade implementing the Pi0.5 client protocol
-# ---------------------------------------------------------------------------
 
 
 class Pi05VLAFacade(BaseVLAFacade):
@@ -255,9 +249,6 @@ class Pi05VLAFacade(BaseVLAFacade):
         }
 
 
-# ---------------------------------------------------------------------------
-# Main
-# ---------------------------------------------------------------------------
 
 
 def main() -> None:

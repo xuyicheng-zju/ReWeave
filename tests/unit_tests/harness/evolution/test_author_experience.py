@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Offline experience is required, preserved, and separate from executable skill assets."""
 
 import asyncio

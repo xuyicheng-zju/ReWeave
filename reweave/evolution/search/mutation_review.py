@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Observe mutation exposure and matched official outcomes without causal claims."""
 
 from __future__ import annotations

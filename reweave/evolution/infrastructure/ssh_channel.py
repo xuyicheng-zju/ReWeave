@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Bidirectional requests on one private SSH stdio stream; no reconnect/replay.
 
 Frames have an integer request id, method and params, or the matching id and

@@ -1,4 +1,5 @@
-# Copyright (c) 2026 RPent Contributors
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Current native timeout settings and unknown outcomes remain authoritative."""
 
 import pytest

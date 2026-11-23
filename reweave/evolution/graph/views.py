@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Targeted views over complete graph originals; summaries never replace evidence."""
 
 from reweave.evolution.graph.projection import map_cell, map_row

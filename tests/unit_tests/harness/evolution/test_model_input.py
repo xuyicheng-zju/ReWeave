@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Real failure shapes, explicit selection and end-to-end candidate input ownership."""
 
 import base64

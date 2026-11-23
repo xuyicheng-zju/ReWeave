@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Development reports bind the candidate bytes actually parsed and executed."""
 
 import asyncio

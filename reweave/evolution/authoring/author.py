@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Native offline authors over an isolated W/C/L candidate and complete dev trace."""
 
 from __future__ import annotations

@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Lossless physical evidence scaffold, independent of semantic refinement."""
 
 import json

@@ -1,8 +1,7 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Deterministic offline navigation over complete, immutable episode evidence.
 
-Zetta's aligned telemetry and visual overviews inspired this implementation
-(air-embodied-brain/Zetta-Embodiment, dfe8777). No upstream source is copied.
 Unlike a sampled diagnostic trace, every recorded control step is retained here.
 This module describes evidence; it never labels a root cause or predicts a changed
 program's physical outcome. Generated references use a stable virtual namespace;

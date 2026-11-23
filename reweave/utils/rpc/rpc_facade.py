@@ -1,17 +1,5 @@
-# Copyright 2026 The RPent Authors.
-# Modified for the ReWeave namespace.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     https://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 
 """Base class for subprocess RPC servers.
 
@@ -171,7 +159,6 @@ class RpcFacade:
         with self._dispatch_lock.write():
             return handler(*args, **kwargs, session_id=session_id)
 
-    # ---- session lifecycle (RPC methods + hooks) -------------------------
 
     def register_session(self, session_id: str) -> dict:
         """Register a session.

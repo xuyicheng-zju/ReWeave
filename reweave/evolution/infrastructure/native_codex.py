@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Codex app-server backend for durable native author and analysis sessions."""
 
 from __future__ import annotations

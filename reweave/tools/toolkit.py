@@ -1,17 +1,5 @@
-# Copyright 2026 The RPent Authors.
-# Modified for the ReWeave namespace.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     https://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 
 """Base class for agent tools.
 
@@ -245,9 +233,6 @@ class Toolkit:
             filesystem_tools_enabled=filesystem_tools_enabled,
         )
 
-    # ------------------------------------------------------------------
-    # Registration
-    # ------------------------------------------------------------------
 
     def add_tool(
         self,
@@ -304,9 +289,6 @@ class Toolkit:
             raise RuntimeError("toolkit has no reference corpus")
         return self._memory
 
-    # ------------------------------------------------------------------
-    # Planner-facing API
-    # ------------------------------------------------------------------
 
     @property
     def state(self) -> EnvState:
@@ -657,9 +639,6 @@ class Toolkit:
         """Capture and return the observation produced by a stateful tool."""
         raise NotImplementedError
 
-    # ------------------------------------------------------------------
-    # Server lifecycle hooks (overridden by robot toolkits)
-    # ------------------------------------------------------------------
 
     def cancel_active_and_wait(self) -> None:
         """Request cancellation and wait for the active tool to return."""

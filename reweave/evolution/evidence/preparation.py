@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Author-visible evidence views over admitted episode archives and history."""
 
 from __future__ import annotations

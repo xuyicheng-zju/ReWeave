@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Replay declared responses through the production W/C/L execution path.
 
 Only the model and public gateway responses are synthetic. The Planner adapter,

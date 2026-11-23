@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Physical-graph-guided offline evolution with immutable native sessions and receipts."""
 
 from __future__ import annotations

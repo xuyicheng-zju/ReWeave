@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Official development results for stopping, reporting and SR-only selection."""
 
 from collections.abc import Iterable, Mapping, Sequence

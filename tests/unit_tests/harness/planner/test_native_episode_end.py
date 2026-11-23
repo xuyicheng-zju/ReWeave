@@ -1,4 +1,5 @@
-# Copyright (c) 2026 RPent Contributors
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Native W/C/L stops after terminal ACK and never replays unknown actions."""
 
 import asyncio

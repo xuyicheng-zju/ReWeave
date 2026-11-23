@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Lossless native sessions keep branch identity across processes and relocation."""
 
 from __future__ import annotations

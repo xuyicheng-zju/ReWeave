@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Readable, request-bound references at the author/Host boundary.
 
 The run allocates append-only names; each workspace admits only the names it

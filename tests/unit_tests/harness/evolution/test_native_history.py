@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Native ancestry is a frozen history fork, never shared writable identity."""
 
 import asyncio

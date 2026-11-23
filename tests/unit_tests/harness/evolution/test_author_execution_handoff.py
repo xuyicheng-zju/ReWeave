@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """A settled graph keeps its decision while new authors adopt a runtime repair."""
 
 import asyncio

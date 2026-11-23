@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Plan-confirmed Runtime calls survive complete episode archiving."""
 
 import asyncio

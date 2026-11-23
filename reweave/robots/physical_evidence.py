@@ -1,5 +1,5 @@
-# Copyright (c) 2026 RPent Contributors
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """Side-effect-free physical scalar measurements shared by simulator adapters.
 
 The wire dictionary describes each feature at collection time. Evaluator calls

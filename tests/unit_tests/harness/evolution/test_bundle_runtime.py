@@ -1,4 +1,5 @@
-# Modified for the ReWeave namespace.
+# SPDX-License-Identifier: Apache-2.0
+# Modified for ReWeave.
 """W/C/L are consumed by the real API loop, with protected program execution."""
 
 import asyncio
