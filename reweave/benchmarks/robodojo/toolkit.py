@@ -6,11 +6,11 @@
 from __future__ import annotations
 
 import json
-import os
 from contextlib import contextmanager, nullcontext
 from dataclasses import replace
 from functools import partial
 from pathlib import Path
+from tempfile import TemporaryDirectory
 from threading import RLock
 
 from reweave.benchmarks.robodojo import tools
@@ -78,12 +78,12 @@ class RoboDojoState(EnvState):
                     raise ValueError("server RGB response must contain PNG bytes")
                 destination = self._artifact_file(mapping[camera], step)
                 destination.parent.mkdir(parents=True, exist_ok=True)
-                temporary = self._temporary_file(destination)
-                try:
+                with TemporaryDirectory(
+                    dir=destination.parent, prefix=".publish-"
+                ) as staging:
+                    temporary = Path(staging) / destination.name
                     temporary.write_bytes(image)
-                    os.replace(temporary, destination)
-                finally:
-                    temporary.unlink(missing_ok=True)
+                    temporary.replace(destination)
 
     def cached_artifact_bytes(self, name, *, step=-1):
         """Return already materialized media for passive UI; never perform I/O RPC."""
