@@ -7,11 +7,9 @@ from __future__ import annotations
 import json
 import os
 import re
-from contextlib import suppress
 from dataclasses import asdict, is_dataclass
 from pathlib import Path, PureWindowsPath
 from typing import Any
-from uuid import UUID
 
 
 def native_event_field(value: Any, name: str, default: Any = None) -> Any:
@@ -40,11 +38,11 @@ def serialize_native_event(value: Any) -> Any:
 
 def _validate_session_id(identity: str) -> None:
     # The SDK skips SessionStore materialization for non-UUID resume values.
-    if isinstance(identity, str):
-        with suppress(ValueError):
-            if str(UUID(identity)) == identity.lower():
-                return
-    raise ValueError("Claude native session ID must be a UUID for durable resume")
+    if re.fullmatch(
+        r"[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}",
+        identity,
+    ) is None:
+        raise ValueError("Claude native session ID must be a UUID for durable resume")
 
 
 def _key_identity(key: dict[str, Any]) -> tuple[str, str | None]:
