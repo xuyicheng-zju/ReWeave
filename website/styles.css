@@ -328,9 +328,9 @@ sup, sub { line-height: 0; }
 }
 
 .hero-logos img {
-  block-size: clamp(1.45rem, 2.3vw, 1.85rem);
+  block-size: clamp(2.125rem, 3.5vw, 3rem);
   inline-size: auto;
-  max-inline-size: 9.5rem;
+  max-inline-size: min(13rem, 56%);
   object-fit: contain;
   opacity: .92;
   transition: opacity .2s ease, transform .2s ease;
@@ -776,14 +776,14 @@ h2 {
 
 /* ---------- Indexed points ---------- */
 
-.challenge-grid, .limitations-grid {
+.challenge-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
   align-items: stretch;
 }
 
-.challenge-card, .limit-item {
+.challenge-card {
   padding: 1.05rem 1.15rem;
   border: 1px solid var(--line);
   border-block-start: 2.5px solid var(--line-strong);
@@ -793,12 +793,12 @@ h2 {
   transition: border-color .25s ease, transform .2s ease;
 }
 
-.challenge-card:hover, .limit-item:hover {
+.challenge-card:hover {
   border-block-start-color: var(--accent);
   transform: translateY(-1px);
 }
 
-.challenge-card .eyebrow, .limit-item strong {
+.challenge-card .eyebrow {
   display: block;
   margin-block-end: .7rem;
   color: var(--accent);
@@ -808,7 +808,7 @@ h2 {
   text-transform: uppercase;
 }
 
-.challenge-card h3, .limit-item strong { color: var(--ink); }
+.challenge-card h3 { color: var(--ink); }
 
 .challenge-card h3 {
   font: 500 1.24rem / 1.32 var(--serif);
@@ -816,7 +816,7 @@ h2 {
   text-wrap: balance;
 }
 
-.challenge-card p, .limit-item p {
+.challenge-card p {
   margin-block-start: .6rem;
   color: var(--muted);
   font-size: .92rem;
@@ -2802,7 +2802,7 @@ body:has(#rollout-player[open]) { overflow: hidden; }
     border-inline-start: 0;
     border-block-start: 1px solid var(--line);
   }
-  .challenge-grid, .limitations-grid, .distill-steps { grid-template-columns: 1fr; gap: 1.2rem; }
+  .challenge-grid, .distill-steps { grid-template-columns: 1fr; gap: 1.2rem; }
   .transfer-flow-grid, .distill-impact-grid { grid-template-columns: 1fr; }
   .abstract-pillars { grid-template-columns: 1fr; gap: .75rem; }
   .abstract-pillars div + div {
