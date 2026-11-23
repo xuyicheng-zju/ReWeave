@@ -5,7 +5,7 @@
   <img src="docs/assets/readme-institutions-dark.png#gh-dark-mode-only" alt="APRIL 实验室与智元机器人" width="192">
 </p>
 
-# <img src="website/assets/logos/reweave-knot.svg" width="52" height="30" align="absmiddle" alt=""> $\color{#8557A0}{\textsf{ReWeave}}$: Emergent Physical&nbsp;Task&nbsp;Topologies<br>for Embodied Harness Optimization<br>and Cross-Task Meta-Distillation
+# <img src="website/assets/logos/reweave-knot.svg" width="52" height="30" align="absmiddle" alt=""> ReWeave: Emergent Physical&nbsp;Task&nbsp;Topologies<br>for Embodied Harness Optimization<br>and Cross-Task Meta-Distillation
 
 <p>
   <strong><a href="https://github.com/xuyicheng-zju">Yicheng&nbsp;Xu</a></strong><sup>1</sup> &nbsp;·&nbsp;
@@ -28,15 +28,9 @@
 <p><sup>†</sup> 通讯作者</p>
 
 <p>
-  <a href="https://xuyicheng-zju.github.io/ReWeave/"><strong>项目主页</strong></a> &nbsp;·&nbsp;
-  <a href="https://xuyicheng-zju.github.io/ReWeave/main.pdf"><strong>论文</strong></a> &nbsp;·&nbsp;
-  <a href="#overview"><strong>亮点</strong></a> &nbsp;·&nbsp;
-  <a href="#quick-start"><strong>快速开始</strong></a> &nbsp;·&nbsp;
-  <a href="#documentation"><strong>文档</strong></a> &nbsp;·&nbsp;
-  <a href="#benchmarks"><strong>基准</strong></a> &nbsp;·&nbsp;
-  <a href="#repository"><strong>代码</strong></a> &nbsp;·&nbsp;
-  <a href="#acknowledgments"><strong>致谢</strong></a> &nbsp;·&nbsp;
-  <a href="README.md"><strong>English</strong></a>
+  <strong>arXiv</strong>&nbsp;·&nbsp;待公开 &nbsp;
+  <a href="https://xuyicheng-zju.github.io/ReWeave/"><img src="docs/assets/project-badge.svg" alt="Project · 项目主页" height="24" align="absmiddle"></a>
+  <a href="https://github.com/xuyicheng-zju/ReWeave"><img src="docs/assets/code-badge.svg" alt="Code · GitHub 仓库" height="24" align="absmiddle"></a>
 </p>
 
 <p>

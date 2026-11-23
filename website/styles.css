@@ -432,6 +432,15 @@ sup, sub { line-height: 0; }
   margin-block-start: .95rem;
 }
 
+.hero-resources { align-items: center; }
+
+.resource-status {
+  margin-inline-end: .25rem;
+  color: var(--muted);
+  font-size: .82rem;
+  white-space: nowrap;
+}
+
 /* Unified Hero Abstract Panel */
 
 .hero-abstract {
