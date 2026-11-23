@@ -1,4 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2026 RPent Contributors
 # Modified for ReWeave.
 """Text-experience scopes and Harness's shared Markdown writing convention."""
 

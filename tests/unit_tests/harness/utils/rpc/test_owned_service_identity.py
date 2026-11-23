@@ -1,4 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2026 RPent Contributors
 # Modified for ReWeave.
 """Real delayed subprocesses must not connect to another service's ready port."""
 

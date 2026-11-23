@@ -1,4 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
+# Copyright 2026 The RPent Authors.
 # Modified for ReWeave.
 
 """Pickle-framed TCP transport for the env + model RPC boundary.

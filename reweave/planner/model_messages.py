@@ -1,4 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2026 RPent Contributors
 # Modified for ReWeave.
 """Convert settled tool feedback into runtime text and image content."""
 

@@ -1,4 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2026 RPent Contributors
 # Modified for ReWeave.
 """Physical tool ownership and causal execution trace contracts."""
 

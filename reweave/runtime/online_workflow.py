@@ -1,4 +1,6 @@
 # SPDX-License-Identifier: Apache-2.0
+# Copyright 2026 PyRUA-Lean Contributors.
+# Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 # Modified for ReWeave.
 """Opt-in online authoring of ordinary W assets, using the existing W contract."""
 

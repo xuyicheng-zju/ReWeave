@@ -1,4 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
+# Copyright 2026 PyRUA-Lean Contributors.
 # Modified for ReWeave.
 """PyRUA-Lean's measured two-action stroke convergence, with explicit units.
 

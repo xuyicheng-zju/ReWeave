@@ -1,4 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
+# Copyright 2026 The ReWeave Authors.
 # Modified for ReWeave.
 
 """Validated, inference-only client for a remote GraspGen-X server."""

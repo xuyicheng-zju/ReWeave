@@ -1,4 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2026 RPent Contributors
 # Modified for ReWeave.
 """SIMULATED CPU demo of the real frozen RoboDojo Harness execution path.
 

@@ -1,4 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
+# Copyright 2026 The RPent Authors.
 # Modified for ReWeave.
 
 """In-process streamable-HTTP transport for a Toolkit or native MCP Server.
