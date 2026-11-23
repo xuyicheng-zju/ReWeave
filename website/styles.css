@@ -3092,7 +3092,7 @@ body:has(#rollout-player[open]) { overflow: hidden; }
   .trace-pick { flex: 0 0 min(78vw,17rem); scroll-snap-align: start; }
 }
 
-.project-title-mark { display: inline-block; width: .89em; height: .89em; margin-inline-end: .17em; vertical-align: -.045em; }
+.project-title-mark { display: inline-block; width: 1.38em; height: auto; margin-inline-end: .16em; vertical-align: -.015em; }
 
 .unit-foot .grasp-frames { margin-top: .3rem; color: var(--muted); font: 400 .75rem/1.4 var(--sans); }
 

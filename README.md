@@ -6,7 +6,7 @@
 
 <div align="center">
 
-# <img src="website/assets/logos/reweave-mark.svg" width="38" height="38" align="absmiddle" alt=""> $\color{#8557A0}{\textsf{ReWeave}}$: Emergent Physical&nbsp;Task&nbsp;Topologies<br>for Embodied Harness Optimization<br>and Cross-Task Meta-Distillation
+# <img src="website/assets/logos/reweave-knot.svg" width="52" height="30" align="absmiddle" alt=""> $\color{#8557A0}{\textsf{ReWeave}}$: Emergent Physical&nbsp;Task&nbsp;Topologies<br>for Embodied Harness Optimization<br>and Cross-Task Meta-Distillation
 
 <p>
   <strong><a href="https://github.com/xuyicheng-zju">Yicheng&nbsp;Xu</a></strong><sup>1</sup> &nbsp;·&nbsp;
