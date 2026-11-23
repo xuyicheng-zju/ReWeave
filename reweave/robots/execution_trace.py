@@ -134,10 +134,7 @@ class ExecutionTrace:
             with self._path.open("a", encoding="utf-8") as file:
                 file.write(json.dumps(event, separators=(",", ":")) + "\n")
 
-    def public_control_steps(
-        self, *, execution_ref: str | None = None
-    ) -> list[dict[str, Any]]:
-        """All public action records, optionally scoped to a physical invocation."""
+    def public_control_steps(self) -> list[dict[str, Any]]:
         with self._lock:
             rows = [
                 {
@@ -160,7 +157,6 @@ class ExecutionTrace:
                 }
                 for event in merge_control_telemetry(self._events)
                 if event["event_type"] == "control_step"
-                and (execution_ref is None or event["execution_ref"] == execution_ref)
             ]
             return json.loads(json.dumps(rows))
 
@@ -396,20 +392,9 @@ class ExecutionTrace:
         terminated: object,
         truncated: object,
         public_evidence: Mapping[str, EvidenceScalar] | None = None,
-        critic_private_evidence: Mapping[str, EvidenceScalar] | None = None,
     ) -> int:
         """Record one non-VLA controller action in its active tool execution."""
         public = _serialize_evidence(public_evidence or {}, plane="public")
-        private = _serialize_evidence(
-            critic_private_evidence or {},
-            plane="critic_private",
-        )
-        duplicate_features = set(public) & set(private)
-        if duplicate_features:
-            raise ValueError(
-                "control-step evidence cannot occur in both planes: "
-                f"{sorted(duplicate_features)}"
-            )
         index = int(action_index)
         if index < 0:
             raise ValueError("scripted action index must be non-negative")
@@ -432,8 +417,6 @@ class ExecutionTrace:
             }
             if public:
                 event["public_evidence"] = public
-            if private:
-                event["critic_private_evidence"] = private
             self._append(event)
             self._control_records.append(event)
             return event["control_step_index"]
@@ -591,29 +574,6 @@ class ExecutionTrace:
                     }
                 )
             return discarded
-
-    def open_suffix_action_steps(self, execution_ref: str) -> int:
-        """Return leftover unexecuted actions for one live execution.
-
-        Used as a host invariant after interrupt dump. A positive count means
-        leftover actions were not discarded when physical execution ended.
-        """
-        with self._lock:
-            self._execution(execution_ref, phases={"running"})
-            open_forwards = [
-                progress
-                for progress in self._forward_progress.values()
-                if progress.execution_ref == execution_ref
-                and not progress.suffix_closed
-            ]
-            if len(open_forwards) > 1:
-                raise RuntimeError(
-                    "one active execution owns multiple open VLA forwards"
-                )
-            if not open_forwards:
-                return 0
-            progress = open_forwards[0]
-            return progress.execution_horizon_steps - progress.next_action_index
 
     def record_open_suffix_discarded(
         self,

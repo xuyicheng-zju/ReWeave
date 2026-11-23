@@ -410,14 +410,12 @@ def test_static_online_w_does_not_grant_c_or_l_authority(tmp_path):
     assert manager.active.bundle.context == baseline().context
 
 
-def test_cli_flag_defaults_off_and_accepts_explicit_alias():
+def test_online_workflow_cli_flag_defaults_off():
     from reweave.cli.main import parse_cli_arguments
 
     arguments = ["--robot", "libero", "--suite", "libero_goal", "--task", "0"]
     _, plain, _ = parse_cli_arguments(arguments)
-    _, enabled, _ = parse_cli_arguments([*arguments, "--online-cap"])
     assert not plain.online_workflows
-    assert enabled.online_workflows and enabled.adaptation_mode == "static"
 
 
 def test_offline_view_keeps_w_source_and_zero_action_events(tmp_path):

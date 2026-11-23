@@ -46,43 +46,6 @@ def measure_region(world_map, box_rc, *, support_z=None):
     }
 
 
-def region_tool_spec(*, camera_key="camera", cameras, resolutions=None):
-    spec = {
-        "name": "measure_region",
-        "description": "Measure PyRUA-Lean footprint, top and world closing axis from a selected region of an existing world map. The region may contain background/multiple objects: inspect identity and isolate the target. No render or physical action. support_z enables upright-on-plane body height; omit for visible geometry only.",
-        "input_schema": {
-            "type": "object",
-            "properties": {
-                camera_key: {"type": "string", "enum": list(cameras)},
-                "box_rc": {
-                    "type": "array",
-                    "items": {"type": "integer"},
-                    "minItems": 4,
-                    "maxItems": 4,
-                    "description": "Half-open [row_start, col_start, row_end, col_end] in the SAME recorded camera/resolution.",
-                },
-                "support_z": {
-                    "type": "number",
-                    "description": "Known world support-plane height in metres; omit if unknown.",
-                },
-                "step": {
-                    "type": "integer",
-                    "description": "Recorded state, default latest.",
-                },
-            },
-            "required": ["box_rc", camera_key],
-            "additionalProperties": False,
-        },
-    }
-    if resolutions is not None:
-        spec["input_schema"]["properties"]["resolution"] = {
-            "type": "string",
-            "enum": list(resolutions),
-            "description": "World-map resolution matching the image pixels; default low.",
-        }
-    return spec
-
-
 def measure_geometry(points, *, support_z: float | None = None) -> dict[str, Any]:
     """Measure PyRUA-Lean geometry; require an explicit plane for body height.
 
@@ -158,12 +121,12 @@ ROUND_MIN_ARC_DEG = 100.0
 ROUND_AXIS_M = 0.006
 
 
-def _cells(xy: np.ndarray, cell: float = FOOTPRINT_CELL_M) -> np.ndarray:
+def _cells(xy: np.ndarray) -> np.ndarray:
     """One point per occupied grid cell (the mean of the points in it): the footprint with
     the same weight everywhere."""
 
     _, cell_of, count = np.unique(
-        np.floor(xy / cell).astype(np.int64),
+        np.floor(xy / FOOTPRINT_CELL_M).astype(np.int64),
         axis=0,
         return_inverse=True,
         return_counts=True,

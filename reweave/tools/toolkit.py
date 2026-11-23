@@ -703,14 +703,6 @@ class Toolkit:
         record = self.state.latest_record()
         return bool(record is not None and (record.terminated or record.truncated))
 
-    def set_decision_overlay(self, cot: str, decision: str) -> None:
-        """Hold CoT + decision on recorded video until the next trigger.
-
-        Env toolkits that write ``episode.mp4`` override this. The default
-        is a no-op so planners can fire it on every turn without knowing
-        which env they are driving.
-        """
-
     def write_recipe(self, recipe_tag: str) -> str | None:
         """Write a replay recipe for this robot, if supported."""
         return None

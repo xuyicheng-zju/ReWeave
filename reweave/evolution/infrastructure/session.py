@@ -6,7 +6,6 @@ from __future__ import annotations
 import json
 import os
 import re
-import tempfile
 from dataclasses import asdict, is_dataclass
 from pathlib import Path, PureWindowsPath
 from typing import Any
@@ -36,19 +35,11 @@ def serialize_native_event(value: Any) -> Any:
     raise TypeError(f"unsupported SDK audit value: {type(value).__name__}")
 
 
-def write_json(
-    path: Path, value: Any, *, temporary_directory: Path | None = None
-) -> None:
+def write_json(path: Path, value: Any) -> None:
     """Atomically persist a complete Host record."""
     path.parent.mkdir(parents=True, exist_ok=True)
-    if temporary_directory is None:
-        temporary = path.with_suffix(path.suffix + ".tmp")
-        stream = temporary.open("w", encoding="utf-8")
-    else:
-        descriptor, name = tempfile.mkstemp(dir=temporary_directory)
-        temporary = Path(name)
-        stream = os.fdopen(descriptor, "w", encoding="utf-8")
-    with stream:
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    with temporary.open("w", encoding="utf-8") as stream:
         stream.write(
             json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False) + "\n"
         )

@@ -33,11 +33,6 @@ def cursor_private_directory(home: Path) -> Path:
     return Path(home) / ".config" / "reweave" / "cursor"
 
 
-def cursor_auth_file(home: Path) -> Path:
-    """Linux file login. Darwin keeps the same account in the login keychain."""
-    return cursor_private_directory(home) / "auth.json"
-
-
 def prepare_cursor_private_directory(home: Path, *, require_auth: bool) -> Path:
     """Create the private directory and reject group or world access."""
     reweave = Path(home) / ".config" / "reweave"

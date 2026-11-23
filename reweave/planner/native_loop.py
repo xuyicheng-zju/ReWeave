@@ -886,28 +886,6 @@ class NativeBundlePlanner:
                     ],
                     mode="json",
                 )[0]
-                review = getattr(toolkit, "review_planner_decision", None)
-                if review is not None:
-                    verdict = await review(
-                        {
-                            "request_id": identity,
-                            "program_call_id": program_call_id,
-                            "response": message,
-                        }
-                    )
-                    if verdict is not None:
-                        runtime.kernel._event(
-                            "model_decision_reviewed",
-                            request_id=identity,
-                            program_call_id=program_call_id,
-                            verdict=verdict,
-                        )
-                        if not verdict["accepted"]:
-                            for call in calls:
-                                call["validation_error"] = (
-                                    "Operator rejected this decision: "
-                                    + verdict["reason"]
-                                )
                 runtime.messages.append(
                     {
                         "role": "assistant",

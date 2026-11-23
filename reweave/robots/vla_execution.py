@@ -166,11 +166,6 @@ class VLAActionCursor:
         """Actions left in this forward after the current action."""
         return self.execution_horizon_steps - self.action_index - 1
 
-    @property
-    def next_action_requires_inference(self) -> bool:
-        """Whether consuming this action exhausts the executable window."""
-        return self.remaining_action_steps == 0
-
     @classmethod
     def from_rpc(cls, payload: object) -> VLAActionCursor:
         """Validate the current single-action RPC response."""

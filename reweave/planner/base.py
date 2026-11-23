@@ -98,13 +98,6 @@ def episode_is_scored(termination_class: str) -> bool:
     return require_termination_class(termination_class) != API_ERROR
 
 
-def add_mcp_prefix(name: str) -> str:
-    """Return the namespaced MCP tool name for a bare tool name."""
-    if name.startswith(MCP_TOOL_PREFIX):
-        return name
-    return f"{MCP_TOOL_PREFIX}{name}"
-
-
 def strip_mcp_prefix(name: str) -> str:
     """Return the bare tool name, dropping the MCP namespace if present."""
     return name.removeprefix(MCP_TOOL_PREFIX)

@@ -433,10 +433,6 @@ class ProgramSandbox:
     def __init__(self, backend: SandboxBackend | None = None) -> None:
         self._backend = backend or sandbox_backend()
 
-    @property
-    def backend_name(self) -> str:
-        return self._backend.name
-
     def _materialize_program(self, program: PythonProgram, root: Path) -> Path:
         validate_program_source(program)
         source_root = root / "src"

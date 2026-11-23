@@ -196,7 +196,7 @@ class EvolutionWorkspace:
             + "\n",
         )
 
-    def put_bundle(self, bundle: AgentBundle, *, reuse_content: bool = True) -> str:
+    def put_bundle(self, bundle: AgentBundle) -> str:
         if Path(bundle.record_id).name != bundle.record_id or bundle.record_id in {
             ".",
             "..",
@@ -208,7 +208,7 @@ class EvolutionWorkspace:
             if json.loads(path.read_text()) != value:
                 raise ValueError("immutable bundle archive was modified")
         else:
-            for original in sorted(path.parent.glob("*.json")) if reuse_content else ():
+            for original in sorted(path.parent.glob("*.json")):
                 if original.name.startswith("."):
                     continue
                 published = AgentBundle.model_validate_json(original.read_text())

@@ -131,7 +131,6 @@ def _build_argparser() -> argparse.ArgumentParser:
     )
     ap.add_argument(
         "--online-workflows",
-        "--online-cap",
         action="store_true",
         default=False,
         help="Experimental online W authoring and immediate execution; disabled by default. Does not grant C/L editing.",

@@ -211,36 +211,3 @@ class CapabilityCatalog:
     def authoring_payload(self) -> list[dict[str, Any]]:
         """Return the exact catalog embedded in the coding-agent request."""
         return [capability.model_dump(mode="json") for capability in self.capabilities]
-
-
-def validate_capability_arguments(
-    capability: Capability,
-    arguments: dict[str, Any],
-) -> None:
-    """Validate exact call arguments before host dispatch."""
-    schema = dict(capability.input_schema)
-    if isinstance(schema.get("properties"), dict):
-        schema["additionalProperties"] = False
-    errors = sorted(
-        Draft202012Validator(schema).iter_errors(arguments),
-        key=lambda error: tuple(str(part) for part in error.absolute_path),
-    )
-    if errors:
-        detail = "; ".join(
-            f"{'.'.join(str(part) for part in error.absolute_path) or '<root>'}: "
-            f"{error.message}"
-            for error in errors
-        )
-        raise ValueError(
-            f"invalid arguments for capability {capability.name!r}: {detail}"
-        )
-
-
-def validate_capability_result(capability: Capability, result: dict[str, Any]) -> None:
-    """Reject a host result that violates its advertised program contract."""
-    errors = list(Draft202012Validator(capability.output_schema).iter_errors(result))
-    if errors:
-        raise RuntimeError(
-            f"capability {capability.name!r} returned an invalid result: "
-            f"{errors[0].message}"
-        )
