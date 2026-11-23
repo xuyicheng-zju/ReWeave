@@ -177,8 +177,6 @@ def validate_refinement(request, result):
             raise ValueError("official successful terminal frame must be a goal state")
     for node_id, node in graph.nodes.items():
         if node_id not in used_nodes:
-            if previous is not None and node_id in previous.nodes:
-                continue
             if node.role == "branch":
                 raise ValueError("optional branch nodes require observed members")
             if not node.uncertainty.strip():
