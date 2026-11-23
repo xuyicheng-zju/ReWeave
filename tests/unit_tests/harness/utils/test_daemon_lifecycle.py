@@ -140,7 +140,7 @@ def test_reserved_port_remains_owned_across_rpc_child_spawn(tmp_path: Path) -> N
             sys.executable,
             "-c",
             """
-from reweave.utils.rpc import RpcFacade
+from reweave.utils.rpc.rpc_facade import RpcFacade
 facade = RpcFacade()
 facade.serve(transport='http', host=__import__('sys').argv[1],
              port=int(__import__('sys').argv[2]), parent_watch=True)
@@ -215,7 +215,7 @@ def test_reserved_rpc_daemon_restarts_on_same_endpoint(
             sys.executable,
             "-c",
             """
-from reweave.utils.rpc import RpcFacade
+from reweave.utils.rpc.rpc_facade import RpcFacade
 facade = RpcFacade()
 facade.serve(transport=__import__('sys').argv[1],
              host=__import__('sys').argv[2],

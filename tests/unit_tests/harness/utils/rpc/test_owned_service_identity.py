@@ -24,7 +24,7 @@ import json, os, sys, time
 from pathlib import Path
 sys.path.insert(0, sys.argv[1])
 from reweave.utils.daemon import SERVICE_INSTANCE_ENV
-from reweave.utils.rpc import RpcFacade
+from reweave.utils.rpc.rpc_facade import RpcFacade
 transport, port, events, gate, omit_identity = sys.argv[2:]
 if omit_identity == 'yes':
     os.environ.pop(SERVICE_INSTANCE_ENV, None)

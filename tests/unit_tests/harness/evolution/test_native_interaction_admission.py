@@ -184,7 +184,7 @@ def test_native_admission_runs_one_session_and_real_c_l_w_without_api(
 
     assert not hasattr(interaction, "ApiAgentLoop")
     monkeypatch.setattr(
-        "reweave.planner.providers.CodexDecisionSession.start", forbidden
+        "reweave.planner.providers.codex.CodexDecisionSession.start", forbidden
     )
     cases = []
     bundle = asyncio.run(admit_candidate(root, case_results=cases))
