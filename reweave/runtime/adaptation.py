@@ -36,7 +36,6 @@ from reweave.evolution.bundle import (
     WorkflowSpec,
     new_record_id,
 )
-from reweave.runtime.exception_notes import add_exception_note
 from reweave.utils.persistence import atomic_json
 
 _STATE = TypeAdapter(
@@ -308,8 +307,7 @@ class HarnessAdaptation:
                 kind, error_type=type(error).__name__, error=str(error), **values
             )
         except BaseException as audit_error:
-            add_exception_note(
-                error,
+            error.add_note(
                 f"Revision audit failed: {type(audit_error).__name__}: {audit_error}",
             )
 
@@ -496,8 +494,8 @@ class HarnessAdaptation:
                     try:
                         failed_source = self._failed_source(files)
                     except BaseException as audit_error:
-                        add_exception_note(
-                            error, f"Failed-edit source audit failed: {audit_error}"
+                        error.add_note(
+                            f"Failed-edit source audit failed: {audit_error}"
                         )
                 self._failure(
                     "stage_failed",
@@ -702,8 +700,7 @@ class HarnessAdaptation:
                 except BaseException as error:
                     if failure is None:
                         raise
-                    add_exception_note(
-                        failure,
+                    failure.add_note(
                         f"Revision activation failed: {type(error).__name__}: {error}",
                     )
                     raise failure from error
@@ -768,7 +765,7 @@ class HarnessAdaptation:
                 except BaseException as error:
                     if failure is None:
                         raise
-                    add_exception_note(failure, f"Revision activation failed: {error}")
+                    failure.add_note(f"Revision activation failed: {error}")
                     raise failure from error
 
     def receipt(self) -> dict[str, Any]:

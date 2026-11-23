@@ -28,7 +28,6 @@ from reweave.runtime.capability import (
     PhysicalOutcomeUnknown,
     ProgramDeadlineExceeded,
 )
-from reweave.runtime.exception_notes import add_exception_note
 from reweave.runtime.kernel import EpisodeKernel, EpisodeLimits
 from reweave.runtime.model_budget import ModelServiceFailure
 from reweave.session import resolve_image_artifact
@@ -477,8 +476,8 @@ class BundleRuntime:
             self.kernel._event("operation_settled", **record)
         except BaseException as evidence_error:
             if isinstance(error, PhysicalOutcomeUnknown):
-                add_exception_note(
-                    error, f"Settlement evidence failed: {evidence_error}"
+                error.add_note(
+                    f"Settlement evidence failed: {evidence_error}"
                 )
                 raise error from evidence_error
             raise
@@ -634,15 +633,13 @@ class BundleRuntime:
             # later evidence writes or task cleanup fail with another exception.
             unknown = self.kernel._fatal
             if unknown is not None and unknown is not error:
-                add_exception_note(
-                    unknown,
+                unknown.add_note(
                     f"Episode cleanup or reporting failed: {type(error).__name__}: {error}",
                 )
                 raise unknown from error
             service_failure = self.kernel._service_failure
             if service_failure is not None and service_failure is not error:
-                add_exception_note(
-                    service_failure,
+                service_failure.add_note(
                     f"Later program termination: {type(error).__name__}: {error}",
                 )
                 raise service_failure from error
@@ -671,8 +668,7 @@ class BundleRuntime:
                 # Host evidence failure must not become a candidate-code failure.
                 evidence_error = self.kernel._evidence_error
                 if evidence_error is not None:
-                    add_exception_note(
-                        evidence_error,
+                    evidence_error.add_note(
                         f"Program also failed: {type(error).__name__}: {error}",
                     )
                     raise evidence_error from error

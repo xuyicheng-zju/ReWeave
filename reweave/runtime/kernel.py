@@ -37,7 +37,6 @@ from reweave.runtime.capability import (
     PhysicalOutcomeUnknown,
     ProgramDeadlineExceeded,
 )
-from reweave.runtime.exception_notes import add_exception_note
 from reweave.runtime.model_budget import ModelBudgetExceeded, ModelServiceFailure
 
 try:
@@ -269,15 +268,15 @@ class EpisodeKernel:
         """
         outcome = self._fatal or self._service_failure or error
         if outcome is not error:
-            add_exception_note(
-                outcome, f"Subsequent {kind}: {type(error).__name__}: {error}"
+            outcome.add_note(
+                f"Subsequent {kind}: {type(error).__name__}: {error}"
             )
         try:
             self._event(
                 kind, error=type(outcome).__name__, detail=str(outcome), **values
             )
         except BaseException as evidence_error:
-            add_exception_note(outcome, f"{kind} evidence failed: {evidence_error}")
+            outcome.add_note(f"{kind} evidence failed: {evidence_error}")
             if outcome is evidence_error:
                 raise
             raise outcome from evidence_error

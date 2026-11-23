@@ -25,7 +25,6 @@ from jsonschema import Draft202012Validator
 
 from reweave.evolution.bundle import ProgramLimits, PythonProgram
 from reweave.runtime.capability import PhysicalOutcomeUnknown, ProgramDeadlineExceeded
-from reweave.runtime.exception_notes import add_exception_note
 from reweave.runtime.isolation import restrict_program_reads
 from reweave.runtime.model_budget import ModelBudgetExceeded, ModelServiceFailure
 from reweave.runtime.source import validate_program_source
@@ -722,8 +721,7 @@ class ProgramSandbox:
                     if failure is not None:
                         if failure is cleanup_error:
                             raise
-                        add_exception_note(
-                            failure,
+                        failure.add_note(
                             f"Sandbox cleanup failed: {type(cleanup_error).__name__}: {cleanup_error}",
                         )
                         raise failure from cleanup_error
@@ -733,6 +731,6 @@ class ProgramSandbox:
                 if interrupted:
                     if failure is None:
                         raise asyncio.CancelledError
-                    add_exception_note(
-                        failure, "Cancellation waited for sandbox pipe drainage"
+                    failure.add_note(
+                        "Cancellation waited for sandbox pipe drainage"
                     )

@@ -21,7 +21,6 @@ from reweave.runtime.capability import (
     PhysicalBudget,
     PhysicalOutcomeUnknown,
 )
-from reweave.runtime.exception_notes import add_exception_note
 from reweave.runtime.model_input import validate_native_request
 
 
@@ -260,8 +259,7 @@ class ProgramExecution:
                 if failure is not None and not isinstance(
                     cleanup_error, PhysicalOutcomeUnknown
                 ):
-                    add_exception_note(
-                        failure,
+                    failure.add_note(
                         f"Program cleanup failed: {type(cleanup_error).__name__}: {cleanup_error}",
                     )
                     if failure is cleanup_error:
