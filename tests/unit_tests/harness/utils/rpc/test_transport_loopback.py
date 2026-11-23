@@ -30,13 +30,9 @@ import numpy as np
 import pytest
 
 from reweave.utils.daemon import pick_free_port
-from reweave.utils.rpc import (
-    RpcClient,
-    RpcError,
-    RpcFacade,
-    make_rpc_client,
-    wait_for_ready,
-)
+from reweave.utils.rpc.rpc_client import RpcClient, RpcError
+from reweave.utils.rpc.rpc_facade import RpcFacade
+from reweave.utils.rpc.client_utils import make_rpc_client, wait_for_ready
 from reweave.utils.rpc.http_rpc import HttpRpcClient, _is_direct_url
 
 Transport = Literal["http", "socket"]

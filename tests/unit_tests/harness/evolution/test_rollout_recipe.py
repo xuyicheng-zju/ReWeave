@@ -313,7 +313,7 @@ def test_real_main_normalizes_string_memory_path_for_frozen_entrypoints(
 ):
     from reweave.cli import main
     from reweave.evolution import runtime_manifest
-    from reweave.robots import PromptBundle
+    from reweave.robots.prompt_bundle import PromptBundle
 
     inputs, _, runner, _ = recipe
     spec = main.get_robot_spec("libero")

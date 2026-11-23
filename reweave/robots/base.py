@@ -15,15 +15,14 @@ if TYPE_CHECKING:
 
 
 def _resolve_robot(name: str) -> Any:
-    """Import ``reweave.benchmarks.<name>`` lazily and return the module."""
     if not name:
         raise ValueError("robot name must be non-empty")
     robot_name = name.lower()
     module_name = f"reweave.benchmarks.{robot_name}"
     try:
-        return importlib.import_module(module_name)
+        return importlib.import_module(f"{module_name}.robot_spec")
     except ModuleNotFoundError as e:
-        if e.name == module_name:
+        if e.name in {module_name, f"{module_name}.robot_spec"}:
             raise ValueError(f"unknown robot: {robot_name!r}") from e
         raise
 

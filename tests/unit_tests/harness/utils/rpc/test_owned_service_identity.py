@@ -15,7 +15,7 @@ import pytest
 
 from reweave.robots.runtime import try_wait_server
 from reweave.utils.daemon import SERVICE_INSTANCE_ENV, ProcessDaemon, pick_free_port
-from reweave.utils.rpc import make_rpc_client, wait_for_ready
+from reweave.utils.rpc.client_utils import make_rpc_client, wait_for_ready
 from reweave.utils.rpc.client_utils import logger
 
 ROOT = Path(__file__).resolve().parents[5]

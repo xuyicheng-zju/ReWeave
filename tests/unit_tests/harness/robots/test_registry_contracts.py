@@ -22,7 +22,7 @@ from string import Formatter
 import pytest
 
 from reweave.robots import base as registry
-from reweave.robots import enumerate_robots, get_robot_spec
+from reweave.robots.base import enumerate_robots, get_robot_spec
 from reweave.robots.robot_spec import RobotSpec, RunConfig
 
 EXPECTED_ROBOTS = ("libero", "robodojo")

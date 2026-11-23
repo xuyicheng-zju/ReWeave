@@ -361,7 +361,7 @@ def test_back_project_region_cannot_wrap_or_reverse_into_another_surface(rows):
 
 def test_partial_observation_reports_capture_error_and_keeps_available_images(tmp_path):
     from reweave.benchmarks.libero.tools import dump_state, view_env_state
-    from reweave.session import EnvState
+    from reweave.session.base import EnvState
 
     def render(**kwargs):
         raise RuntimeError("renderer unavailable")

@@ -4,7 +4,7 @@
 import pytest
 
 from reweave.planner.base import ACTION_OUTCOME_UNKNOWN, API_ERROR, build_planner
-from reweave.planner.providers import NativeTurnFailed
+from reweave.planner.providers.base import NativeTurnFailed
 from reweave.runtime.capability import EnvironmentServiceFailure, PhysicalOutcomeUnknown
 from tests.unit_tests.harness.planner.test_native_episode_end import (
     TerminalRobot,

@@ -7,8 +7,8 @@ import copy
 
 import pytest
 
-from reweave.planner.providers import (
-    CodexDecisionSession,
+from reweave.planner.providers.codex import CodexDecisionSession
+from reweave.planner.providers.base import (
     NativeProtocolError,
     NativeRecoveryBlocked,
     NativeSubmissionUnknown,
@@ -543,7 +543,7 @@ def test_lost_authorization_reply_keeps_pending_turn_budget_requirement(
     tmp_path, monkeypatch
 ):
     async def exercise():
-        from reweave.planner.providers import NativeTransportError
+        from reweave.planner.providers.base import NativeTransportError
 
         transport = FakeTransport(tmp_path)
         session = CodexDecisionSession(tmp_path / "provider", transport=transport)

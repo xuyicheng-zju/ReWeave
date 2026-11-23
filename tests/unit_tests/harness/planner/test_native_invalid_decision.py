@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from reweave.planner.providers import (
+from reweave.planner.providers.base import (
     NativeCompletedInvalidDecision,
     NativeProtocolError,
     NativeSubmissionUnknown,

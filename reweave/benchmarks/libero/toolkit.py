@@ -29,10 +29,10 @@ from typing import Any
 from reweave.benchmarks.libero import tools as libero_tools
 from reweave.dashboard.events import DashboardEventSink
 from reweave.evaluation.result import write_json_atomic
-from reweave.memory import ReadOnlyCorpus
+from reweave.memory.corpus import ReadOnlyCorpus
 from reweave.robots.active_execution import ActiveExecution
 from reweave.robots.execution_trace import ExecutionTrace
-from reweave.session import EnvState
+from reweave.session.base import EnvState
 from reweave.tools.toolkit import Toolkit, readonly
 from reweave.utils.logging import get_logger, get_output_dir
 

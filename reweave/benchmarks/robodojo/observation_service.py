@@ -45,7 +45,7 @@ class ObservationService:
         )
         from reweave.robots.components.pi05_vla_client import Pi05VLAClient
         from reweave.robots.components.sam3_client import Sam3Client
-        from reweave.utils.rpc import make_rpc_client
+        from reweave.utils.rpc.client_utils import make_rpc_client
 
         unknown = set(configuration) - {
             "vla_endpoint",

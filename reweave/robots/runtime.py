@@ -30,10 +30,10 @@ from typing import TYPE_CHECKING, Any
 from reweave.dashboard.events import DashboardEventSink, RuntimeStatusEvent
 from reweave.utils.daemon import ProcessDaemon
 from reweave.utils.logging import get_logger
-from reweave.utils.rpc import wait_for_ready
+from reweave.utils.rpc.client_utils import wait_for_ready
 
 if TYPE_CHECKING:
-    from reweave.utils.rpc import RpcClient
+    from reweave.utils.rpc.rpc_client import RpcClient
 
 logger = get_logger("robot_runtime")
 

@@ -48,7 +48,7 @@ from reweave.dashboard.spec import DashboardSpec, TaskSpec
 from reweave.utils.logging import get_logger
 
 if TYPE_CHECKING:
-    from reweave.session import EnvState, StepRecord
+    from reweave.session.base import EnvState, StepRecord
     from reweave.tools.toolkit import Toolkit, ToolResult
 
 RUNTIME_STATUSES = {"pending", "starting", "ready", "failed"}

@@ -28,7 +28,7 @@ from reweave.benchmarks.robodojo.robot_spec import finalize_run
 from reweave.benchmarks.robodojo.tasks import native_step_limit
 from reweave.cli.main import parse_cli_arguments
 from reweave.dashboard.events import NullDashboardEventSink
-from reweave.evaluation import RunFinalizationContext
+from reweave.evaluation.result import RunFinalizationContext
 from reweave.evolution.contracts import (
     EvaluationConditions,
     EvaluationRequest,

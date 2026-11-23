@@ -17,7 +17,7 @@
 
 from __future__ import annotations
 
-from reweave.utils.rpc import RpcFacade
+from reweave.utils.rpc.rpc_facade import RpcFacade
 from reweave.utils.rpc.rpc_facade import DEFAULT_SESSION_TIMEOUT_S
 
 

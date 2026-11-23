@@ -20,7 +20,7 @@ from pathlib import Path
 
 import pytest
 
-from reweave.robots import get_robot_spec
+from reweave.robots.base import get_robot_spec
 
 
 def _parser(robot_name: str, *, dashboard: bool = False) -> argparse.ArgumentParser:

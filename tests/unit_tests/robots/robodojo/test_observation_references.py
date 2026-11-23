@@ -9,7 +9,7 @@ from PIL import Image
 
 from reweave.benchmarks.robodojo import tools
 from reweave.benchmarks.robodojo.toolkit import RoboDojoState
-from reweave.session import resolve_image_artifact
+from reweave.session.base import resolve_image_artifact
 
 
 def png(value):

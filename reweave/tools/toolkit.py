@@ -47,7 +47,7 @@ from reweave.utils.templates import substitute
 
 if TYPE_CHECKING:
     from reweave.memory.corpus import ReadOnlyCorpus
-    from reweave.session import EnvState, StepRecord
+    from reweave.session.base import EnvState, StepRecord
 
 
 @dataclass(slots=True)

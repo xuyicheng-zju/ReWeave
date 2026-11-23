@@ -38,7 +38,7 @@ from reweave.dashboard.events import (
     NullDashboardEventSink,
     RunStartedEvent,
 )
-from reweave.evaluation import RunFinalizationContext
+from reweave.evaluation.result import RunFinalizationContext
 from reweave.evaluation.settlement import settled_episode_termination
 from reweave.planner.base import (
     ACTION_OUTCOME_UNKNOWN,
@@ -49,7 +49,8 @@ from reweave.planner.base import (
     build_planner,
     task_evidence_is_complete,
 )
-from reweave.robots import RobotSpec, enumerate_robots, get_robot_spec, get_toolkit
+from reweave.robots.robot_spec import RobotSpec
+from reweave.robots.base import enumerate_robots, get_robot_spec, get_toolkit
 from reweave.runtime.capability import (
     EnvironmentInvalid,
     EnvironmentServiceFailure,

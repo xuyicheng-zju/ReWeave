@@ -25,9 +25,9 @@ import pytest
 
 from reweave.benchmarks.libero import robot_spec, toolkit
 from reweave.dashboard.events import NullDashboardEventSink
-from reweave.memory import ReadOnlyCorpus
+from reweave.memory.corpus import ReadOnlyCorpus
 from reweave.planner.base import accepted_finish_result
-from reweave.robots import RunConfig
+from reweave.robots.robot_spec import RunConfig
 from reweave.tools.toolkit import Toolkit, _is_readonly
 from reweave.utils import templates
 

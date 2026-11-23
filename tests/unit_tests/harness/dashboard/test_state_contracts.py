@@ -36,7 +36,7 @@ from reweave.dashboard.interaction import (
 )
 from reweave.dashboard.spec import DashboardSpec
 from reweave.dashboard.state import DashboardState
-from reweave.session import EnvState
+from reweave.session.base import EnvState
 from reweave.tools.toolkit import Toolkit, ToolResult
 
 DASHBOARD_SPEC: DashboardSpec = {

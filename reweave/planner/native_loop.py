@@ -39,10 +39,10 @@ from reweave.planner.native_context import (
     baseline_context,
     prepare_native,
 )
-from reweave.planner.providers import (
-    ClaudeDecisionSession,
-    CodexDecisionSession,
-    CursorDecisionSession,
+from reweave.planner.providers.claude import ClaudeDecisionSession
+from reweave.planner.providers.codex import CodexDecisionSession
+from reweave.planner.providers.cursor import CursorDecisionSession
+from reweave.planner.providers.base import (
     NativeCompletedInvalidDecision,
     NativeProtocolError,
     NativeSessionError,

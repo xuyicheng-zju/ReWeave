@@ -25,7 +25,7 @@ from typing import Any
 import imageio.v2 as imageio
 import numpy as np
 
-from reweave.utils.rpc import RpcClient
+from reweave.utils.rpc.rpc_client import RpcClient
 
 
 @dataclass(frozen=True)

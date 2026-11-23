@@ -7,7 +7,7 @@ import threading
 
 import pytest
 
-from reweave.utils.rpc import RpcFacade
+from reweave.utils.rpc.rpc_facade import RpcFacade
 from reweave.utils.rpc.main_thread_serve import MainThreadServeMixin
 
 

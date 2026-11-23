@@ -24,9 +24,10 @@ import pytest
 
 from reweave.dashboard.session import DashboardSessionController
 from reweave.dashboard.state import ClaimedTask
-from reweave.evaluation import RunFinalizationContext
+from reweave.evaluation.result import RunFinalizationContext
 from reweave.planner.base import PlannerResult
-from reweave.robots import PromptBundle, RunConfig
+from reweave.robots.prompt_bundle import PromptBundle
+from reweave.robots.robot_spec import RunConfig
 from reweave.runtime.capability import PhysicalOutcomeUnknown
 
 

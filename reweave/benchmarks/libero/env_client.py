@@ -28,7 +28,7 @@ from typing import Any
 import numpy as np
 
 from reweave.robots.components.env_client_base import BaseEnvClient
-from reweave.utils.rpc import RpcClient
+from reweave.utils.rpc.rpc_client import RpcClient
 
 
 class LiberoEnvClient(BaseEnvClient):

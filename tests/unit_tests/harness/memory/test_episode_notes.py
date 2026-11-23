@@ -16,11 +16,11 @@ from reweave.evolution.evidence.trace import (
     build_episode_context,
     resolve_trace_reference,
 )
-from reweave.memory import ReadOnlyCorpus
+from reweave.memory.corpus import ReadOnlyCorpus
 from reweave.memory.notes import EpisodeNotes, planner_memory_guidance
 from reweave.planner.bundle_runtime import BundleRuntime
 from reweave.runtime.kernel import EpisodeLimits
-from reweave.session import EnvState
+from reweave.session.base import EnvState
 from tests.native_fixture import ScriptedNativePlanner
 from tests.unit_tests.harness.evolution.fixtures import baseline
 from tests.unit_tests.harness.tools.test_toolkit_contracts import _ContractToolkit

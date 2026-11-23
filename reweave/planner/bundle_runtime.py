@@ -30,7 +30,7 @@ from reweave.runtime.capability import (
 )
 from reweave.runtime.kernel import EpisodeKernel, EpisodeLimits
 from reweave.runtime.model_budget import ModelServiceFailure
-from reweave.session import resolve_image_artifact
+from reweave.session.base import resolve_image_artifact
 from reweave.tools.toolkit import Toolkit, ToolResult, _runtime_json_object
 
 

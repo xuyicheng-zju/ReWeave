@@ -21,7 +21,7 @@ from pathlib import Path
 
 import pytest
 
-from reweave.evaluation import write_json_atomic
+from reweave.evaluation.result import write_json_atomic
 
 
 def test_write_json_atomic_replaces_complete_record(tmp_path: Path) -> None:

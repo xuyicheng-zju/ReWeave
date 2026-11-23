@@ -12,7 +12,7 @@ from pydantic_ai.models.function import FunctionModel
 from examples.robodojo_demo import SimulatedEnvironmentRPC, create_simulated_toolkit
 from reweave.benchmarks.robodojo.robot_spec import finalize_run
 from reweave.dashboard.events import NullDashboardEventSink
-from reweave.evaluation import RunFinalizationContext
+from reweave.evaluation.result import RunFinalizationContext
 from reweave.evolution.bundle import AgentBundle
 from reweave.evolution.search.rollout import RolloutEvaluator
 from reweave.planner.base import PHYSICAL_FAILURE, classify_episode_termination

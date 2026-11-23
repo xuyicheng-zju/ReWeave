@@ -7,7 +7,7 @@ import pytest
 
 from reweave.evolution.bundle import AgentBundle
 from reweave.planner.base import AGENT_EXECUTION_FAILURE
-from reweave.planner.providers import NativeTurnFailed
+from reweave.planner.providers.base import NativeTurnFailed
 from reweave.runtime.kernel import EpisodeLimits
 from tests.native_fixture import PhysicalRobot, ScriptedNativePlanner, rows
 from tests.unit_tests.harness.evolution.test_author_interaction import candidate

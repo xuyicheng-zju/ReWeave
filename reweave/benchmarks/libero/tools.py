@@ -29,7 +29,7 @@ from reweave.robots.vla_execution import (
     VLAExecution,
 )
 from reweave.runtime.capability import EnvironmentServiceFailure, PhysicalOutcomeUnknown
-from reweave.session import EnvState, StepRecord
+from reweave.session.base import EnvState, StepRecord
 from reweave.tools.toolkit import readonly
 from reweave.utils.logging import get_logger
 from reweave.utils.rpc.rpc_client import RpcTransportError

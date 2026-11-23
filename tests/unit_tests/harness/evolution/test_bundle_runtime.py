@@ -404,7 +404,7 @@ def test_episode_timeout_includes_controller_wait(tmp_path):
 
 
 def test_failed_model_attempts_consume_request_budget(tmp_path, monkeypatch):
-    from reweave.planner.providers import NativeTurnFailed
+    from reweave.planner.providers.base import NativeTurnFailed
 
     calls = []
 

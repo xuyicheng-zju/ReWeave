@@ -16,7 +16,7 @@ from reweave.planner.bundle_runtime import BundleRuntime
 from reweave.runtime.capability import PhysicalOutcomeUnknown
 from reweave.runtime.execution import ExecutionContext, ProgramExecution
 from reweave.runtime.kernel import EpisodeKernel, EpisodeLimits
-from reweave.session import EnvState
+from reweave.session.base import EnvState
 from reweave.tools.toolkit import Toolkit, readonly
 from reweave.utils.logging import init_output_dir
 from tests.native_fixture import ScriptedNativePlanner

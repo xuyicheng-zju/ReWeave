@@ -26,10 +26,10 @@ from typing import Any
 import pytest
 
 from reweave.dashboard.events import StepRecordEvent
-from reweave.memory import ReadOnlyCorpus
+from reweave.memory.corpus import ReadOnlyCorpus
 from reweave.memory import tools as memory_tools
 from reweave.planner.base import accepted_finish_result
-from reweave.session import EnvState
+from reweave.session.base import EnvState
 from reweave.tools import common
 from reweave.tools.toolkit import Toolkit, ToolResult, readonly
 

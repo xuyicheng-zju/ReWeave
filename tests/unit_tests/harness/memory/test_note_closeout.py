@@ -260,7 +260,7 @@ def test_note_failure_is_bounded_and_does_not_replace_environment_result(
             # No arbitrary sleep duration or provider callback supplies the end.
             await asyncio.Event().wait()
             pytest.fail("An uncompleted closeout request escaped its timeout")
-        from reweave.planner.providers import NativeTurnFailed
+        from reweave.planner.providers.base import NativeTurnFailed
 
         raise NativeTurnFailed("failed", {"message": "summary connection lost"})
 

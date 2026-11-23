@@ -21,7 +21,7 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING, Any, Protocol, TypeAlias
 
 if TYPE_CHECKING:
-    from reweave.session import EnvState, StepRecord
+    from reweave.session.base import EnvState, StepRecord
 
 
 @dataclass(frozen=True, slots=True)

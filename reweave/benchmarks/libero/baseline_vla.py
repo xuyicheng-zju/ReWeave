@@ -38,7 +38,8 @@ from reweave.robots.active_execution import ActiveExecution
 from reweave.robots.components.pi05_vla_client import Pi05VLAClient
 from reweave.robots.execution_trace import ExecutionTrace
 from reweave.utils.logging import get_logger
-from reweave.utils.rpc import RpcClient, make_rpc_client, wait_for_ready
+from reweave.utils.rpc.rpc_client import RpcClient
+from reweave.utils.rpc.client_utils import make_rpc_client, wait_for_ready
 
 logger = get_logger("baseline")
 

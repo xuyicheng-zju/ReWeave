@@ -8,7 +8,7 @@ from functools import wraps
 import pytest
 
 from reweave.planner.native_loop import NativeBundlePlanner
-from reweave.planner.providers import (
+from reweave.planner.providers.base import (
     NativeCompletedInvalidDecision,
     NativeProtocolError,
     NativeRecoveryBlocked,
@@ -175,7 +175,7 @@ def test_failed_native_provider_recovers_before_one_host_action(
     tmp_path, monkeypatch, compaction
 ):
     from reweave.planner import native_loop
-    from reweave.planner.providers import CodexDecisionSession
+    from reweave.planner.providers.codex import CodexDecisionSession
     from tests.unit_tests.harness.planner.test_native_codex_recovery import (
         BAD_REQUEST,
         STREAM_ERROR,
@@ -398,7 +398,7 @@ def test_shared_cost_cap_still_terminates_without_granting_extra_turn(tmp_path):
 
 @async_test
 async def test_start_failure_without_sid_parks_before_any_model_charge(tmp_path):
-    from reweave.planner.providers import NativeAuthenticationError
+    from reweave.planner.providers.base import NativeAuthenticationError
 
     class StartBlocked(RecoverySession):
         def __init__(self, *args):
@@ -632,7 +632,7 @@ def test_last_failed_controller_attempt_ends_at_cost_cap_instead_of_parking(
 def test_known_failed_campaign_wait_expires_without_another_model_request(
     tmp_path, starting, phase
 ):
-    from reweave.planner.providers import NativeAuthenticationError
+    from reweave.planner.providers.base import NativeAuthenticationError
 
     class Failed(RecoverySession):
         def recovery_status(self, request_id):

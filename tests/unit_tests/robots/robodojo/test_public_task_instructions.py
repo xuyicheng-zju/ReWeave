@@ -36,7 +36,7 @@ from reweave.dashboard.events import NullDashboardEventSink
 from reweave.evolution.bundle import AgentBundle
 from reweave.evolution.runtime_manifest import RuntimeAuthoringContract
 from reweave.planner.bundle_runtime import BundleRuntime
-from reweave.planner.providers import CodexDecisionSession
+from reweave.planner.providers.codex import CodexDecisionSession
 from reweave.runtime.kernel import EpisodeLimits
 from tests.native_fixture import ScriptedNativePlanner
 from tests.unit_tests.harness.planner.test_native_provider_codex import FakeTransport

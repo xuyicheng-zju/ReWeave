@@ -25,7 +25,7 @@ from reweave.planner.base import (
     API_ERROR,
     SUCCESS,
 )
-from reweave.planner.providers import NativeTurnFailed
+from reweave.planner.providers.base import NativeTurnFailed
 from reweave.runtime.capability import PhysicalOutcomeUnknown
 from reweave.utils.persistence import atomic_json
 from tests.native_fixture import ScriptedNativePlanner

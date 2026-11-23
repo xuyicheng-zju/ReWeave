@@ -9,7 +9,7 @@ from reweave.evolution.evidence.records import inspect_episode
 from reweave.memory.notes import planner_memory_guidance
 from reweave.planner.native_context import baseline_context
 from reweave.planner.native_loop import NativeBundlePlanner
-from reweave.planner.providers import NativeSessionError
+from reweave.planner.providers.base import NativeSessionError
 from reweave.robots.execution_trace import ExecutionTrace
 from reweave.runtime.kernel import EpisodeLimits
 from tests.native_robot import Robot

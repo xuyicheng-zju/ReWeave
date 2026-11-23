@@ -31,17 +31,17 @@ from reweave.benchmarks.libero.evaluation import (
 from reweave.benchmarks.libero.prompt_bundle import system_prompt, user_prompt
 from reweave.dashboard.events import DashboardEventSink
 from reweave.dashboard.spec import DashboardSpec
-from reweave.memory import ReadOnlyCorpus
+from reweave.memory.corpus import ReadOnlyCorpus
 from reweave.robots.prompt_bundle import PromptBundle
 from reweave.robots.robot_spec import RobotSpec, RunConfig
 from reweave.robots.runtime import try_spawn_server, try_wait_server
 from reweave.utils.config import get_memory_dir, get_repo_root
 from reweave.utils.daemon import ProcessDaemon, reserve_free_port
-from reweave.utils.rpc import make_rpc_client
+from reweave.utils.rpc.client_utils import make_rpc_client
 from reweave.utils.rpc.http_rpc import HttpRpcClient
 
 if TYPE_CHECKING:
-    from reweave.utils.rpc import RpcClient
+    from reweave.utils.rpc.rpc_client import RpcClient
 
 
 LIBERO_SUITE_NAMES = (

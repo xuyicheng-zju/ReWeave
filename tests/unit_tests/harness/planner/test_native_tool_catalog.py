@@ -7,7 +7,7 @@ import pytest
 from reweave.evolution.bundle import AgentBundle
 from reweave.planner.native_context import baseline_context
 from reweave.planner.native_loop import NativeBundlePlanner
-from reweave.planner.providers import NativeTransportError
+from reweave.planner.providers.base import NativeTransportError
 from reweave.runtime import execution
 from reweave.runtime.kernel import EpisodeLimits
 from tests.native_robot import Robot

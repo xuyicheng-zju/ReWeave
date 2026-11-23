@@ -289,7 +289,8 @@ def test_full_cli_exploration_archives_run_without_memory_manager(
 ) -> None:
     cli = _cli_module()
     from reweave.planner.base import PlannerResult
-    from reweave.robots import PromptBundle, RobotSpec, RunConfig
+    from reweave.robots.prompt_bundle import PromptBundle
+    from reweave.robots.robot_spec import RobotSpec, RunConfig
     from reweave.tools.toolkit import ToolResult
 
     calls: dict[str, Any] = {}
@@ -506,9 +507,10 @@ def test_full_cli_calls_robot_result_finalizer_without_robot_special_case(
     planner_error: str | None,
 ) -> None:
     cli = _cli_module()
-    from reweave.evaluation import RunFinalizationContext, write_json_atomic
+    from reweave.evaluation.result import RunFinalizationContext, write_json_atomic
     from reweave.planner.base import PlannerResult
-    from reweave.robots import PromptBundle, RobotSpec, RunConfig
+    from reweave.robots.prompt_bundle import PromptBundle
+    from reweave.robots.robot_spec import RobotSpec, RunConfig
 
     captured: list[RunFinalizationContext] = []
     stopped: list[str] = []
@@ -695,9 +697,10 @@ def test_cli_preserves_primary_failure_when_evaluation_and_cleanup_fail(
     expected_termination: str,
     cleanup_count: int,
 ) -> None:
-    from reweave.evaluation import RunFinalizationContext
+    from reweave.evaluation.result import RunFinalizationContext
     from reweave.planner.base import PlannerResult
-    from reweave.robots import PromptBundle, RobotSpec, RunConfig
+    from reweave.robots.prompt_bundle import PromptBundle
+    from reweave.robots.robot_spec import RobotSpec, RunConfig
     from reweave.runtime.capability import PhysicalOutcomeUnknown
 
     cli = _cli_module()
@@ -802,7 +805,8 @@ def test_cli_exploration_continues_only_after_structured_planner_timeout(
     reasoning_effort: str,
 ) -> None:
     from reweave.planner.base import PlannerResult
-    from reweave.robots import PromptBundle, RobotSpec, RunConfig
+    from reweave.robots.prompt_bundle import PromptBundle
+    from reweave.robots.robot_spec import RobotSpec, RunConfig
 
     cli = _cli_module()
     lifecycle: list[str] = []
@@ -904,7 +908,8 @@ def test_baseline_capture_waits_for_cleanup_before_reporting_success(
     tmp_path, monkeypatch, cleanup_failure
 ):
     from reweave.evolution import runtime_manifest
-    from reweave.robots import PromptBundle, RobotSpec, RunConfig
+    from reweave.robots.prompt_bundle import PromptBundle
+    from reweave.robots.robot_spec import RobotSpec, RunConfig
 
     cli = _cli_module()
     cleanup = []

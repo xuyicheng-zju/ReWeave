@@ -22,7 +22,7 @@ from typing import Any
 import numpy as np
 import pytest
 
-from reweave.session import EnvState, StepRecord, resolve_image_artifact
+from reweave.session.base import EnvState, StepRecord, resolve_image_artifact
 
 
 class _StepFailure(Exception):

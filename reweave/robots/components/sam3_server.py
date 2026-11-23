@@ -43,7 +43,7 @@ from PIL import Image
 from pydantic import BaseModel, Field, model_validator
 
 from reweave.utils.logging import get_logger
-from reweave.utils.rpc import RpcFacade
+from reweave.utils.rpc.rpc_facade import RpcFacade
 
 logger = get_logger("sam3_server")
 

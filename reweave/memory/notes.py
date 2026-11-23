@@ -10,7 +10,7 @@ from typing import TYPE_CHECKING
 from uuid import uuid4
 
 if TYPE_CHECKING:
-    from reweave.session import EnvState
+    from reweave.session.base import EnvState
     from reweave.tools.toolkit import Toolkit
 
 from reweave.memory.experience import TASK_FAMILY_FORMAT

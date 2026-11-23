@@ -26,7 +26,7 @@ from typing import Any
 import pytest
 
 from reweave.utils.daemon import ProcessDaemon, reserve_free_port
-from reweave.utils.rpc import make_rpc_client, wait_for_ready
+from reweave.utils.rpc.client_utils import make_rpc_client, wait_for_ready
 from reweave.utils.rpc.http_rpc import HttpRpcClient
 
 

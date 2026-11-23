@@ -9,7 +9,7 @@ from pathlib import Path
 
 import pytest
 
-from reweave.planner.providers import (
+from reweave.planner.providers.base import (
     NativeProtocolError,
     NativeRpcError,
     NativeTransportError,

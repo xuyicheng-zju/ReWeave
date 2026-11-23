@@ -17,7 +17,7 @@ from typing import TYPE_CHECKING, Any
 
 from reweave.cli.main import _handoff_message
 from reweave.dashboard.events import RunStartedEvent
-from reweave.evaluation import RunFinalizationContext
+from reweave.evaluation.result import RunFinalizationContext
 from reweave.evaluation.settlement import settled_episode_termination
 from reweave.planner.base import (
     ACTION_OUTCOME_UNKNOWN,
@@ -26,7 +26,7 @@ from reweave.planner.base import (
     SUCCESS,
     build_planner,
 )
-from reweave.robots import get_toolkit
+from reweave.robots.base import get_toolkit
 from reweave.runtime.capability import (
     EnvironmentInvalid,
     EnvironmentServiceFailure,

@@ -18,7 +18,8 @@ from reweave.planner.base import (
     SUCCESS,
     PlannerResult,
 )
-from reweave.robots import PromptBundle, RobotSpec, RunConfig
+from reweave.robots.prompt_bundle import PromptBundle
+from reweave.robots.robot_spec import RobotSpec, RunConfig
 from tests.unit_tests.harness.cli.test_main_contracts import _cli_module
 
 

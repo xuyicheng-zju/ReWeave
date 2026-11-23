@@ -13,7 +13,7 @@ from reweave.dashboard.events import NullDashboardEventSink
 from reweave.robots.active_execution import ActiveExecution
 from reweave.robots.execution_trace import ExecutionTrace
 from reweave.robots.vla_execution import VLAActionBuffer, VLAChunkPrediction
-from reweave.session import EnvState
+from reweave.session.base import EnvState
 from reweave.tools.toolkit import (
     Toolkit,
     readonly,

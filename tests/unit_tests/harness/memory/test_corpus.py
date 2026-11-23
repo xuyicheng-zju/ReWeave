@@ -4,7 +4,8 @@
 
 import pytest
 
-from reweave.memory import ReadOnlyCorpus, tools
+from reweave.memory.corpus import ReadOnlyCorpus
+from reweave.memory import tools
 
 
 @pytest.mark.parametrize("scope", ["global", "task-family", "task-specific", "results"])

@@ -17,7 +17,7 @@ from reweave.planner.base import (
 from reweave.planner.native_loop import NativeBundlePlanner
 from reweave.planner.utils.http_mcp_server import HttpMcpServer
 from reweave.runtime.capability import PhysicalOutcomeUnknown
-from reweave.session import EnvState
+from reweave.session.base import EnvState
 from reweave.tools.toolkit import Toolkit
 from reweave.utils.logging import init_output_dir
 

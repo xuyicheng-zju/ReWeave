@@ -21,7 +21,7 @@ from reweave.robots.active_execution import ActiveExecution
 from reweave.robots.execution_trace import ExecutionTrace
 from reweave.runtime.capability import ModelInputRejected
 from reweave.runtime.model_budget import ModelServiceFailure
-from reweave.session import EnvState
+from reweave.session.base import EnvState
 from reweave.tools.toolkit import Toolkit
 from reweave.utils.logging import get_output_dir
 

@@ -35,7 +35,7 @@ from typing import TYPE_CHECKING, Any
 
 from reweave.dashboard.events import DashboardEventSink
 from reweave.dashboard.spec import DashboardSpec
-from reweave.evaluation import RunFinalizer
+from reweave.evaluation.result import RunFinalizer
 from reweave.robots.prompt_bundle import PromptBundle
 
 if TYPE_CHECKING:

@@ -10,7 +10,7 @@ from PIL import Image
 from reweave.evolution.bundle import AgentBundle, RequestLimits
 from reweave.planner.native_context import baseline_context, prepare_native
 from reweave.planner.native_loop import NativeBundlePlanner
-from reweave.planner.providers import NativeTurnFailed
+from reweave.planner.providers.base import NativeTurnFailed
 from reweave.runtime.capability import ModelInputRejected
 from reweave.runtime.kernel import EpisodeLimits
 from tests.native_robot import Robot
@@ -234,7 +234,7 @@ def test_connection_recovery_keeps_live_loop_and_request_identity(
     tmp_path, monkeypatch
 ):
     from reweave.planner import native_loop
-    from reweave.planner.providers import NativeTransportError
+    from reweave.planner.providers.base import NativeTransportError
 
     waits = []
 
@@ -304,7 +304,7 @@ def test_native_cli_bootstraps_standard_harness_without_capture(tmp_path):
 
 def test_transient_connection_before_session_start_keeps_episode(tmp_path, monkeypatch):
     import reweave.planner.native_loop as module
-    from reweave.planner.providers import NativeTransportError
+    from reweave.planner.providers.base import NativeTransportError
 
     instances = []
 

@@ -11,8 +11,8 @@ import pytest
 
 from reweave.planner import codex_connection
 from reweave.planner.native_loop import NativeBundlePlanner
-from reweave.planner.providers import (
-    ClaudeDecisionSession,
+from reweave.planner.providers.claude import ClaudeDecisionSession
+from reweave.planner.providers.base import (
     NativeAuthenticationError,
     NativeProtocolError,
     NativeSubmissionUnknown,
