@@ -260,55 +260,6 @@ sup, sub { line-height: 0; }
   background: var(--accent-wash);
 }
 
-/* ---------- Buttons ---------- */
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: .4rem;
-  min-block-size: 2.6rem;
-  padding-inline: 1.15rem;
-  border: 1px solid transparent;
-  border-radius: 6px;
-  font-size: .85rem;
-  font-weight: 500;
-  letter-spacing: .005em;
-  text-decoration: none;
-  transition: background-color .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
-}
-
-.btn--sm {
-  min-block-size: 2.1rem;
-  padding-inline: .85rem;
-  font-size: .78rem;
-}
-
-.btn--solid {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #f7f5ee;
-}
-
-.btn--solid:hover {
-  background: var(--accent-strong);
-  border-color: var(--accent-strong);
-  transform: translateY(-1px);
-}
-
-.btn--ghost {
-  border-color: var(--line-strong);
-  background: transparent;
-  color: var(--ink-soft);
-}
-
-.btn--ghost:hover {
-  border-color: var(--ink-soft);
-  background: var(--surface);
-  color: var(--ink);
-  transform: translateY(-1px);
-}
-
 /* ---------- Hero ---------- */
 
 .hero {
@@ -434,12 +385,30 @@ sup, sub { line-height: 0; }
 
 .hero-resources { align-items: center; }
 
-.resource-status {
-  margin-inline-end: .25rem;
-  color: var(--muted);
-  font-size: .82rem;
+.hero-resources > * {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .38rem;
+  min-block-size: 2.65rem;
+  padding-inline: .68rem;
+  font-size: .86rem;
   white-space: nowrap;
 }
+
+.hero-resources a {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.hero-resources a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: .22em;
+}
+
+.resource-status { color: var(--muted); }
 
 /* Unified Hero Abstract Panel */
 
@@ -3086,7 +3055,13 @@ body:has(#rollout-player[open]) { overflow: hidden; }
 .feature-story header { min-inline-size: 0; }
 @media (max-width: 32rem) {
   .hero-resources { gap: .38rem; }
-  .hero-resources .btn { padding-inline: .68rem; font-size: .76rem; }
+  .hero-resources > * { padding-inline: .22rem; font-size: .8rem; }
+}
+@media (max-width: 22rem) {
+  .hero-resources { column-gap: .35rem; }
+  .hero-resources > * { gap: .23rem; padding-inline: 0; font-size: .76rem; }
+  .hero-resources .resource-status img { inline-size: 2.6rem; }
+  .hero-resources a img { max-inline-size: 1.25rem; }
 }
 .trace-flow { grid-template-columns: minmax(0, 1fr); }
 .trace-flow > .trace-block, .trace-block .excerpt { min-inline-size: 0; }
