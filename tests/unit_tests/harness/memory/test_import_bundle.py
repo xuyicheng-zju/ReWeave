@@ -2,6 +2,7 @@
 # Modified for ReWeave.
 """Text import freezes audited C content without creating a learning service."""
 
+import os
 import asyncio
 import json
 
@@ -200,18 +201,16 @@ def test_import_never_overwrites_existing_publication(tmp_path, existing):
 
 
 def test_failed_bundle_publication_rolls_back_only_its_receipt(tmp_path, monkeypatch):
-    from reweave.memory import import_bundle
-
     _, manifest_path, bundle_path = inputs(tmp_path)
     output = tmp_path / "result.json"
-    publish = import_bundle._publish_json
+    link = os.link
 
-    def fail_bundle(path, value):
+    def fail_bundle(source, path):
         if path == output:
             raise OSError("publication failed")
-        publish(path, value)
+        link(source, path)
 
-    monkeypatch.setattr(import_bundle, "_publish_json", fail_bundle)
+    monkeypatch.setattr(os, "link", fail_bundle)
     with pytest.raises(OSError, match="publication failed"):
         publish_import(manifest_path, bundle_path, output)
     assert not list(tmp_path.glob("result.json*"))

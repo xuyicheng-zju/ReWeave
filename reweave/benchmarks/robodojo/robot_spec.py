@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import argparse
 import copy
+import json
 import os
 import subprocess
 import sys
@@ -18,7 +19,7 @@ from typing import TYPE_CHECKING, Any
 from reweave.benchmarks.robodojo.prompt_bundle import system_prompt, user_prompt
 from reweave.dashboard.events import DashboardEventSink
 from reweave.dashboard.spec import DashboardSpec
-from reweave.evaluation.result import RunFinalizationContext, write_json_atomic
+from reweave.evaluation.result import RunFinalizationContext
 from reweave.memory.corpus import ReadOnlyCorpus
 from reweave.planner.base import ACTION_OUTCOME_UNKNOWN
 from reweave.robots.prompt_bundle import PromptBundle
@@ -26,6 +27,7 @@ from reweave.robots.robot_spec import RobotSpec, RunConfig
 from reweave.robots.runtime import try_spawn_server, try_wait_server
 from reweave.utils.config import get_memory_dir, get_repo_root
 from reweave.utils.daemon import ProcessDaemon, reserve_free_port
+from reweave.utils.persistence import atomic_text
 from reweave.utils.rpc.client_utils import make_rpc_client
 from reweave.utils.rpc.http_rpc import HttpRpcClient
 
@@ -162,7 +164,9 @@ def finalize_run(context: RunFinalizationContext) -> Path:
         },
         "planner_timeout_s": context.planner_timeout_s,
     }
-    return write_json_atomic(context.output_dir / "result.json", record)
+    destination = context.output_dir / "result.json"
+    atomic_text(destination, json.dumps(record, indent=2) + "\n")
+    return destination
 
 
 def get_toolkit(

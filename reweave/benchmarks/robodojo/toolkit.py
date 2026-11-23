@@ -4,6 +4,7 @@
 
 from __future__ import annotations
 
+import json
 import os
 from contextlib import contextmanager, nullcontext
 from dataclasses import replace
@@ -16,7 +17,6 @@ from reweave.benchmarks.robodojo.planner_observation import (
     PlannerObservation,
     contains_text,
 )
-from reweave.evaluation.result import write_json_atomic
 from reweave.robots.active_execution import ActiveExecution
 from reweave.robots.execution_trace import ExecutionTrace
 from reweave.runtime.capability import ModelInputRejected
@@ -24,6 +24,7 @@ from reweave.runtime.model_budget import ModelServiceFailure
 from reweave.session.base import EnvState
 from reweave.tools.toolkit import Toolkit
 from reweave.utils.logging import get_output_dir
+from reweave.utils.persistence import atomic_text
 
 
 class RoboDojoState(EnvState):
@@ -172,9 +173,13 @@ class RoboDojoToolkit(Toolkit):
         )
         primitives = getattr(self, "_primitives", None)
         if getattr(primitives, "graspgen_client", None) is not None:
-            write_json_atomic(
+            atomic_text(
                 Path(get_output_dir()) / "graspgen_config.json",
-                self._primitives.graspgen_client.config.model_dump(mode="json"),
+                json.dumps(
+                    self._primitives.graspgen_client.config.model_dump(mode="json"),
+                    indent=2,
+                )
+                + "\n",
             )
         self._planner_observation = PlannerObservation()
         self._primitives.env.bind_frozen_execution(
@@ -295,7 +300,10 @@ class RoboDojoToolkit(Toolkit):
         )
         if prior is not None:
             guidance += "\n\n" + prior["prompt"]
-            write_json_atomic(Path(get_output_dir()) / "vla_baseline_prior.json", prior)
+            atomic_text(
+                Path(get_output_dir()) / "vla_baseline_prior.json",
+                json.dumps(prior, indent=2) + "\n",
+            )
         return {
             **context,
             "instructions": context["instructions"] + "\n\n" + guidance,

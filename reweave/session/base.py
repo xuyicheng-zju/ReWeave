@@ -11,13 +11,14 @@ from collections.abc import Generator
 from contextlib import contextmanager
 from dataclasses import dataclass, field
 from pathlib import Path
+from tempfile import TemporaryDirectory
 from typing import Any
 
 import imageio.v2 as imageio
 import numpy as np
 
 from reweave.utils.logging import get_logger
-from reweave.utils.persistence import atomic_path
+from reweave.utils.persistence import atomic_text
 
 logger = get_logger("env_state")
 
@@ -116,31 +117,22 @@ class EnvState:
         artifact = Path(name)
         return self._output_dir / name / f"{step:02d}{artifact.suffix}"
 
-    def _manifest_file(self) -> Path:
-        return self._output_dir / _MANIFEST_NAME
-
-    def _temporary_file(self, destination: Path) -> Path:
-        return destination.with_name(f".{destination.stem}.tmp{destination.suffix}")
-
     def _record_for(self, step: int) -> StepRecord:
         """Return the live step record at ``step`` for in-place updates."""
         if 0 <= step < len(self._steps):
             return self._steps[step]
         raise KeyError(f"step {step} not present in state trace")
 
-
     def _write_manifest(self) -> None:
-        destination = self._manifest_file()
-        temporary = self._temporary_file(destination)
         manifest = {
             "run_artifacts": sorted(self._run_artifacts),
             "steps": [record.to_blob() for record in self._steps],
         }
-        with atomic_path(destination, temporary):
-            # Rewritten whole at every tool boundary: compact JSON keeps the cost flat.
-            with temporary.open("w") as file:
-                json.dump(manifest, file, default=_json_default)
-
+        # Rewritten whole at every tool boundary: compact JSON keeps the cost flat.
+        atomic_text(
+            self._output_dir / _MANIFEST_NAME,
+            json.dumps(manifest, default=_json_default),
+        )
 
     def reset(self) -> None:
         """Reset the in-memory trace without removing on-disk artifacts."""
@@ -190,45 +182,48 @@ class EnvState:
         step = self._resolve_read_step(step)
         destination = self._artifact_file(name, step)
         destination.parent.mkdir(parents=True, exist_ok=True)
-        temporary = self._temporary_file(destination)
         suffix = destination.suffix.lower()
         record: StepRecord | None = self._record_for(step) if step is not None else None
         try:
-            with atomic_path(destination, temporary):
-                if suffix in _IMAGE_SUFFIXES:
-                    array = np.asarray(value)
-                    if array.dtype != np.uint8:
-                        array = array.astype(np.uint8)
-                    imageio.imwrite(temporary, array)
-                elif suffix == ".npy":
-                    np.save(temporary, np.asarray(value))
-                elif suffix == ".npz":
-                    np.savez_compressed(temporary, array=np.asarray(value))
-                elif suffix == ".json":
-                    with temporary.open("w") as file:
-                        json.dump(value, file, indent=2, default=_json_default)
-                elif suffix == ".jsonl":
-                    with temporary.open("w") as file:
-                        if isinstance(value, str):
-                            file.write(value)
+            if suffix == ".json":
+                atomic_text(
+                    destination, json.dumps(value, indent=2, default=_json_default)
+                )
+            elif suffix == ".jsonl":
+                text = value if isinstance(value, str) else "".join(
+                    json.dumps(item, default=_json_default) + "\n" for item in value
+                )
+                atomic_text(destination, text)
+            elif suffix in _TEXT_SUFFIXES:
+                atomic_text(destination, str(value))
+            else:
+                with TemporaryDirectory(
+                    dir=destination.parent, prefix=".publish-"
+                ) as staging:
+                    temporary = Path(staging) / destination.name
+                    if suffix in _IMAGE_SUFFIXES:
+                        array = np.asarray(value)
+                        if array.dtype != np.uint8:
+                            array = array.astype(np.uint8)
+                        imageio.imwrite(temporary, array)
+                    elif suffix == ".npy":
+                        np.save(temporary, np.asarray(value))
+                    elif suffix == ".npz":
+                        np.savez_compressed(temporary, array=np.asarray(value))
+                    elif suffix == ".mp4":
+                        if isinstance(value, (bytes, bytearray, memoryview)):
+                            temporary.write_bytes(bytes(value))
                         else:
-                            for item in value:
-                                file.write(json.dumps(item, default=_json_default) + "\n")
-                elif suffix == ".mp4":
-                    if isinstance(value, (bytes, bytearray, memoryview)):
+                            imageio.mimwrite(
+                                temporary,
+                                list(value),
+                                fps=int(options.get("fps", 20)),
+                            )
+                    elif suffix == ".bin":
                         temporary.write_bytes(bytes(value))
                     else:
-                        imageio.mimwrite(
-                            temporary,
-                            list(value),
-                            fps=int(options.get("fps", 20)),
-                        )
-                elif suffix in _TEXT_SUFFIXES:
-                    temporary.write_text(str(value))
-                elif suffix == ".bin":
-                    temporary.write_bytes(bytes(value))
-                else:
-                    raise ValueError(f"unsupported artifact suffix: {suffix}")
+                        raise ValueError(f"unsupported artifact suffix: {suffix}")
+                    temporary.replace(destination)
             if record is not None:
                 record.artifacts.add(name)
             else:

@@ -15,6 +15,8 @@ import jsonschema
 from reweave import __version__
 from reweave.planner.cursor_connection import DEFAULT_CURSOR_MODEL, cursor_model_spec
 
+from reweave.utils.persistence import atomic_text
+
 from .base import (
     DurableDecisionSession,
     NativeAuthenticationError,
@@ -26,7 +28,6 @@ from .base import (
     NativeTurnFailed,
     _canonical,
     _decision_text,
-    _write_json,
 )
 from .cursor_stdio import CursorStdioTransport
 from .transport import NativeTransport
@@ -393,7 +394,10 @@ class CursorDecisionSession(DurableDecisionSession):
                 }
                 directory = self.directory / "requests" / request["directory"]
                 self._archive_inputs(directory, blobs)
-                _write_json(directory / "input.json", inputs)
+                atomic_text(
+                    directory / "input.json",
+                    json.dumps(inputs, ensure_ascii=False, allow_nan=False) + "\n",
+                )
                 self._state["requests"][request_id] = request
                 self._save()
             else:
@@ -477,7 +481,10 @@ class CursorDecisionSession(DurableDecisionSession):
                 )
                 self._save()
                 raise NativeCompletedInvalidDecision(str(error)) from error
-            _write_json(directory / "result.json", decision)
+            atomic_text(
+                directory / "result.json",
+                json.dumps(decision, ensure_ascii=False, allow_nan=False) + "\n",
+            )
             request["phase"] = "completed"
             self._state["instructions_delivered"] = True
             self._save()

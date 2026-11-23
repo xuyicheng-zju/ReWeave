@@ -7,13 +7,11 @@ from __future__ import annotations
 import json
 import os
 import re
-from contextlib import nullcontext, suppress
+from contextlib import suppress
 from dataclasses import asdict, is_dataclass
 from pathlib import Path, PureWindowsPath
 from typing import Any
 from uuid import UUID
-
-from reweave.utils.persistence import atomic_path
 
 
 def native_event_field(value: Any, name: str, default: Any = None) -> Any:
@@ -38,20 +36,6 @@ def serialize_native_event(value: Any) -> Any:
     if isinstance(value, (str, int, float, bool)) or value is None:
         return value
     raise TypeError(f"unsupported SDK audit value: {type(value).__name__}")
-
-
-def write_json(path: Path, value: Any) -> None:
-    """Atomically persist a complete Host record."""
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with atomic_path(
-        path, path.with_suffix(path.suffix + ".tmp"), cleanup=nullcontext
-    ) as temporary:
-        with temporary.open("w", encoding="utf-8") as stream:
-            stream.write(
-                json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False) + "\n"
-            )
-            stream.flush()
-            os.fsync(stream.fileno())
 
 
 def _validate_session_id(identity: str) -> None:

@@ -10,19 +10,20 @@ LIBERO primitives (``move_to``, ``pi0_pick``, ``release``, ...) on top.
 from __future__ import annotations
 
 import copy
+import json
 from functools import partial
 from pathlib import Path
 from typing import Any
 
 from reweave.benchmarks.libero import tools as libero_tools
 from reweave.dashboard.events import DashboardEventSink
-from reweave.evaluation.result import write_json_atomic
 from reweave.memory.corpus import ReadOnlyCorpus
 from reweave.robots.active_execution import ActiveExecution
 from reweave.robots.execution_trace import ExecutionTrace
 from reweave.session.base import EnvState
 from reweave.tools.toolkit import Toolkit, readonly
 from reweave.utils.logging import get_logger, get_output_dir
+from reweave.utils.persistence import atomic_text
 
 logger = get_logger("libero_toolkit")
 
@@ -244,9 +245,10 @@ class LiberoToolkit(Toolkit):
         self._primitives = primitives
         graspgen_client = getattr(primitives, "_graspgen_client", None)
         if graspgen_client is not None:
-            write_json_atomic(
+            atomic_text(
                 self._state_output_dir / "graspgen_config.json",
-                graspgen_client.config.model_dump(mode="json"),
+                json.dumps(graspgen_client.config.model_dump(mode="json"), indent=2)
+                + "\n",
             )
         self._solved |= record.terminated
         self._publish_step(record)

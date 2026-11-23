@@ -16,6 +16,8 @@ import jsonschema
 
 from reweave.planner.codex_connection import claude_environment, claude_executable
 
+from reweave.utils.persistence import atomic_text
+
 from .base import (
     DurableDecisionSession,
     NativeAuthenticationError,
@@ -23,7 +25,6 @@ from .base import (
     NativeSubmissionUnknown,
     NativeTransportError,
     NativeTurnFailed,
-    _write_json,
 )
 
 
@@ -226,7 +227,10 @@ class ClaudeDecisionSession(DurableDecisionSession):
                     target = self._image_path(directory, image, index)
                     target.parent.mkdir(parents=True, exist_ok=True)
                     shutil.copyfile(image["path"], target)
-                _write_json(directory / "input.json", inputs)
+                atomic_text(
+                    directory / "input.json",
+                    json.dumps(inputs, ensure_ascii=False, allow_nan=False) + "\n",
+                )
                 self._state["requests"][request_id] = request
                 self._save()
                 self._record("decision_prepared", request_id=request_id)
@@ -320,7 +324,10 @@ class ClaudeDecisionSession(DurableDecisionSession):
         }
         request.update(phase="failed", status=source.subtype or "error", error=error)
         self._save()
-        _write_json(directory / "native_completion.json", request)
+        atomic_text(
+            directory / "native_completion.json",
+            json.dumps(request, ensure_ascii=False, allow_nan=False) + "\n",
+        )
         if error["api_error_status"] in {401, 403}:
             raise NativeAuthenticationError(
                 f"Claude provider rejected the credential (HTTP {error['api_error_status']})"
@@ -328,16 +335,21 @@ class ClaudeDecisionSession(DurableDecisionSession):
         raise NativeTurnFailed(request["status"], error)
 
     def _finish(self, request: dict, inputs: dict, directory: Path, result) -> dict:
-        _write_json(
+        atomic_text(
             directory / "native_completion.json",
-            {
-                "subtype": result.subtype,
-                "is_error": result.is_error,
-                "num_turns": result.num_turns,
-                "usage": result.usage,
-                "total_cost_usd": result.total_cost_usd,
-                "terminal_reason": result.terminal_reason,
-            },
+            json.dumps(
+                {
+                    "subtype": result.subtype,
+                    "is_error": result.is_error,
+                    "num_turns": result.num_turns,
+                    "usage": result.usage,
+                    "total_cost_usd": result.total_cost_usd,
+                    "terminal_reason": result.terminal_reason,
+                },
+                ensure_ascii=False,
+                allow_nan=False,
+            )
+            + "\n",
         )
         self._state["token_usage"] = result.usage
         if result.is_error:
@@ -353,7 +365,10 @@ class ClaudeDecisionSession(DurableDecisionSession):
             raise NativeProtocolError(
                 "Completed native output did not satisfy the decision schema"
             ) from error
-        _write_json(directory / "result.json", decision)
+        atomic_text(
+            directory / "result.json",
+            json.dumps(decision, ensure_ascii=False, allow_nan=False) + "\n",
+        )
         request.update(phase="completed", status="completed")
         self._save()
         self._record("decision_completed", request_id=request["request_id"])

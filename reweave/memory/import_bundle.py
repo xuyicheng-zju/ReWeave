@@ -5,8 +5,6 @@
 from __future__ import annotations
 
 import json
-import os
-import tempfile
 from pathlib import Path
 from uuid import uuid4
 
@@ -14,7 +12,7 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator, model_valida
 
 from reweave.evolution.bundle import AgentBundle, Asset, TextSkill
 from reweave.memory.experience import ExperienceId, ExperienceScope
-from reweave.utils.persistence import atomic_path, sync_directory
+from reweave.utils.persistence import atomic_text
 
 
 class LocalSource(BaseModel):
@@ -133,19 +131,6 @@ def import_corpus(
     return AgentBundle.model_validate(payload), tuple(inventory)
 
 
-def _publish_json(path: Path, value: dict) -> None:
-    """Atomically expose one complete file, refusing an existing destination."""
-    raw = (json.dumps(value, ensure_ascii=False, indent=2) + "\n").encode()
-    stream = tempfile.NamedTemporaryFile(dir=path.parent, delete=False)
-    # Unlike rename, a hard link cannot overwrite a concurrently created file.
-    with atomic_path(path, Path(stream.name), publish=os.link):
-        with stream:
-            stream.write(raw)
-            stream.flush()
-            os.fsync(stream.fileno())
-    sync_directory(path.parent)
-
-
 def publish_import(manifest_path: Path, bundle_path: Path, output: Path) -> dict:
     """Publish a new Bundle and its audit receipt without changing source assets."""
     receipt_path = output.with_name(output.name + ".receipt.json")
@@ -182,9 +167,18 @@ def publish_import(manifest_path: Path, bundle_path: Path, output: Path) -> dict
         "verification": "unverified",
     }
     # Publish the receipt first; a visible Bundle always has its complete audit.
-    _publish_json(receipt_path, receipt)
+    atomic_text(
+        receipt_path,
+        json.dumps(receipt, ensure_ascii=False, indent=2) + "\n",
+        exclusive=True,
+    )
     try:
-        _publish_json(output, imported.model_dump(mode="json"))
+        atomic_text(
+            output,
+            json.dumps(imported.model_dump(mode="json"), ensure_ascii=False, indent=2)
+            + "\n",
+            exclusive=True,
+        )
     except BaseException:
         receipt_path.unlink()
         raise

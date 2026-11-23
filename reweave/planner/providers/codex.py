@@ -19,7 +19,7 @@ import jsonschema
 from reweave import __version__
 from reweave.planner.codex_connection import codex_connection_config, codex_model_config
 
-from reweave.utils.persistence import atomic_path
+from reweave.utils.persistence import atomic_text
 from .base import (
     DurableDecisionSession,
     NativeAuthenticationError,
@@ -33,7 +33,6 @@ from .base import (
     NativeTurnRecoveryRequired,
     _decision_text,
     _same_bytes,
-    _write_json,
 )
 from .stdio import CodexStdioTransport
 from .transport import NativeTransport
@@ -131,7 +130,10 @@ class CodexDecisionSession(DurableDecisionSession):
                 key: copy.deepcopy(request.get(key))
                 for key in ("client_id", "turn_id", "phase", "status", "error")
             }
-        _write_json(self._state_path, self._state)
+        atomic_text(
+            self._state_path,
+            json.dumps(self._state, ensure_ascii=False, allow_nan=False) + "\n",
+        )
 
     def _observe(self, event: dict) -> None:
         self._record("wire", **event)
@@ -507,8 +509,12 @@ class CodexDecisionSession(DurableDecisionSession):
                     raise
         with tempfile.NamedTemporaryFile(dir=target.parent, delete=False) as stream:
             temporary = Path(stream.name)
-        with atomic_path(target, temporary):
-            shutil.copyfile(source, temporary)
+            try:
+                stream.close()
+                shutil.copyfile(source, temporary)
+                temporary.replace(target)
+            finally:
+                temporary.unlink(missing_ok=True)
 
     def _submission_image_path(self, directory: Path, image: dict, index: int) -> Path:
         # The native process can read its Host-owned launcher directory, but
@@ -570,7 +576,10 @@ class CodexDecisionSession(DurableDecisionSession):
                     target = self._image_path(directory, image, index)
                     target.parent.mkdir(parents=True, exist_ok=True)
                     self._archive_image(Path(image["path"]), target)
-                _write_json(directory / "input.json", inputs)
+                atomic_text(
+                    directory / "input.json",
+                    json.dumps(inputs, ensure_ascii=False, allow_nan=False) + "\n",
+                )
                 self._state["requests"][request_id] = request
                 self._save()
                 self._record(
@@ -931,7 +940,10 @@ class CodexDecisionSession(DurableDecisionSession):
                 / "attempts"
                 / request["client_id"]
             )
-            _write_json(attempt_dir / "verified_completion.json", verified)
+            atomic_text(
+                attempt_dir / "verified_completion.json",
+                json.dumps(verified, ensure_ascii=False, allow_nan=False) + "\n",
+            )
             reason = self._recovery_reason(request, verified)
             if reason is None:
                 return self._finish(request, inputs, verified)
@@ -1110,8 +1122,14 @@ class CodexDecisionSession(DurableDecisionSession):
             directory / "attempts" / request["client_id"] / "native_completion.json"
         )
         if not attempt_completion.exists():
-            _write_json(attempt_completion, turn)
-        _write_json(directory / "native_completion.json", turn)
+            atomic_text(
+                attempt_completion,
+                json.dumps(turn, ensure_ascii=False, allow_nan=False) + "\n",
+            )
+        atomic_text(
+            directory / "native_completion.json",
+            json.dumps(turn, ensure_ascii=False, allow_nan=False) + "\n",
+        )
         status = turn.get("status")
         messages = {
             item["id"]: item
@@ -1178,7 +1196,10 @@ class CodexDecisionSession(DurableDecisionSession):
             raise error_class(
                 "Completed native output did not satisfy the decision schema"
             ) from error
-        _write_json(directory / "result.json", result)
+        atomic_text(
+            directory / "result.json",
+            json.dumps(result, ensure_ascii=False, allow_nan=False) + "\n",
+        )
         request.update(phase="completed", status=status, final_item_id=finals[-1]["id"])
         if usage_error:
             request["usage_warning"] = turn["error"]

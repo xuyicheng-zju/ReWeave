@@ -495,7 +495,8 @@ def test_full_cli_calls_robot_result_finalizer_without_robot_special_case(
     planner_error: str | None,
 ) -> None:
     cli = _cli_module()
-    from reweave.evaluation.result import RunFinalizationContext, write_json_atomic
+    from reweave.evaluation.result import RunFinalizationContext
+    from reweave.utils.persistence import atomic_text
     from reweave.planner.base import PlannerResult
     from reweave.robots.prompt_bundle import PromptBundle
     from reweave.robots.robot_spec import RobotSpec, RunConfig
@@ -561,15 +562,21 @@ def test_full_cli_calls_robot_result_finalizer_without_robot_special_case(
     def finalize_run(context: RunFinalizationContext) -> Path:
         captured.append(context)
         assert robot_toolkit.closed is True
-        return write_json_atomic(
-            context.output_dir / "result.json",
-            {
-                "robot": context.robot_name,
-                "task": dict(context.task_desc),
-                "success": context.environment_success,
-                "planner_claim": context.finish_result,
-            },
+        destination = context.output_dir / "result.json"
+        atomic_text(
+            destination,
+            json.dumps(
+                {
+                    "robot": context.robot_name,
+                    "task": dict(context.task_desc),
+                    "success": context.environment_success,
+                    "planner_claim": context.finish_result,
+                },
+                indent=2,
+            )
+            + "\n",
         )
+        return destination
 
     daemons = [FakeDaemon(name) for name in ("first", "second", "third")]
     robot_toolkit = FakeToolkit()

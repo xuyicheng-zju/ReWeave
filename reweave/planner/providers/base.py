@@ -5,8 +5,6 @@ from __future__ import annotations
 import copy
 import fcntl
 import json
-import os
-import tempfile
 import time
 import uuid
 from abc import ABC, abstractmethod
@@ -14,7 +12,7 @@ from pathlib import Path
 
 import jsonschema
 
-from reweave.utils.persistence import atomic_path
+from reweave.utils.persistence import atomic_text
 
 
 class NativeSessionError(RuntimeError):
@@ -162,17 +160,6 @@ def _same_bytes(left: Path, right: Path) -> bool:
                 return True
 
 
-def _write_json(path: Path, value: dict) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    stream = tempfile.NamedTemporaryFile(mode="w", dir=path.parent, delete=False)
-    with atomic_path(path, Path(stream.name)):
-        with stream:
-            json.dump(value, stream, ensure_ascii=False, allow_nan=False)
-            stream.write("\n")
-            stream.flush()
-            os.fsync(stream.fileno())
-
-
 class DurableDecisionSession(NativeDecisionSession):
     """Episode state on disk: identity, owner lock, event log and request inputs.
 
@@ -218,7 +205,10 @@ class DurableDecisionSession(NativeDecisionSession):
         return state
 
     def _save(self) -> None:
-        _write_json(self._state_path, self._state)
+        atomic_text(
+            self._state_path,
+            json.dumps(self._state, ensure_ascii=False, allow_nan=False) + "\n",
+        )
 
     def _record(self, kind: str, **values) -> None:
         with (self.directory / "events.jsonl").open("a") as stream:

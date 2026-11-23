@@ -24,7 +24,7 @@ from reweave.evolution.evidence.records import (
     inventory_episode,
     restore_record,
 )
-from reweave.evolution.infrastructure.session import write_json
+from reweave.utils.persistence import atomic_text
 
 TRACE_INDEX_SCHEMA_VERSION = 1
 
@@ -1771,26 +1771,43 @@ def build_episode_context(
                         "note": "May be automatic episode_start, nested supervision, or missing evidence. No temporal matching.",
                     }
                 )
-        write_json(
+        atomic_text(
             temporary / "timeline.json",
-            {
-                "source": episode.ref("execution_trace.jsonl"),
-                "observation_semantics": "Final archived state artifacts may include later segmentation overlays. They do not establish what a previous Planner decision saw. decision_inputs point to exact recorded requests when uniquely linkable.",
-                "planner_calls": calls,
-                "program_feedback": program_feedback,
-                "bundle_events": bundle_events,
-                "executions": executions,
-                "observations": observations,
-                "forward_inputs": forward_inputs,
-                "forward_input_semantics": "Exact archived model inputs. Prior control indices locate capture between recorded actions; they do not turn chunk inputs into continuous physical-step images or establish what the high-level Planner saw.",
-                "gaps": gaps,
-            },
+            json.dumps(
+                {
+                    "source": episode.ref("execution_trace.jsonl"),
+                    "observation_semantics": "Final archived state artifacts may include later segmentation overlays. They do not establish what a previous Planner decision saw. decision_inputs point to exact recorded requests when uniquely linkable.",
+                    "planner_calls": calls,
+                    "program_feedback": program_feedback,
+                    "bundle_events": bundle_events,
+                    "executions": executions,
+                    "observations": observations,
+                    "forward_inputs": forward_inputs,
+                    "forward_input_semantics": "Exact archived model inputs. Prior control indices locate capture between recorded actions; they do not turn chunk inputs into continuous physical-step images or establish what the high-level Planner saw.",
+                    "gaps": gaps,
+                },
+                ensure_ascii=False,
+                indent=2,
+                allow_nan=False,
+            )
+            + "\n",
         )
         telemetry = _telemetry(episode, events)
-        write_json(temporary / "telemetry.json", telemetry)
-        write_json(
+        atomic_text(
+            temporary / "telemetry.json",
+            json.dumps(telemetry, ensure_ascii=False, indent=2, allow_nan=False) + "\n",
+        )
+        atomic_text(
             temporary / "diagnostics.json",
-            _diagnostics(events, executions, observations, calls, request_signatures),
+            json.dumps(
+                _diagnostics(
+                    events, executions, observations, calls, request_signatures
+                ),
+                ensure_ascii=False,
+                indent=2,
+                allow_nan=False,
+            )
+            + "\n",
         )
         pages = (
             _visuals(episode, temporary, observations, forward_inputs)
@@ -1924,7 +1941,10 @@ def build_episode_context(
             ],
             "files": inventory_episode(temporary),
         }
-        write_json(temporary / "index.json", manifest)
+        atomic_text(
+            temporary / "index.json",
+            json.dumps(manifest, ensure_ascii=False, indent=2, allow_nan=False) + "\n",
+        )
         previous = None
         if destination.exists():
             previous = (
