@@ -535,6 +535,60 @@ def test_four_joint_stages_have_declared_panels_and_one_parent(tmp_path):
         assert len([r for r in evaluator.requests if r.instance.task == name]) == 2
 
 
+def test_stream_from_a_cold_h0_uses_the_explicit_stage_budget(tmp_path, monkeypatch):
+    from reweave.evolution.distillation import stream
+
+    initial = plan()
+    h0 = initial.initial
+    initial = SharedPlan.model_validate(
+        {
+            **initial.model_dump(mode="json"),
+            "mode": "baseline",
+            "method": "aligned",
+            "initialize_new_task_graphs": True,
+            "sources": [],
+            "unseen": [],
+            "teachers": [],
+            "max_rounds": 0,
+            "conditional_retention": False,
+        }
+    )
+    checkpoint = tmp_path / "h0.json"
+    atomic_json(checkpoint, {"bundle": h0.model_dump(mode="json"), "source_graphs": {}})
+    incoming = task("incoming")
+    new_graph = corpus_graph(tmp_path)
+
+    class Stage:
+        def __init__(self, *args, **kwargs):
+            pass
+
+        async def run(self, stage):
+            assert stage.initial == h0
+            assert stage.max_rounds == 2
+            assert stage.initial_learned_tasks == ()
+            assert stage.new_tasks == (incoming.name,)
+            return {
+                "bundle": h0.model_dump(mode="json"),
+                "source_graphs": {incoming.name: new_graph.model_dump(mode="json")},
+            }
+
+    monkeypatch.setattr(stream, "SharedEvolution", Stage)
+    checkpoints = asyncio.run(
+        run_stream(
+            tmp_path / "stream",
+            initial,
+            (incoming,),
+            [[incoming.name]],
+            None,
+            None,
+            initial_checkpoint=checkpoint,
+            task_runtime_manifests={},
+            max_rounds=2,
+        )
+    )
+    assert checkpoints[0]["tasks"] == [incoming.name]
+
+
 @pytest.mark.parametrize("bad_definition", [False, True])
 def test_condition_encoder_preserves_fixed_catalog_definitions(
     tmp_path, bad_definition

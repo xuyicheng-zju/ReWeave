@@ -54,6 +54,7 @@ async def run_stream(
     initial_checkpoint,
     task_runtime_manifests,
     infrastructure_retries=0,
+    max_rounds=None,
 ):
     """Each stage jointly updates one student; there is no per-new-task search."""
     directory = Path(directory)
@@ -86,6 +87,7 @@ async def run_stream(
             "initial_plan": initial_plan.model_dump(mode="json"),
             "tasks": [t.model_dump(mode="json") for t in tasks],
             "stages": stages,
+            **({"max_rounds": max_rounds} if max_rounds is not None else {}),
         },
     )
     checkpoints = []
@@ -145,6 +147,9 @@ async def run_stream(
                 first_conditional_rates={},
                 source_graphs=current["source_graphs"],
                 loss_threshold=initial_plan.loss_threshold,
+                max_rounds=initial_plan.max_rounds
+                if max_rounds is None
+                else max_rounds,
             )
             if previous_update is not None:
                 allowed = {

@@ -51,20 +51,115 @@ python -m pip install -e .
 python examples/robodojo_demo.py --output-dir runs/robodojo-demo
 ```
 
-示例使用脚本化的模型与环境响应，输出动作轨迹和单局回执。运行真实仿真需要准备上游运行时、场景资产和模型权重。[安装指南](docs/INSTALLATION.md)
+CPU 示例使用脚本化响应，结果见 `runs/robodojo-demo/demo_summary.json`。
+下文使用 Linux GPU 运行 LIBERO-PRO。安装仿真器、模型依赖与 Codex CLI 后，换成自己的路径和模型。[安装指南](docs/INSTALLATION.md)
 
-| 命令 | 用途 |
-| --- | --- |
-| `reweave --help` | 运行单局任务 |
-| `reweave-evolve --help` | 在固定开发条件下搜索 Harness |
-| `reweave-distill --help` | 构建和评估共享 Harness |
+```bash
+export REWEAVE_RLINF_ROOT=/path/to/rlinf
+export LIBERO_CONFIG_PATH=/path/to/liberopro_config
+export PI05_CHECKPOINT_PATH=/path/to/pi05-checkpoint
+export SAM3_CHECKPOINT_PATH=/path/to/sam3.pt
+export SAM3_BPE_PATH=/path/to/bpe_simple_vocab_16e6.txt.gz
+export REWEAVE_MODEL=gpt-6.2-sol
+export REWEAVE_CODEX_AUTHOR_MODEL="$REWEAVE_MODEL"
+codex login
+```
+
+<details>
+<summary>准备默认 Harness</summary>
+
+先生成当前环境的资源清单，再一次性捕获基线。
+
+```bash
+mkdir -p runs
+python - <<'PY'
+import json
+import os
+from pathlib import Path
+
+resources = {
+    "models": {
+        "pi05": os.environ["PI05_CHECKPOINT_PATH"],
+        "sam3": os.environ["SAM3_CHECKPOINT_PATH"],
+        "sam3_bpe": os.environ["SAM3_BPE_PATH"],
+    },
+    "environment": {
+        "benchmark": "LIBERO-PRO",
+        "rlinf_checkout": os.environ["REWEAVE_RLINF_ROOT"],
+        "asset_config": os.environ["LIBERO_CONFIG_PATH"],
+    },
+    "routes": {"planner": os.environ["REWEAVE_MODEL"], "pi05": "local", "sam3": "local"},
+}
+if "PI05_NORM_STATS_PATH" in os.environ:
+    resources["models"]["pi05_norm_stats"] = os.environ["PI05_NORM_STATS_PATH"]
+Path("runs/runtime_resources.json").write_text(json.dumps(resources, indent=2) + "\n")
+PY
+```
+
+```bash
+python scripts/capture_harness.py --model "$REWEAVE_MODEL" \
+  --resources runs/runtime_resources.json --output-dir runs/H0
+```
+
+</details>
+
+### Inference
+
+选一个 Harness 跑一局。回执记录仿真器判定，也可作为自进化的轨迹输入。
+
+```bash
+python scripts/run_inference.py --harness runs/H0/harness.json \
+  --task 0 --output-dir runs/task0-trial
+```
+
+### Optimization
+
+选定起始 Harness 和同一任务的开发轨迹。重复传入 `--trajectory` 可选多条轨迹。离线演化一次，生成尚未评测的 `runs/H1-task0/harness.json`。
+
+```bash
+python scripts/self_evolve.py --harness runs/H0/harness.json \
+  --trajectory runs/task0-trial/attempt/result.json --output-dir runs/H1-task0
+```
+
+<details>
+<summary>为蒸馏准备第二个源 Harness</summary>
+
+```bash
+python scripts/run_inference.py --harness runs/H0/harness.json \
+  --task 1 --output-dir runs/task1-trial
+python scripts/self_evolve.py --harness runs/H0/harness.json \
+  --trajectory runs/task1-trial/attempt/result.json --output-dir runs/H1-task1
+```
+
+</details>
+
+### Distillation
+
+选定要合并的 Harness，每个任务选一个来源。第一个输入是合并的起始实现。合并一次，得到 `runs/Hshared/harness.json`。
+
+```bash
+python scripts/distill.py \
+  --harness runs/H1-task0/harness.json --harness runs/H1-task1/harness.json \
+  --output-dir runs/Hshared
+```
+
+### Continual Learning
+
+任意兼容的 Harness 都可以选作 H0。每个 `--stage` 指定一批新任务。这里先学习任务 2，再一起学习任务 3 和 4。
+
+```bash
+python scripts/continual_learning.py --h0 runs/Hshared/harness.json \
+  --stage 2 --stage 3 4 --output-dir runs/continual
+```
+
+每个阶段产出 `runs/continual/stream/updates/NNN/harness.json`。通过 `--harness` 可选它做推理，通过 `--h0` 可从它开启下一轮持续学习。加上 `--test-reset-id 1`，可在同一留出条件下评测各阶段。
 
 <h2 id="documentation">📚 文档</h2>
 
 | 文档 | 内容 |
 | --- | --- |
 | [安装](docs/INSTALLATION.md) | Python 环境、模型服务和仿真依赖 |
-| [评测](docs/EVALUATION.md) | 单局命令、冻结基线和留出评测 |
+| [使用与评测](docs/EVALUATION.md) | 恢复运行、自定义协议和留出评测 |
 | [方法](docs/METHOD.md) | C/W/L 运行时、拓扑更新和跨任务蒸馏 |
 | [示例协议](examples/graph_evolution/) | 开发条件、作者配置和拓扑分析输入 |
 
@@ -87,6 +182,7 @@ reweave/
     search/                候选 Harness 搜索与评估
     distillation/          共享 Harness 构建
   benchmarks/              LIBERO 和 RoboDojo 适配器
+scripts/                   推理、自进化、蒸馏与持续学习
 examples/                  CPU 示例与示例协议
 tests/                     运行时、方法和适配器测试
 third_party/               上游链接与源码归属

@@ -47,6 +47,12 @@ class SharedConfiguration(BaseModel):
         default=None,
         description="Existing frozen shared checkpoint before the first joint continual stage; never retrained by the stream.",
     )
+    stream_rounds: int | None = Field(
+        default=None,
+        ge=1,
+        exclude_if=lambda value: value is None,
+        description="Search-round limit per continual stage, independent of the starting checkpoint.",
+    )
     infrastructure_retries: int = Field(
         default=0,
         ge=0,
@@ -405,13 +411,14 @@ async def _execute(config, output, mode):
         evidence_workspace=output,
         runtime_manifest=config.runner.runtime_manifest,
     )
+    task_runtime_manifests = {
+        task.name: config.task_runners.get(task.name, config.runner).runtime_manifest
+        for task in config.tasks()
+    }
     task_topology = NativeTaskTopology(
         policy=config.author,
         runtime_manifest=config.runner.runtime_manifest,
-        task_runtime_manifests={
-            name: runner.runtime_manifest
-            for name, runner in config.task_runners.items()
-        },
+        task_runtime_manifests=task_runtime_manifests,
     )
     from reweave.evolution.distillation.progress import NativeTopologyProgress
 
@@ -495,10 +502,8 @@ async def _execute(config, output, mode):
             assessor,
             task_topology,
             initial_checkpoint=config.stream_initial,
-            task_runtime_manifests={
-                name: runner.runtime_manifest
-                for name, runner in config.task_runners.items()
-            },
+            max_rounds=config.stream_rounds,
+            task_runtime_manifests=task_runtime_manifests,
             infrastructure_retries=config.infrastructure_retries,
         )
     if mode == "stream-test":

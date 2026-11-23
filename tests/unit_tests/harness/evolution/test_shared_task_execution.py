@@ -249,6 +249,34 @@ def test_dispatch_and_recovery_preserve_bundle_and_exact_request(tmp_path, monke
     assert len(calls) == 3
 
 
+def test_stream_supplies_runtime_for_tasks_on_the_default_runner(tmp_path, monkeypatch):
+    from reweave.cli import distill
+
+    cfg = configuration(tmp_path)
+    incoming = plan().sources[0]
+    cfg = SharedConfiguration.model_validate(
+        {
+            **cfg.model_dump(mode="json"),
+            "stream_tasks": (incoming,),
+            "stages": ((incoming.name,),),
+            "stream_initial": tmp_path / "initial.json",
+        }
+    )
+    (tmp_path / "campaign_state.json").write_text("{}")
+    (tmp_path / "scheduler_policy.json").write_text('{"mode": "episode_pool"}')
+
+    async def run_stream(*args, task_runtime_manifests, **kwargs):
+        topology = args[7]
+        assert topology.task_runtime_manifests == task_runtime_manifests
+        assert task_runtime_manifests[incoming.name] == cfg.runner.runtime_manifest
+        for name, runner in cfg.task_runners.items():
+            assert task_runtime_manifests[name] == runner.runtime_manifest
+        return "started"
+
+    monkeypatch.setattr(distill, "run_stream", run_stream)
+    assert asyncio.run(distill.execute(cfg, tmp_path / "stream", "stream")) == "started"
+
+
 def test_shared_panel_runs_cells_concurrently_in_declared_order(tmp_path):
     class Concurrent(Evaluator):
         def __init__(self):

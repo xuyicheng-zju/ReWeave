@@ -52,22 +52,117 @@ python -m pip install -e .
 python examples/robodojo_demo.py --output-dir runs/robodojo-demo
 ```
 
-The demo runs the harness with scripted model and environment responses and
-writes an action trace and episode receipt. For live simulation, prepare the
-benchmark runtime, scene assets, and model weights. [Installation](docs/INSTALLATION.md)
+The CPU demo uses scripted responses and writes `runs/robodojo-demo/demo_summary.json`.
+The workflows below use LIBERO-PRO on a Linux GPU. Install the simulator,
+model dependencies, and Codex CLI, then set the paths and model for your setup.
+[Installation](docs/INSTALLATION.md)
 
-| Command | Use |
-| --- | --- |
-| `reweave --help` | Run one episode. |
-| `reweave-evolve --help` | Search for a harness on fixed development conditions. |
-| `reweave-distill --help` | Build and evaluate a shared harness. |
+```bash
+export REWEAVE_RLINF_ROOT=/path/to/rlinf
+export LIBERO_CONFIG_PATH=/path/to/liberopro_config
+export PI05_CHECKPOINT_PATH=/path/to/pi05-checkpoint
+export SAM3_CHECKPOINT_PATH=/path/to/sam3.pt
+export SAM3_BPE_PATH=/path/to/bpe_simple_vocab_16e6.txt.gz
+export REWEAVE_MODEL=gpt-6.2-sol
+export REWEAVE_CODEX_AUTHOR_MODEL="$REWEAVE_MODEL"
+codex login
+```
+
+<details>
+<summary>Capture the default Harness</summary>
+
+Create a resource manifest for your environment, then capture the baseline once.
+
+```bash
+mkdir -p runs
+python - <<'PY'
+import json
+import os
+from pathlib import Path
+
+resources = {
+    "models": {
+        "pi05": os.environ["PI05_CHECKPOINT_PATH"],
+        "sam3": os.environ["SAM3_CHECKPOINT_PATH"],
+        "sam3_bpe": os.environ["SAM3_BPE_PATH"],
+    },
+    "environment": {
+        "benchmark": "LIBERO-PRO",
+        "rlinf_checkout": os.environ["REWEAVE_RLINF_ROOT"],
+        "asset_config": os.environ["LIBERO_CONFIG_PATH"],
+    },
+    "routes": {"planner": os.environ["REWEAVE_MODEL"], "pi05": "local", "sam3": "local"},
+}
+if "PI05_NORM_STATS_PATH" in os.environ:
+    resources["models"]["pi05_norm_stats"] = os.environ["PI05_NORM_STATS_PATH"]
+Path("runs/runtime_resources.json").write_text(json.dumps(resources, indent=2) + "\n")
+PY
+```
+
+```bash
+python scripts/capture_harness.py --model "$REWEAVE_MODEL" \
+  --resources runs/runtime_resources.json --output-dir runs/H0
+```
+
+</details>
+
+### Inference
+
+Select a Harness and run one task. The rollout receipt contains the simulator verdict and can be selected for optimization.
+
+```bash
+python scripts/run_inference.py --harness runs/H0/harness.json \
+  --task 0 --output-dir runs/task0-trial
+```
+
+### Optimization
+
+Select the starting Harness and the development trajectories from one task. Repeat `--trajectory` to include more receipts. One offline mutation writes an unmeasured candidate to `runs/H1-task0/harness.json`.
+
+```bash
+python scripts/self_evolve.py --harness runs/H0/harness.json \
+  --trajectory runs/task0-trial/attempt/result.json --output-dir runs/H1-task0
+```
+
+<details>
+<summary>Prepare a second source Harness for distillation</summary>
+
+```bash
+python scripts/run_inference.py --harness runs/H0/harness.json \
+  --task 1 --output-dir runs/task1-trial
+python scripts/self_evolve.py --harness runs/H0/harness.json \
+  --trajectory runs/task1-trial/attempt/result.json --output-dir runs/H1-task1
+```
+
+</details>
+
+### Distillation
+
+Select the source Harnesses to merge once, with one source per task. The first input provides the starting implementation. The result is `runs/Hshared/harness.json`.
+
+```bash
+python scripts/distill.py \
+  --harness runs/H1-task0/harness.json --harness runs/H1-task1/harness.json \
+  --output-dir runs/Hshared
+```
+
+### Continual Learning
+
+Select any compatible Harness as H0. Each `--stage` introduces one batch of tasks. This example learns task 2 first, then tasks 3 and 4 together.
+
+```bash
+python scripts/continual_learning.py --h0 runs/Hshared/harness.json \
+  --stage 2 --stage 3 4 --output-dir runs/continual
+```
+
+Each stage publishes `runs/continual/stream/updates/NNN/harness.json`. Pass that file to `--harness` for inference or to `--h0` to start a new stream. Add `--test-reset-id 1` to evaluate the stage checkpoints on a fixed held-out reset.
 
 <h2 id="documentation">📚 Documentation</h2>
 
 | Guide | Coverage |
 | --- | --- |
 | [Installation](docs/INSTALLATION.md) | Python, model providers, and simulator dependencies |
-| [Evaluation](docs/EVALUATION.md) | Episode commands, frozen baselines, and held-out tests |
+| [Usage and evaluation](docs/EVALUATION.md) | Recovery, custom protocols, and held-out evaluation |
 | [Method](docs/METHOD.md) | The C/W/L runtime, topology revision, and cross-task distillation |
 | [Example protocols](examples/graph_evolution/) | Development conditions, author policy, and graph inputs |
 
@@ -90,6 +185,7 @@ reweave/
     search/                Candidate search and evaluation
     distillation/          Shared harness construction
   benchmarks/              LIBERO and RoboDojo adapters
+scripts/                   Inference, optimization, distillation, and continual learning
 examples/                  CPU demo and example protocols
 tests/                     Runtime, method, and adapter tests
 third_party/               Upstream links and source attribution

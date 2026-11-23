@@ -24,8 +24,9 @@ local graph embeddings, or `.[remote]` for SSH-backed sensor archives.
 Install the [Codex CLI](https://developers.openai.com/codex/cli) and run
 `codex login` for the default local account mode. A session-specific copy of
 its login file can be stored in the local run directory. Keep that directory
-private. Use `--model` to choose an available online model and
-[an author policy](../examples/graph_evolution/author_policy.json) to set the
+private. Use `--model` to choose an online model available to your account. Set
+`REWEAVE_CODEX_AUTHOR_MODEL` or pass
+[an author policy](../examples/graph_evolution/author_policy.json) to choose the
 offline model.
 
 For a Responses API provider, export `OPENAI_API_KEY` and use
@@ -49,8 +50,12 @@ environments. Follow upstream instructions for simulator and model assets.
 | LIBERO-PRO | LIBERO-PRO, RLinf's LIBERO adapter, MuJoCo, a compatible OpenPI Pi0.5 policy and SAM3 | `--libero-type pro`, `PI05_CHECKPOINT_PATH`, `SAM3_CHECKPOINT_PATH` |
 | RoboDojo | RoboDojo, its RLinf `CollectEnv` bridge, Isaac Sim, XPolicyLab, the matching 14-value Pi0.5 model and SAM3 | `ROBODOJO_ASSETS_ROOT`, `PI05_CHECKPOINT_PATH`, `SAM3_CHECKPOINT_PATH`, `--sim-python`, `--pi05-python` |
 
-The Pi0.5 policy can require `PI05_NORM_STATS_PATH` for separate normalization
-statistics. RoboDojo accepts `--source-root` and `--xpolicylab-root` for explicit
+The local SAM3 server also requires `SAM3_BPE_PATH` pointing to
+`bpe_simple_vocab_16e6.txt.gz` from the SAM3 assets. Set `LIBERO_CONFIG_PATH`
+to the directory containing your benchmark's `config.yaml` when using an
+explicit asset configuration. The Pi0.5 policy can require
+`PI05_NORM_STATS_PATH` for separate normalization statistics. RoboDojo
+accepts `--source-root` and `--xpolicylab-root` for explicit
 checkouts. LIBERO accepts compatible service URLs via `--env-endpoint`,
 `--vla-endpoint` and `--sam3-endpoint`. Use the backend-specific CLI help to see
 supported resource flags. The [RoboDojo guide](../reweave/benchmarks/robodojo/README.md)
