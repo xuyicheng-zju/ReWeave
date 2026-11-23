@@ -1,10 +1,9 @@
-<p>
-  <img src="website/assets/logos/april_logo_blue.png" height="30" align="left" alt="APRIL Lab">
-  <img src="website/assets/logos/agibot_logo.png" height="30" align="right" alt="AGIBOT">
-</p>
-<br clear="all">
-
 <div align="center">
+
+<p>
+  <img src="docs/assets/readme-institutions-light.png#gh-light-mode-only" alt="APRIL 实验室与智元机器人" width="192">
+  <img src="docs/assets/readme-institutions-dark.png#gh-dark-mode-only" alt="APRIL 实验室与智元机器人" width="192">
+</p>
 
 # <img src="website/assets/logos/reweave-knot.svg" width="52" height="30" align="absmiddle" alt=""> $\color{#8557A0}{\textsf{ReWeave}}$: Emergent Physical&nbsp;Task&nbsp;Topologies<br>for Embodied Harness Optimization<br>and Cross-Task Meta-Distillation
 
