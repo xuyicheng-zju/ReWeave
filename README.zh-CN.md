@@ -28,11 +28,9 @@
 <p><sup>†</sup> 通讯作者</p>
 
 <p>
-  <a><picture><source media="(prefers-color-scheme: dark)" srcset="website/assets/logos/arxiv-dark.svg"><img src="website/assets/logos/arxiv.svg" width="48" alt="arXiv" align="absmiddle"></picture></a> · 待公开
-  &nbsp;&nbsp;
-  <a href="https://xuyicheng-zju.github.io/ReWeave/"><img src="website/assets/logos/reweave-knot.svg" width="26" alt="" align="absmiddle"> Project</a>
-  &nbsp;&nbsp;
-  <a href="https://github.com/xuyicheng-zju/ReWeave"><picture><source media="(prefers-color-scheme: dark)" srcset="website/assets/logos/github-white.svg"><img src="website/assets/logos/github.svg" width="21" alt="" align="absmiddle"></picture> GitHub</a>
+  <a><picture><img src="docs/assets/resource-arxiv-zh.svg" alt="arXiv · 待公开" align="absmiddle"></picture></a>
+  <a href="https://xuyicheng-zju.github.io/ReWeave/"><img src="docs/assets/resource-project.svg" alt="Project website" align="absmiddle"></a>
+  <a href="https://github.com/xuyicheng-zju/ReWeave"><img src="docs/assets/resource-github.svg" alt="Code on GitHub" align="absmiddle"></a>
 </p>
 
 <p>

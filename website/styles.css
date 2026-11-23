@@ -389,9 +389,12 @@ sup, sub { line-height: 0; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: .38rem;
-  min-block-size: 2.65rem;
-  padding-inline: .68rem;
+  gap: .48rem;
+  min-block-size: 2.75rem;
+  padding-inline: .85rem;
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  background: color-mix(in srgb, var(--surface) 72%, transparent);
   font-size: .86rem;
   white-space: nowrap;
 }
@@ -400,15 +403,33 @@ sup, sub { line-height: 0; }
   color: var(--ink);
   font-weight: 600;
   text-decoration: none;
+  transition: border-color .2s ease, background-color .2s ease, box-shadow .2s ease;
 }
 
-.hero-resources a:hover {
+.hero-resources a:hover,
+.hero-resources a:focus-visible {
+  border-color: color-mix(in srgb, var(--accent) 43%, var(--line));
+  background: var(--surface);
+  box-shadow: 0 3px 12px #45274a16;
+}
+
+.hero-resources .resource-status {
+  color: var(--muted);
+  border-style: dashed;
+  background: transparent;
+}
+
+.resource-arrow {
+  display: grid;
+  place-items: center;
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  border-radius: 50%;
+  background: #5a356811;
   color: var(--accent);
-  text-decoration: underline;
-  text-underline-offset: .22em;
+  font-size: .74rem;
+  line-height: 1;
 }
-
-.resource-status { color: var(--muted); }
 
 /* Unified Hero Abstract Panel */
 
@@ -3055,13 +3076,14 @@ body:has(#rollout-player[open]) { overflow: hidden; }
 .feature-story header { min-inline-size: 0; }
 @media (max-width: 32rem) {
   .hero-resources { gap: .38rem; }
-  .hero-resources > * { padding-inline: .22rem; font-size: .8rem; }
+  .hero-resources > * { gap: .32rem; padding-inline: .48rem; font-size: .8rem; }
 }
 @media (max-width: 22rem) {
   .hero-resources { column-gap: .35rem; }
-  .hero-resources > * { gap: .23rem; padding-inline: 0; font-size: .76rem; }
+  .hero-resources > * { gap: .23rem; padding-inline: .38rem; font-size: .76rem; }
   .hero-resources .resource-status img { inline-size: 2.6rem; }
-  .hero-resources a img { max-inline-size: 1.25rem; }
+  .hero-resources a img { max-inline-size: 1.1rem; }
+  .resource-arrow { display: none; }
 }
 .trace-flow { grid-template-columns: minmax(0, 1fr); }
 .trace-flow > .trace-block, .trace-block .excerpt { min-inline-size: 0; }
