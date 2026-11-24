@@ -5,14 +5,14 @@
     <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-april-dark.png">
     <img src="docs/assets/logo-april-light.png" width="17%" alt="APRIL Lab, Zhejiang University" align="absmiddle">
   </picture>
-  &nbsp;&nbsp;&nbsp;
+  &nbsp;
   <img src="docs/assets/reweave-wordmark.svg" width="30%" alt="ReWeave" align="absmiddle">
-  &nbsp;&nbsp;&nbsp;
+  &nbsp;
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-maniformer-dark.png">
     <img src="docs/assets/logo-maniformer-light.png" width="16%" alt="Maniformer" align="absmiddle">
   </picture>
-  &nbsp;&nbsp;
+  &nbsp;
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-agibot-dark.png">
     <img src="docs/assets/logo-agibot-light.png" width="17%" alt="AGIBOT Innovation" align="absmiddle">
