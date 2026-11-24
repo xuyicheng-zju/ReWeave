@@ -271,6 +271,7 @@ sup, sub { line-height: 0; }
 }
 
 .hero-logos {
+  --institution-logo-height: clamp(1.1rem, 4.15vw, 2.2rem);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -285,7 +286,7 @@ sup, sub { line-height: 0; }
 }
 
 .hero-logos img {
-  block-size: clamp(2.125rem, 3.5vw, 3rem);
+  block-size: calc(var(--institution-logo-height) * var(--institution-logo-scale, 1));
   inline-size: auto;
   max-inline-size: min(13rem, 30vw);
   object-fit: contain;
@@ -298,8 +299,10 @@ sup, sub { line-height: 0; }
   transform: translateY(-.5px);
 }
 
+.institution-logo--maniformer { --institution-logo-scale: .93; }
+.institution-logo--agibot { --institution-logo-scale: 1.22; }
+
 @media (max-width: 34rem) {
-  .hero-logos img { block-size: clamp(1.05rem, 5.3vw, 1.7rem); }
   .hero-logos-partners img { max-inline-size: 27vw; }
 }
 
@@ -2633,6 +2636,7 @@ body:has(#rollout-player[open]) { overflow: hidden; }
 }
 
 .logos {
+  --institution-logo-height: clamp(1.1rem, 4vw, 1.65rem);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -2641,7 +2645,7 @@ body:has(#rollout-player[open]) { overflow: hidden; }
 }
 
 .logos img {
-  block-size: 1.8rem;
+  block-size: calc(var(--institution-logo-height) * var(--institution-logo-scale, 1));
   inline-size: auto;
   max-inline-size: 8.5rem;
   object-fit: contain;
