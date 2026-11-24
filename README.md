@@ -3,14 +3,14 @@
 <p>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-april-dark.png">
-    <img src="docs/assets/logo-april-light.png" height="26" alt="APRIL Lab, Zhejiang University" align="absmiddle">
+    <img src="docs/assets/logo-april-light.png" width="17%" alt="APRIL Lab, Zhejiang University" align="absmiddle">
   </picture>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="docs/assets/reweave-wordmark.svg" height="36" alt="ReWeave" align="absmiddle">
+  <img src="docs/assets/reweave-wordmark.svg" width="30%" alt="ReWeave" align="absmiddle">
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-agibot-dark.png">
-    <img src="docs/assets/logo-agibot-light.png" height="26" alt="AGIBOT Innovation" align="absmiddle">
+    <img src="docs/assets/logo-agibot-light.png" width="17%" alt="AGIBOT Innovation" align="absmiddle">
   </picture>
 </p>
 
