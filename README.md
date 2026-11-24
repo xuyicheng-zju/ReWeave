@@ -1,31 +1,37 @@
 <div align="center">
 
-<p>
-  <img src="docs/assets/readme-institutions-light.png#gh-light-mode-only" alt="APRIL Lab and AGIBOT" width="192">
-  <img src="docs/assets/readme-institutions-dark.png#gh-dark-mode-only" alt="APRIL Lab and AGIBOT" width="192">
-</p>
+<p><img src="docs/assets/reweave-wordmark.svg" width="226" alt="ReWeave"></p>
 
-# <img src="website/assets/logos/reweave-knot.svg" width="52" height="30" align="absmiddle" alt=""> ReWeave: Emergent Physical&nbsp;Task&nbsp;Topologies<br>for Embodied Harness Optimization<br>and Cross-Task Meta-Distillation
+<h3>Emergent Physical Task Topologies<br>for Embodied Harness Optimization and Cross-Task Meta-Distillation</h3>
 
 <p>
-  <strong><a href="https://github.com/xuyicheng-zju">Yicheng&nbsp;Xu</a></strong><sup>1</sup> &nbsp;·&nbsp;
-  <strong><a href="https://github.com/Rinke02">Wencan&nbsp;Jiang</a></strong><sup>1</sup> &nbsp;·&nbsp;
-  <strong>Zihao&nbsp;Zhu</strong><sup>2,4</sup> &nbsp;·&nbsp;
-  <strong>Keru&nbsp;Zhou</strong><sup>3</sup> &nbsp;·&nbsp;
-  <strong>Chang&nbsp;Zhou</strong><sup>4</sup><br>
-  <strong>Li&nbsp;Liu</strong><sup>4</sup> &nbsp;·&nbsp;
-  <strong>Maoqing&nbsp;Yao</strong><sup>4</sup> &nbsp;·&nbsp;
-  <strong>Yong&nbsp;Liu</strong><sup>1</sup> &nbsp;·&nbsp;
-  <strong><a href="https://github.com/zhangzjn">Jiangning&nbsp;Zhang</a></strong><sup>1,†</sup>
+  <a href="https://github.com/xuyicheng-zju">Yicheng&nbsp;Xu</a><sup>1</sup> ·
+  <a href="https://github.com/Rinke02">Wencan&nbsp;Jiang</a><sup>1</sup> ·
+  <a href="https://openreview.net/profile?id=~Zihao_Zhu12">Zihao&nbsp;Zhu</a><sup>2,4</sup> ·
+  <a href="https://openreview.net/profile?id=~Keru_Zhou1">Keru&nbsp;Zhou</a><sup>3</sup> ·
+  <a href="https://openreview.net/profile?id=~Chang_Zhou16">Chang&nbsp;Zhou</a><sup>4</sup><br>
+  <a href="https://openreview.net/profile?id=~Li_Liu19">Li&nbsp;Liu</a><sup>4</sup> ·
+  <a href="https://openreview.net/profile?id=~Maoqing_Yao1">Maoqing&nbsp;Yao</a><sup>4</sup> ·
+  <a href="https://openreview.net/profile?id=~Yong_Liu11">Yong&nbsp;Liu</a><sup>1</sup> ·
+  <a href="https://github.com/zhangzjn">Jiangning&nbsp;Zhang</a><sup>1,†</sup>
 </p>
 
 <p>
-  <sup>1</sup> <img src="website/assets/logos/zju_logo.png" height="17" align="absmiddle" alt=""> Zhejiang University &nbsp;·&nbsp;
-  <sup>2</sup> <img src="website/assets/logos/stanford_logo.svg" height="17" align="absmiddle" alt=""> Stanford University &nbsp;·&nbsp;
-  <sup>3</sup> <img src="website/assets/logos/tsinghua_logo.svg" height="17" align="absmiddle" alt=""> Tsinghua University &nbsp;·&nbsp;
-  <sup>4</sup> <img src="website/assets/logos/agibot_logo.png" height="17" align="absmiddle" alt=""> AGIBOT Innovation
+  <sub>
+    <sup>1</sup>&nbsp;Zhejiang&nbsp;University ·
+    <sup>2</sup>&nbsp;Stanford&nbsp;University ·
+    <sup>3</sup>&nbsp;Tsinghua&nbsp;University ·
+    <sup>4</sup>&nbsp;AGIBOT&nbsp;Innovation
+    <br>† Corresponding author
+  </sub>
 </p>
-<p><sup>†</sup> Corresponding author</p>
+
+<p>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme-institutions-dark.png">
+    <img src="docs/assets/readme-institutions-light.png" width="156" alt="APRIL Lab and AGIBOT">
+  </picture>
+</p>
 
 <p>
   <a><picture><img src="docs/assets/resource-arxiv.svg" alt="arXiv · Pending" align="absmiddle"></picture></a>
