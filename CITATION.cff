@@ -1,0 +1,53 @@
+cff-version: 1.2.0
+message: "If you use ReWeave in your research, please cite the paper below."
+title: ReWeave
+type: software
+authors:
+  - family-names: Xu
+    given-names: Yicheng
+  - family-names: Jiang
+    given-names: Wencan
+  - family-names: Zhu
+    given-names: Zihao
+  - family-names: Zhou
+    given-names: Keru
+  - family-names: Zhou
+    given-names: Chang
+  - family-names: Liu
+    given-names: Li
+  - family-names: Yao
+    given-names: Maoqing
+  - family-names: Liu
+    given-names: Yong
+  - family-names: Zhang
+    given-names: Jiangning
+repository-code: https://github.com/xuyicheng-zju/ReWeave
+url: https://xuyicheng-zju.github.io/ReWeave/
+preferred-citation:
+  type: article
+  title: "ReWeave: Emergent Physical Task Topologies for Embodied Harness Optimization and Cross-Task Meta-Distillation"
+  authors:
+    - family-names: Xu
+      given-names: Yicheng
+    - family-names: Jiang
+      given-names: Wencan
+    - family-names: Zhu
+      given-names: Zihao
+    - family-names: Zhou
+      given-names: Keru
+    - family-names: Zhou
+      given-names: Chang
+    - family-names: Liu
+      given-names: Li
+    - family-names: Yao
+      given-names: Maoqing
+    - family-names: Liu
+      given-names: Yong
+    - family-names: Zhang
+      given-names: Jiangning
+  journal: arXiv
+  year: 2026
+  url: https://arxiv.org/abs/2611.31053
+  identifiers:
+    - type: other
+      value: "arXiv:2611.31053"

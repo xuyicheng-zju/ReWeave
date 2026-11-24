@@ -34,7 +34,7 @@
 </p>
 
 <p>
-  <a><picture><img src="docs/assets/resource-arxiv-zh.svg" alt="arXiv · 待公开" align="absmiddle"></picture></a>
+  <a href="https://arxiv.org/abs/2611.31053"><img src="docs/assets/resource-arxiv.svg" alt="arXiv:2611.31053" align="absmiddle"></a>
   <a href="https://xuyicheng-zju.github.io/ReWeave/"><img src="docs/assets/resource-project.svg" alt="Project website" align="absmiddle"></a>
   <a href="https://github.com/xuyicheng-zju/ReWeave"><img src="docs/assets/resource-github.svg" alt="Code on GitHub" align="absmiddle"></a>
 </p>
@@ -201,6 +201,22 @@ scripts/                   推理、自进化、蒸馏与持续学习
 examples/                  CPU 示例与示例协议
 tests/                     运行时、方法和适配器测试
 third_party/               上游链接与源码归属
+```
+
+<h2 id="citation">引用</h2>
+
+论文已发布于 [arXiv:2611.31053](https://arxiv.org/abs/2611.31053)。
+
+```bibtex
+@misc{xu2026reweave,
+  title         = {ReWeave: Emergent Physical Task Topologies for Embodied Harness Optimization and Cross-Task Meta-Distillation},
+  author        = {Yicheng Xu and Wencan Jiang and Zihao Zhu and Keru Zhou and Chang Zhou and Li Liu and Maoqing Yao and Yong Liu and Jiangning Zhang},
+  year          = {2026},
+  eprint        = {2611.31053},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  url           = {https://arxiv.org/abs/2611.31053}
+}
 ```
 
 <h2 id="acknowledgments">致谢</h2>

@@ -413,12 +413,6 @@ sup, sub { line-height: 0; }
   box-shadow: 0 3px 12px #45274a16;
 }
 
-.hero-resources .resource-status {
-  color: var(--muted);
-  border-style: dashed;
-  background: transparent;
-}
-
 .resource-arrow {
   display: grid;
   place-items: center;
@@ -3078,12 +3072,15 @@ body:has(#rollout-player[open]) { overflow: hidden; }
   .hero-resources { gap: .38rem; }
   .hero-resources > * { gap: .32rem; padding-inline: .48rem; font-size: .8rem; }
 }
-@media (max-width: 22rem) {
+@media (max-width: 26rem) {
   .hero-resources { column-gap: .35rem; }
   .hero-resources > * { gap: .23rem; padding-inline: .38rem; font-size: .76rem; }
-  .hero-resources .resource-status img { inline-size: 2.6rem; }
   .hero-resources a img { max-inline-size: 1.1rem; }
+  .hero-resources .resource-arxiv img { max-inline-size: 2.2rem; }
   .resource-arrow { display: none; }
+}
+@media (max-width: 22rem) {
+  .hero-resources > * { padding-inline: .28rem; }
 }
 .trace-flow { grid-template-columns: minmax(0, 1fr); }
 .trace-flow > .trace-block, .trace-block .excerpt { min-inline-size: 0; }
