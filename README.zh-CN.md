@@ -1,8 +1,23 @@
 <div align="center">
 
-<p><img src="docs/assets/reweave-wordmark.svg" width="226" alt="ReWeave"></p>
+<p>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-april-dark.png">
+    <img src="docs/assets/logo-april-light.png" width="17%" alt="浙江大学 APRIL 实验室" align="absmiddle">
+  </picture>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-maniformer-dark.png">
+    <img src="docs/assets/logo-maniformer-light.png" width="17%" alt="Maniformer" align="absmiddle">
+  </picture>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-agibot-dark.png">
+    <img src="docs/assets/logo-agibot-light.png" width="14%" alt="智元机器人" align="absmiddle">
+  </picture>
+</p>
 
-<h3>Emergent Physical Task Topologies<br>for Embodied Harness Optimization and Cross-Task Meta-Distillation</h3>
+<h3><img src="docs/assets/reweave-wordmark.svg" width="118" alt="ReWeave" align="absmiddle">: Emergent Physical Task Topologies<br>for Embodied Harness Optimization and Cross-Task Meta-Distillation</h3>
 
 <p>
   <a href="https://github.com/xuyicheng-zju">Yicheng&nbsp;Xu</a><sup>1</sup> ·
@@ -27,23 +42,6 @@
     <sup>5</sup>&nbsp;Maniformer
     <br>† 通讯作者
   </sub>
-</p>
-
-<p>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-april-dark.png">
-    <img src="docs/assets/logo-april-light.png" width="17%" alt="浙江大学 APRIL 实验室" align="absmiddle">
-  </picture>
-  &nbsp;&nbsp;
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-maniformer-dark.png">
-    <img src="docs/assets/logo-maniformer-light.png" width="16%" alt="Maniformer" align="absmiddle">
-  </picture>
-  &nbsp;&nbsp;
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-agibot-dark.png">
-    <img src="docs/assets/logo-agibot-light.png" width="17%" alt="智元机器人" align="absmiddle">
-  </picture>
 </p>
 
 <p>

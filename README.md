@@ -5,21 +5,19 @@
     <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-april-dark.png">
     <img src="docs/assets/logo-april-light.png" width="17%" alt="APRIL Lab, Zhejiang University" align="absmiddle">
   </picture>
-  &nbsp;
-  <img src="docs/assets/reweave-wordmark.svg" width="30%" alt="ReWeave" align="absmiddle">
-  &nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-maniformer-dark.png">
-    <img src="docs/assets/logo-maniformer-light.png" width="16%" alt="Maniformer" align="absmiddle">
+    <img src="docs/assets/logo-maniformer-light.png" width="17%" alt="Maniformer" align="absmiddle">
   </picture>
-  &nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-agibot-dark.png">
-    <img src="docs/assets/logo-agibot-light.png" width="17%" alt="AGIBOT Innovation" align="absmiddle">
+    <img src="docs/assets/logo-agibot-light.png" width="14%" alt="AGIBOT Innovation" align="absmiddle">
   </picture>
 </p>
 
-<h2>Emergent Physical Task Topologies for Embodied Harness Optimization and Cross-Task Meta-Distillation</h2>
+<h2><img src="docs/assets/reweave-wordmark.svg" width="118" alt="ReWeave" align="absmiddle">: Emergent Physical Task Topologies for Embodied Harness Optimization and Cross-Task Meta-Distillation</h2>
 
 <p>
   <a href="https://github.com/xuyicheng-zju">Yicheng Xu</a><sup>1</sup> &nbsp;&middot;&nbsp;
