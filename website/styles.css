@@ -274,14 +274,20 @@ sup, sub { line-height: 0; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: clamp(.65rem, 2.5vw, 1rem);
   margin-block-end: .25rem;
+}
+
+.hero-logos-partners {
+  display: flex;
+  align-items: center;
+  gap: clamp(.55rem, 2vw, 1.25rem);
 }
 
 .hero-logos img {
   block-size: clamp(2.125rem, 3.5vw, 3rem);
   inline-size: auto;
-  max-inline-size: min(13rem, 56%);
+  max-inline-size: min(13rem, 30vw);
   object-fit: contain;
   opacity: .92;
   transition: opacity .2s ease, transform .2s ease;
@@ -290,6 +296,11 @@ sup, sub { line-height: 0; }
 .hero-logos img:hover {
   opacity: 1;
   transform: translateY(-.5px);
+}
+
+@media (max-width: 34rem) {
+  .hero-logos img { block-size: clamp(1.05rem, 5.3vw, 1.7rem); }
+  .hero-logos-partners img { max-inline-size: 27vw; }
 }
 
 .hero-header {
@@ -331,6 +342,8 @@ sup, sub { line-height: 0; }
   font-weight: 500;
   line-height: 1.75;
 }
+
+.authors > span { white-space: nowrap; }
 
 .authors sup, .affiliations sup, .correspondence sup {
   margin-inline-start: .08em;

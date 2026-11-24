@@ -5,9 +5,14 @@
     <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-april-dark.png">
     <img src="docs/assets/logo-april-light.png" width="17%" alt="APRIL Lab, Zhejiang University" align="absmiddle">
   </picture>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;
   <img src="docs/assets/reweave-wordmark.svg" width="30%" alt="ReWeave" align="absmiddle">
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-maniformer-dark.png">
+    <img src="docs/assets/logo-maniformer-light.png" width="16%" alt="Maniformer" align="absmiddle">
+  </picture>
+  &nbsp;&nbsp;
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-agibot-dark.png">
     <img src="docs/assets/logo-agibot-light.png" width="17%" alt="AGIBOT Innovation" align="absmiddle">
@@ -19,11 +24,12 @@
 <p>
   <a href="https://github.com/xuyicheng-zju">Yicheng Xu</a><sup>1</sup> &nbsp;&middot;&nbsp;
   <a href="https://github.com/Rinke02">Wencan Jiang</a><sup>1</sup> &nbsp;&middot;&nbsp;
-  <a href="https://openreview.net/profile?id=~Zihao_Zhu12">Zihao Zhu</a><sup>2,4</sup> &nbsp;&middot;&nbsp;
-  <a href="https://openreview.net/profile?id=~Keru_Zhou1">Keru Zhou</a><sup>3</sup> &nbsp;&middot;&nbsp;
-  <a href="https://openreview.net/profile?id=~Chang_Zhou16">Chang Zhou</a><sup>4</sup><br>
-  <a href="https://openreview.net/profile?id=~Li_Liu19">Li Liu</a><sup>4</sup> &nbsp;&middot;&nbsp;
-  <a href="https://openreview.net/profile?id=~Maoqing_Yao1">Maoqing Yao</a><sup>4</sup> &nbsp;&middot;&nbsp;
+  <a href="https://openreview.net/profile?id=~Yuhang_Dong4">Yuhang Dong</a><sup>1</sup> &nbsp;&middot;&nbsp;
+  <a href="https://openreview.net/profile?id=~Zihao_Zhu12">Zihao Zhu</a><sup>2,5</sup> &nbsp;&middot;&nbsp;
+  <a href="https://openreview.net/profile?id=~Keru_Zhou1">Keru Zhou</a><sup>3</sup><br>
+  <a href="https://openreview.net/profile?id=~Chang_Zhou16">Chang Zhou</a><sup>5</sup> &nbsp;&middot;&nbsp;
+  <a href="https://openreview.net/profile?id=~Li_Liu19">Li Liu</a><sup>5</sup> &nbsp;&middot;&nbsp;
+  <a href="https://openreview.net/profile?id=~Maoqing_Yao1">Maoqing Yao</a><sup>4,5</sup> &nbsp;&middot;&nbsp;
   <a href="https://openreview.net/profile?id=~Yong_Liu11">Yong Liu</a><sup>1</sup> &nbsp;&middot;&nbsp;
   <a href="https://github.com/zhangzjn">Jiangning Zhang</a><sup>1,&dagger;</sup>
 </p>
@@ -32,7 +38,8 @@
   <sup>1</sup>Zhejiang University &nbsp;&nbsp;&nbsp;
   <sup>2</sup>Stanford University &nbsp;&nbsp;&nbsp;
   <sup>3</sup>Tsinghua University &nbsp;&nbsp;&nbsp;
-  <sup>4</sup>AGIBOT Innovation<br>
+  <sup>4</sup>AGIBOT Innovation &nbsp;&nbsp;&nbsp;
+  <sup>5</sup>Maniformer<br>
   <sup>&dagger;</sup>Corresponding author
 </p>
 

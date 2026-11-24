@@ -7,11 +7,12 @@
 <p>
   <a href="https://github.com/xuyicheng-zju">Yicheng&nbsp;Xu</a><sup>1</sup> ·
   <a href="https://github.com/Rinke02">Wencan&nbsp;Jiang</a><sup>1</sup> ·
-  <a href="https://openreview.net/profile?id=~Zihao_Zhu12">Zihao&nbsp;Zhu</a><sup>2,4</sup> ·
-  <a href="https://openreview.net/profile?id=~Keru_Zhou1">Keru&nbsp;Zhou</a><sup>3</sup> ·
-  <a href="https://openreview.net/profile?id=~Chang_Zhou16">Chang&nbsp;Zhou</a><sup>4</sup><br>
-  <a href="https://openreview.net/profile?id=~Li_Liu19">Li&nbsp;Liu</a><sup>4</sup> ·
-  <a href="https://openreview.net/profile?id=~Maoqing_Yao1">Maoqing&nbsp;Yao</a><sup>4</sup> ·
+  <a href="https://openreview.net/profile?id=~Yuhang_Dong4">Yuhang&nbsp;Dong</a><sup>1</sup> ·
+  <a href="https://openreview.net/profile?id=~Zihao_Zhu12">Zihao&nbsp;Zhu</a><sup>2,5</sup> ·
+  <a href="https://openreview.net/profile?id=~Keru_Zhou1">Keru&nbsp;Zhou</a><sup>3</sup><br>
+  <a href="https://openreview.net/profile?id=~Chang_Zhou16">Chang&nbsp;Zhou</a><sup>5</sup> ·
+  <a href="https://openreview.net/profile?id=~Li_Liu19">Li&nbsp;Liu</a><sup>5</sup> ·
+  <a href="https://openreview.net/profile?id=~Maoqing_Yao1">Maoqing&nbsp;Yao</a><sup>4,5</sup> ·
   <a href="https://openreview.net/profile?id=~Yong_Liu11">Yong&nbsp;Liu</a><sup>1</sup> ·
   <a href="https://github.com/zhangzjn">Jiangning&nbsp;Zhang</a><sup>1,†</sup>
 </p>
@@ -21,15 +22,26 @@
     <sup>1</sup>&nbsp;浙江大学 ·
     <sup>2</sup>&nbsp;斯坦福大学 ·
     <sup>3</sup>&nbsp;清华大学 ·
-    <sup>4</sup>&nbsp;智元机器人
+    <sup>4</sup>&nbsp;智元机器人 ·
+    <sup>5</sup>&nbsp;Maniformer
     <br>† 通讯作者
   </sub>
 </p>
 
 <p>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme-institutions-dark.png">
-    <img src="docs/assets/readme-institutions-light.png" width="156" alt="APRIL 实验室与智元机器人">
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-april-dark.png">
+    <img src="docs/assets/logo-april-light.png" width="17%" alt="浙江大学 APRIL 实验室" align="absmiddle">
+  </picture>
+  &nbsp;&nbsp;
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-maniformer-dark.png">
+    <img src="docs/assets/logo-maniformer-light.png" width="16%" alt="Maniformer" align="absmiddle">
+  </picture>
+  &nbsp;&nbsp;
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-agibot-dark.png">
+    <img src="docs/assets/logo-agibot-light.png" width="17%" alt="智元机器人" align="absmiddle">
   </picture>
 </p>
 
