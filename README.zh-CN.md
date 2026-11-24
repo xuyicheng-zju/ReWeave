@@ -12,6 +12,7 @@
   <a href="https://openreview.net/profile?id=~Keru_Zhou1">Keru&nbsp;Zhou</a><sup>3</sup><br>
   <a href="https://openreview.net/profile?id=~Chang_Zhou16">Chang&nbsp;Zhou</a><sup>5</sup> ·
   <a href="https://openreview.net/profile?id=~Li_Liu19">Li&nbsp;Liu</a><sup>5</sup> ·
+  <a href="https://github.com/Sundrops">Guanghui&nbsp;Ren</a><sup>4</sup> ·
   <a href="https://openreview.net/profile?id=~Maoqing_Yao1">Maoqing&nbsp;Yao</a><sup>4,5</sup> ·
   <a href="https://openreview.net/profile?id=~Yong_Liu11">Yong&nbsp;Liu</a><sup>1</sup> ·
   <a href="https://github.com/zhangzjn">Jiangning&nbsp;Zhang</a><sup>1,†</sup>
