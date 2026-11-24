@@ -1,42 +1,47 @@
 <div align="center">
 
-<p><img src="docs/assets/reweave-wordmark.svg" width="226" alt="ReWeave"></p>
-
-<h3>Emergent Physical Task Topologies<br>for Embodied Harness Optimization and Cross-Task Meta-Distillation</h3>
-
-<p>
-  <a href="https://github.com/xuyicheng-zju">Yicheng&nbsp;Xu</a><sup>1</sup> ·
-  <a href="https://github.com/Rinke02">Wencan&nbsp;Jiang</a><sup>1</sup> ·
-  <a href="https://openreview.net/profile?id=~Zihao_Zhu12">Zihao&nbsp;Zhu</a><sup>2,4</sup> ·
-  <a href="https://openreview.net/profile?id=~Keru_Zhou1">Keru&nbsp;Zhou</a><sup>3</sup> ·
-  <a href="https://openreview.net/profile?id=~Chang_Zhou16">Chang&nbsp;Zhou</a><sup>4</sup><br>
-  <a href="https://openreview.net/profile?id=~Li_Liu19">Li&nbsp;Liu</a><sup>4</sup> ·
-  <a href="https://openreview.net/profile?id=~Maoqing_Yao1">Maoqing&nbsp;Yao</a><sup>4</sup> ·
-  <a href="https://openreview.net/profile?id=~Yong_Liu11">Yong&nbsp;Liu</a><sup>1</sup> ·
-  <a href="https://github.com/zhangzjn">Jiangning&nbsp;Zhang</a><sup>1,†</sup>
-</p>
-
-<p>
-  <sub>
-    <sup>1</sup>&nbsp;Zhejiang&nbsp;University ·
-    <sup>2</sup>&nbsp;Stanford&nbsp;University ·
-    <sup>3</sup>&nbsp;Tsinghua&nbsp;University ·
-    <sup>4</sup>&nbsp;AGIBOT&nbsp;Innovation
-    <br>† Corresponding author
-  </sub>
-</p>
-
 <p>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme-institutions-dark.png">
-    <img src="docs/assets/readme-institutions-light.png" width="156" alt="APRIL Lab and AGIBOT">
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-april-dark.png">
+    <img src="docs/assets/logo-april-light.png" height="26" alt="APRIL Lab, Zhejiang University" align="absmiddle">
+  </picture>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="docs/assets/reweave-wordmark.svg" height="36" alt="ReWeave" align="absmiddle">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-agibot-dark.png">
+    <img src="docs/assets/logo-agibot-light.png" height="26" alt="AGIBOT Innovation" align="absmiddle">
   </picture>
 </p>
 
+<h2>Emergent Physical Task Topologies for Embodied Harness Optimization and Cross-Task Meta-Distillation</h2>
+
 <p>
-  <a href="https://arxiv.org/abs/2611.31053"><img src="docs/assets/resource-arxiv.svg" alt="arXiv:2611.31053" align="absmiddle"></a>
-  <a href="https://xuyicheng-zju.github.io/ReWeave/"><img src="docs/assets/resource-project.svg" alt="Project website" align="absmiddle"></a>
-  <a href="https://github.com/xuyicheng-zju/ReWeave"><img src="docs/assets/resource-github.svg" alt="Code on GitHub" align="absmiddle"></a>
+  <a href="https://github.com/xuyicheng-zju">Yicheng Xu</a><sup>1</sup> &nbsp;&middot;&nbsp;
+  <a href="https://github.com/Rinke02">Wencan Jiang</a><sup>1</sup> &nbsp;&middot;&nbsp;
+  <a href="https://openreview.net/profile?id=~Zihao_Zhu12">Zihao Zhu</a><sup>2,4</sup> &nbsp;&middot;&nbsp;
+  <a href="https://openreview.net/profile?id=~Keru_Zhou1">Keru Zhou</a><sup>3</sup> &nbsp;&middot;&nbsp;
+  <a href="https://openreview.net/profile?id=~Chang_Zhou16">Chang Zhou</a><sup>4</sup><br>
+  <a href="https://openreview.net/profile?id=~Li_Liu19">Li Liu</a><sup>4</sup> &nbsp;&middot;&nbsp;
+  <a href="https://openreview.net/profile?id=~Maoqing_Yao1">Maoqing Yao</a><sup>4</sup> &nbsp;&middot;&nbsp;
+  <a href="https://openreview.net/profile?id=~Yong_Liu11">Yong Liu</a><sup>1</sup> &nbsp;&middot;&nbsp;
+  <a href="https://github.com/zhangzjn">Jiangning Zhang</a><sup>1,&dagger;</sup>
+</p>
+
+<p>
+  <sup>1</sup>Zhejiang University &nbsp;&nbsp;&nbsp;
+  <sup>2</sup>Stanford University &nbsp;&nbsp;&nbsp;
+  <sup>3</sup>Tsinghua University &nbsp;&nbsp;&nbsp;
+  <sup>4</sup>AGIBOT Innovation<br>
+  <sup>&dagger;</sup>Corresponding author
+</p>
+
+<p>
+  <a href="https://arxiv.org/abs/2611.31053"><img src="https://img.shields.io/badge/arXiv-2611.31053-b31b1b?style=for-the-badge&logo=arxiv&logoColor=white" alt="arXiv:2611.31053"></a>
+  <a href="https://xuyicheng-zju.github.io/ReWeave/"><img src="https://img.shields.io/badge/Project-ReWeave-5a3568?style=for-the-badge" alt="Project Page"></a>
+  <a href="https://github.com/xuyicheng-zju/ReWeave"><img src="https://img.shields.io/badge/Code-GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache--2.0-2c7be5?style=for-the-badge" alt="License Apache-2.0"></a>
+  <a href="README.zh-CN.md"><img src="https://img.shields.io/badge/Docs-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-4c566a?style=for-the-badge" alt="简体中文"></a>
 </p>
 
 <p>
@@ -180,15 +185,6 @@ Each stage publishes `runs/continual/stream/updates/NNN/harness.json`. Pass that
 | [Usage and evaluation](docs/EVALUATION.md) | Recovery, custom protocols, and held-out evaluation |
 | [Method](docs/METHOD.md) | The C/W/L runtime, topology revision, and cross-task distillation |
 | [Example protocols](examples/graph_evolution/) | Development conditions, author policy, and graph inputs |
-
-<h2 id="benchmarks">Benchmarks</h2>
-
-| Backend | Episode identity |
-| --- | --- |
-| LIBERO-PRO | Task suite, task index, random seed, and reset-state ID |
-| RoboDojo | Task name, layout set, and layout ID |
-
-The environment evaluator supplies the episode verdict. [Evaluation](docs/EVALUATION.md)
 
 <h2 id="repository">Repository</h2>
 
